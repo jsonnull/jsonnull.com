@@ -1,0 +1,5 @@
+```json
+{
+  "template": "home"
+}
+```
