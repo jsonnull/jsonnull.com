@@ -9,12 +9,17 @@ function markdownBlock (outputFilePattern) {
           `file-loader?context=${
             path.resolve(__dirname, '../content/')
           }/&name=[path][name].html`,
+          'render-loader',
           'extract-loader?publicPath=./',
-          'html-loader',
-          'markdown-loader'
+          'raw-loader'
         ]
       }]
-    }
+    },
+    resolveLoader: {
+      alias: {
+        'render-loader': path.resolve(__dirname, 'render.loader.js')
+      }
+    } 
   })
 
   return Object.assign(markdown, {

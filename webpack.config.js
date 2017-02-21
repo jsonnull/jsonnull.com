@@ -12,6 +12,7 @@ const cssModules = require('@webpack-blocks/css-modules')
 const extractText = require('@webpack-blocks/extract-text2')
 const markdown = require('./webpack/markdown')
 const content = require('./webpack/content')
+const static = require('./webpack/static')
 const directoryNamed =  require('./webpack/directoryNamed')
 
 const customResolve = () => (context) => ({
@@ -21,10 +22,11 @@ const customResolve = () => (context) => ({
 })
 
 module.exports = createConfig([
-  entryPoint('./content/index.jsonnull'),
+  entryPoint(['./content/index.jsonnull', './src/index.js']),
   // noOutput(),
   setOutput('./public/bundle.js'),
   // loaders
+  static(),
   content('content/index.jsonnull'),
   markdown('[name].html'),
   // transpilers
