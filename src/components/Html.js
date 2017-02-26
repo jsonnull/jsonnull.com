@@ -1,14 +1,13 @@
 import React from 'react'
-import Head from './head'
-import './style.css'
+import Head from './Head'
 
 class Html extends React.Component {
   render () {
     return <html>
-      <Head />
+      <Head head={this.props.head} />
       <body>
         <div id="react-root"
-          dangerouslySetInnerHTML={{__html: this.props.content}}/>
+          dangerouslySetInnerHTML={{__html: this.props.content}} />
       </body>
     </html>
   }
