@@ -28,8 +28,9 @@ export default function render (raw) {
 
   // get header markup
   const head = Helmet.rewind()
-  const html = ReactDOMServer.renderToStaticMarkup(<Html content={body} head={head} />)
 
+  // render full markup
+  const html = ReactDOMServer.renderToStaticMarkup(<Html body={body} content={rendered} head={head} template={template} />)
   return html
 }
 
