@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack-render.config.js && webpack --config webpack-build.config.js",
-    "watch": "webpack --config webpack-watch.config.js"
+    "watch": "webpack --watch --config webpack-watch.config.js"
   },
   "dependencies": {
     "core-js": "^2.4.1",
