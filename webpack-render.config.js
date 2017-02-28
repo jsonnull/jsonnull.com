@@ -15,7 +15,7 @@ module.exports = createConfig(common.concat([
   }),
   setOutput({
     path: './public/',
-    filename: './public/render.js',
+    filename: 'render.js',
     library: 'render',
     libraryTarget: 'umd'
   })

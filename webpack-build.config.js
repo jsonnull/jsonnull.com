@@ -10,6 +10,6 @@ module.exports = createConfig(common.concat([
   entryPoint(['./content/index.jsonnull', './src/index.js']),
   setOutput({
     path: './public',
-    filename: './public/bundle.js'
+    filename: 'bundle.js'
   })
 ]))
