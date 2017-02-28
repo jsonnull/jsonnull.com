@@ -1,6 +1,9 @@
 {
   "name": "jsonnull.com",
   "private": true,
+  "scripts": {
+    "build": "webpack --config webpack-render.config.js && webpack --config webpack-build.config.js"
+  },
   "dependencies": {
     "core-js": "^2.4.1",
     "react": "^15.4.2",
@@ -31,7 +34,7 @@
     "css-modules-require-hook": "^4.0.5",
     "directory-named-webpack-plugin": "2",
     "extract-loader": "^0.1.0",
-    "extract-text-webpack-plugin": "beta",
+    "extract-text-webpack-plugin": "^2.0.0",
     "flow-bin": "^0.38.0",
     "glob": "^7.1.1",
     "gray-matter": "^2.1.0",
@@ -42,6 +45,6 @@
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.0",
     "raw-loader": "^0.5.1",
-    "webpack": "2"
+    "webpack": "^2.2.1"
   }
 }

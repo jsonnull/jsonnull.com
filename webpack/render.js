@@ -1,7 +1,7 @@
 const path = require('path')
 
-function markdownBlock (outputFilePattern) {
-  const markdown = (context) => ({
+function renderBlock (outputFilePattern) {
+  const render = (context) => ({
     module: {
       loaders: [{
         test: context.fileType('text/x-markdown'),
@@ -17,12 +17,12 @@ function markdownBlock (outputFilePattern) {
     },
     resolveLoader: {
       alias: {
-        'render-loader': path.resolve(__dirname, 'render.loader.js')
+        'render-loader': path.resolve(__dirname, 'render.loader.js'),
       }
     } 
   })
 
-  return Object.assign(markdown, {
+  return Object.assign(render, {
     pre: preHook
   })
 }
@@ -34,4 +34,4 @@ function preHook (context) {
   }
 }
 
-module.exports = markdownBlock
+module.exports = renderBlock

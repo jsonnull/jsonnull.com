@@ -6,7 +6,7 @@ class Html extends React.Component {
     return <html>
       <Head {...this.props} />
       <body>
-        <div id="react-root" dangerouslySetInnerHTML={{__html: this.props.content}} />
+        <div id="react-root" dangerouslySetInnerHTML={{__html: this.props.body}} />
       </body>
     </html>
   }

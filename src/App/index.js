@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react'
 import Helmet from 'react-helmet'
+import Header from './Header/Header'
 import Content from './Content/Content'
 
 type Props = {
@@ -16,6 +17,7 @@ class App extends React.Component<*, Props, *> {
           title="☕️💻🎨✏️🎵"
           titleTemplate="Jason Nall - %s"
           />
+          <Header />
           <Content {...this.props} />
       </div>
     )

@@ -1,8 +1,6 @@
-require('css-modules-require-hook/preset')
-require('babel-register')
-
-const render = require('../src/render.js').default
+const path = require('path')
 
 module.exports = function(content) {
+  const render = require('../public/render.js').default
   return render(content.toString())
 }
