@@ -8,5 +8,8 @@ const { common } = require('./webpack.config.js')
 
 module.exports = createConfig(common.concat([
   entryPoint(['./content/index.jsonnull', './src/index.js']),
-  setOutput('./public/bundle.js')
+  setOutput({
+    path: './public',
+    filename: './public/bundle.js'
+  })
 ]))
