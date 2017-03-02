@@ -38,7 +38,7 @@
     "extract-text-webpack-plugin": "^2.0.0",
     "flow-bin": "^0.38.0",
     "glob": "^7.1.1",
-    "gray-matter": "^2.1.0",
+    "gray-matter": "2.1.0",
     "markdown-it": "^8.3.0",
     "markdown-loader": "^2.0.0",
     "postcss-advanced-variables": "^1.2.2",
