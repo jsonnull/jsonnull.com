@@ -7,9 +7,16 @@ const {
 const { common } = require('./webpack.config.js')
 
 module.exports = createConfig(common.concat([
-  entryPoint(['./content/index.jsonnull', './src/index.lsc']),
+  entryPoint('./src/index.lsc'),
   setOutput({
     path: './public',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    library: 'render',
+    libraryTarget: 'umd'
+  }),
+  customConfig({
+    externals: {
+      fs: 'fs'
+    }
   })
 ]))

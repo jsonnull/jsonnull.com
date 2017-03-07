@@ -2,7 +2,7 @@
   "name": "jsonnull.com",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack-render.config.js && webpack --config webpack-build.config.js",
+    "build": "webpack --config webpack-bundle.config.js && webpack --config webpack-content.config.js",
     "watch": "webpack --watch --config webpack-watch.config.js"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
 module.exports = [
-  require('./webpack-render.config.js'),
-  require('./webpack-build.config.js')
+  require('./webpack-bundle.config.js'),
+  require('./webpack-content.config.js')
 ]
