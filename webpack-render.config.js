@@ -8,7 +8,7 @@ const { common } = require('./webpack.config.js')
 
 module.exports = createConfig(common.concat([
   entryPoint({
-    render: './src/render.js',
+    render: './src/render.lsc',
   }),
   customConfig({
     target: 'node'
