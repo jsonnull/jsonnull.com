@@ -1,40 +1,65 @@
-const { defineConstants, env, sourceMaps } = require('@webpack-blocks/webpack2')
-const postcss = require('@webpack-blocks/postcss')
-const cssModules = require('@webpack-blocks/css-modules')
-const extractText = require('@webpack-blocks/extract-text2')
-const lightscript = require('./webpack/lightscript')
-const static = require('./webpack/static')
-const content = require('./webpack/content')
-const render = require('./webpack/render')
-const directoryNamed =  require('./webpack/directoryNamed')
+const webpack = require('webpack')
+const DirectoryNamed = require("directory-named-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Render = require('./render')
 
-const customResolve = () => (context) => ({
+const browser = {
+  entry: './src/index.lsc',
+  output: {
+    path: './public',
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.lsc$/,
+        exclude: [ /\/node_modules\// ],
+        use: 'babel-loader?cacheDirectory'
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader?modules&importLoaders=1',
+            'postcss-loader'
+          ]
+        })
+      },
+      {
+        test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
+        use: 'file-loader?name=static/[hash].[ext]'
+      }
+    ]
+  },
   resolve: {
-    modules: ['node_modules', 'src'],
-    extensions: ['.lsc']
+    modules: ['node_modules', 'src', 'static'],
+    extensions: ['.js', '.json', '.lsc'],
+    plugins: [
+      new DirectoryNamed(true)
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+    }),
+    new ExtractTextPlugin('style.css'),
+    new Render()
+  ]
+}
+
+const server = Object.assign({}, browser, {
+  entry: './src/render.lsc',
+  output: {
+    path: './public',
+    library: 'render',
+    libraryTarget: 'umd',
+    filename: 'render.js'
+  },
+  target: 'node',
+  externals: {
+    fs: 'fs'
   }
 })
 
-module.exports = {
-  common: [
-    // loaders
-    lightscript(),
-    postcss(require('./postcss.config.js')),
-    cssModules(),
-    static(),
-    content('content/index.jsonnull'),
-    render('[name].html'),
-    // development
-    defineConstants({
-      'process.env.NODE_ENV': process.env.NODE_ENV
-    }),
-    env('development', [
-      sourceMaps()
-    ]),
-    // resolve
-    directoryNamed(),
-    customResolve(),
-    // plugins
-    extractText('style.css')
-  ]
-}
+module.exports = [browser, server]
