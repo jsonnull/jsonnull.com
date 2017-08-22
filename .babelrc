@@ -1,3 +1,23 @@
 {
-  "presets": ["react", "babel-preset-lightscript"]
+  "presets": [
+    "react",
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      },
+      "useBuiltIns": true,
+      "modules": false
+    }]
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
 }

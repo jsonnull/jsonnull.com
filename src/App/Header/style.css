@@ -1,9 +1,0 @@
-@import '../../styles/base.css';
-
-.title {
-  display: flex;
-  flex: 1;
-  font-size: 2.4rem;
-  margin: 0;
-  font-family: $heading;
-}

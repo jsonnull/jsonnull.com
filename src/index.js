@@ -1,9 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './App'
-import './style.css'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <App {...window.__PROPS} />,
-  document.getElementById('react-root')
-)
+// On the client side, render the app
+if (typeof window !== 'undefined') {
+  ReactDOM.render(
+    <App {...window.__PROPS} />,
+    document.getElementById('react-root')
+  )
+}
+
+export default App

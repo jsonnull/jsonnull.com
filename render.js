@@ -5,17 +5,15 @@ function Renderer() {}
 
 Renderer.prototype.apply = function (compiler) {
   //now you have access to all the compiler instance methods
-  compiler.plugin('after-emit', function (compiler, callback) {
+  compiler.plugin('done', function () {
     gulp.src('./content/**/*.md')
       .pipe(render())
       .pipe(gulp.dest('./public'))
-
-    callback()
   })
 }
 
 function render (content) {
-  const renderPage = require('./public/render.js').default
+  const renderPage = require('./src/render.js')
 
   return through.obj(function (file, encoding, callback) {
     // chang path extension to html

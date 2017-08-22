@@ -4,27 +4,19 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Render = require('./render')
 
 const browser = {
-  entry: './src/index.lsc',
+  entry: './src/index.js',
   output: {
     path: './public',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    library: 'App',
+    libraryTarget: "umd"
   },
   module: {
     rules: [
       {
-        test: /\.lsc$/,
+        test: /\.js$/,
         exclude: [ /\/node_modules\// ],
         use: 'babel-loader?cacheDirectory'
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?modules&importLoaders=1',
-            'postcss-loader'
-          ]
-        })
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
@@ -34,7 +26,7 @@ const browser = {
   },
   resolve: {
     modules: ['node_modules', 'src', 'static'],
-    extensions: ['.js', '.json', '.lsc'],
+    extensions: ['.js', '.json'],
     plugins: [
       new DirectoryNamed(true)
     ]
@@ -43,23 +35,11 @@ const browser = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
-    new ExtractTextPlugin('style.css'),
     new Render()
-  ]
+  ],
+  stats: {
+    children: false
+  }
 }
 
-const server = Object.assign({}, browser, {
-  entry: './src/render.lsc',
-  output: {
-    path: './public',
-    library: 'render',
-    libraryTarget: 'umd',
-    filename: 'render.js'
-  },
-  target: 'node',
-  externals: {
-    fs: 'fs'
-  }
-})
-
-module.exports = [browser, server]
+module.exports = browser
