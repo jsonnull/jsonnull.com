@@ -1,15 +1,13 @@
 const webpack = require('webpack')
+const path = require('path')
 const DirectoryNamed = require("directory-named-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Render = require('./render')
 
 const browser = {
   entry: './src/index.js',
   output: {
-    path: './public',
-    filename: 'bundle.js',
-    library: 'App',
-    libraryTarget: "umd"
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -35,11 +33,9 @@ const browser = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new Render()
-  ],
-  stats: {
-    children: false
-  }
+  ]
 }
 
 module.exports = browser

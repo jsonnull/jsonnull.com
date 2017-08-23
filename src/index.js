@@ -8,6 +8,6 @@ if (typeof window !== 'undefined') {
     <App {...window.__PROPS} />,
     document.getElementById('react-root')
   )
+} else {
+  global.App = App
 }
-
-export default App

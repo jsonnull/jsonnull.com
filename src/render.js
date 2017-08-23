@@ -1,6 +1,5 @@
 // Server
 const React = require('react')
-const App = require('../public/bundle.js').default
 const createHtml = require('./html')
 const ReactDOMServer = require('react-dom/server')
 const { Helmet } = require('react-helmet')
@@ -12,6 +11,9 @@ const matterOpts = {
   language: 'json',
   delimiters: '```'
 }
+
+require('../public/bundle.js')
+const App = global.App
 
 // On the server side, export a function to perform the render
 module.exports = (raw) => {
