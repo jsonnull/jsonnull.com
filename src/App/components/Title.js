@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
+import feather from 'feather-icons'
 import * as style from 'styles/base'
 
 type Props = {
@@ -29,9 +30,8 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: ${padding};
-  padding-left: ${padding};
-  padding-right: ${padding};
+  bottom: 0;
+  padding: ${padding};
 `
 
 const Title = styled.h1`
@@ -54,6 +54,27 @@ const Title = styled.h1`
   */
 `
 
+const Social = styled.div`
+  margin-top: auto;
+`
+
+const IconWrapper = styled.div`
+  height: ${style.lineUnit};
+  line-height: ${style.lineUnit};
+  margin-top: 1.2rem;
+  padding-top: 2px;
+`
+
+const Icon = ({ name }) => (
+  <IconWrapper dangerouslySetInnerHTML={{
+    __html: feather.toSvg(name, {
+      color: style.gray,
+      width: 20,
+      height: 20
+    })
+  }} />
+)
+
 class Header extends React.Component<*, Props, *> {
   render () {
     const { home = false } = this.props
@@ -70,6 +91,10 @@ class Header extends React.Component<*, Props, *> {
         <Description>
           Designer &amp; Developer
         </Description>
+        <Social>
+          <Icon name='github' />
+          <Icon name='twitter' />
+        </Social>
       </Wrapper>
     )
   }
