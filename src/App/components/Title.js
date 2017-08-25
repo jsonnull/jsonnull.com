@@ -9,7 +9,7 @@ type Props = {
 }
 
 const Description = styled.h2`
-  /* display: none; */
+  display: none;
   font-size: ${style.fontSizeSmall};
   color: ${style.gray};
   font-weight: 700;

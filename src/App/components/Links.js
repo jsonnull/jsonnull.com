@@ -15,12 +15,11 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
+  padding: ${padding};
 `
 
 const List = styled.ul`
-  position: absolute;
-  top: ${padding};
-  right: ${padding};
   text-align: right;
   font-family: ${style.heading};
   font-weight: 700;
@@ -38,6 +37,18 @@ const Link = styled.li`
   margin-bottom: 1.2rem;
 `
 
+const Source = styled.div`
+  margin-top: auto;
+  line-height: $lineUnit;
+  font-size: ${style.fontSizeSmall};
+  color: ${style.gray};
+  text-align: right;
+
+  a {
+    color: ${style.gray};
+  }
+`
+
 class Links extends React.Component<*, Props, *> {
   render () {
     return (
@@ -48,6 +59,11 @@ class Links extends React.Component<*, Props, *> {
           <Link><a href="/scratch">Scratch</a></Link>
           <Link><a href="/contact">Contact</a></Link>
         </List>
+        <Source>
+          <a href="https://github.com/jsonnull/jsonnull.com">
+            Source on GitHub
+          </a>
+        </Source>
       </Wrapper>
     )
   }
