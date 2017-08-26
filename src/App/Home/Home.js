@@ -17,22 +17,15 @@ const Container = styled.div`
   right: 0;
 `
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: 1000px;
-`
-
 const Home = props => (
   <Container>
     <Title />
     <Links />
-    <Content>
-      <Hero />
-      <Interests />
-      <Projects />
-    </Content>
+
+    <Hero />
+    <Interests />
+    <Projects />
+
     <Footer />
   </Container>
 )

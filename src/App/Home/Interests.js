@@ -43,13 +43,21 @@ const Interest = (props) => {
 
 const Interests = styled.div`
   margin-bottom: 14.4rem;
+  padding: 14.4rem 0;
+  background-color: ${style.veryLightGray};
+`
+
+const Inner = styled.div`
+  width: 1000px;
+  margin 0 auto;
+  position: relative;
 `
 
 const Title = styled.h3`
   font-family: ${style.heading};
   font-size: ${style.fontSizeLarge};
   font-weight: 700;
-  color: ${style.gray};
+  color: ${style.black};
   margin: 0;
 `
 
@@ -62,37 +70,39 @@ const Paragraph = styled.p`
 
 const InterestsSection = props => (
   <Interests>
-    <Title>
-      Experience and skills for today's web.
-    </Title>
-    <Paragraph>
-      Having a diverse and always-growing skillset is key to staying adaptable.
-      I've worked with clients on a variety of platforms, and in my free time I dive into cutting-edge technologies to see what's good.
-      Here are the areas I readily turn into client wins.
-    </Paragraph>
-    <List>
-      <Interest color={style.blue} title='JavaScript'>
-        Web projects using modern JavaScript, particularly React, Flow, and TypeScript
-      </Interest>
-      <Interest color={style.orange} title='Firebase'>
-        Realtime web apps backed by Firebase
-      </Interest>
-      <Interest color={style.green} title='Progressive Web Apps'>
-        <a href="https://developers.google.com/web/progressive-web-apps/">PWAs are</a>
-        {' crazy fast, offline-first web apps'}
-      </Interest>
-    </List>
-    <List>
-      <Interest color={style.gray} title='Performance'>
-        Sites facing performance challenges of any kind
-      </Interest>
-      <Interest color={style.red} title='Interactive'>
-        Browser games are an interesting blend of UX and performance concerns
-      </Interest>
-      <Interest color={style.gray} title='New Languages'>
-        Any project using Rust, PureScript, Haskell
-      </Interest>
-    </List>
+    <Inner>
+      <Title>
+        Experience and skills for today's web.
+      </Title>
+      <Paragraph>
+        Having a diverse and always-growing skillset is key to staying adaptable.
+        I've worked with clients on a variety of platforms, and in my free time I dive into cutting-edge technologies to see what's good.
+        Here are the areas I readily turn into client wins.
+      </Paragraph>
+      <List>
+        <Interest color={style.blue} title='JavaScript'>
+          Web projects using modern JavaScript, particularly React, Flow, and TypeScript
+        </Interest>
+        <Interest color={style.orange} title='Firebase'>
+          Realtime web apps backed by Firebase
+        </Interest>
+        <Interest color={style.green} title='Progressive Web Apps'>
+          <a href="https://developers.google.com/web/progressive-web-apps/">PWAs are</a>
+          {' crazy fast, offline-first web apps'}
+        </Interest>
+      </List>
+      <List>
+        <Interest color={style.gray} title='Performance'>
+          Sites facing performance challenges of any kind
+        </Interest>
+        <Interest color={style.red} title='Interactive'>
+          Browser games are an interesting blend of UX and performance concerns
+        </Interest>
+        <Interest color={style.gray} title='New Languages'>
+          Any project using Rust, PureScript, Haskell
+        </Interest>
+      </List>
+    </Inner>
   </Interests>
 )
 

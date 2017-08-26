@@ -12,6 +12,8 @@ const padding = '4.8rem'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 1000px;
+  margin: 0 auto;
   min-height: ${props => props.currentHeight};
 `
 

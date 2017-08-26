@@ -23,6 +23,7 @@ export const lineUnit = '2.4rem'
 export const white = '#fdfffb'
 /* #E7EAE1; */
 export const lightGray = '#D3D8D2'
+export const veryLightGray = '#F2F7F0'
 export const gray = '#838784'
 export const darkGray = '#26282B'
 export const black = '#18191C'
