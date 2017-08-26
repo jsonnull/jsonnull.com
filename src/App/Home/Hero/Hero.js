@@ -22,13 +22,12 @@ const Header = styled.h1`
   padding-bottom: ${padding};
   margin-top: auto;
   font-size: 4.8rem;
-  line-height: 4.8rem; 
+  line-height: 5.4rem; 
   font-family: ${style.heading};
   font-weight: 300;
 `
 
 const About = styled.p`
-  line-height: 3.6rem;
   width: 750px;
   margin: 0;
   color: ${style.black};

@@ -12,17 +12,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: linear-gradient(-45deg, ${style.blue} 0%, ${style.gray} 100%);
+  box-shadow: 0 35px 40px -20px rgba(0, 10, 20, 0.3);
 `
 
 const TabBar = styled.div`
   background: ${style.darkGray};
   height: 3.6rem;
   display: flex;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 `
 
 const Tab = styled.div`
   background: ${style.white};
-  border-top: 2px solid ${style.blue};
+  border-top: 3px solid ${style.blue};
   height: 3.6rem;
   line-height: 3.6rem;
   color: ${style.gray};
@@ -35,7 +38,7 @@ const Tab = styled.div`
 
 const AddressBar = styled.div`
   height: 3.6rem;
-  background-color: ${style.white}
+  background: ${style.white};
 `
 
 const Address = styled.div`
