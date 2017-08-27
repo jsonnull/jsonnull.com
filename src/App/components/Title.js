@@ -46,12 +46,10 @@ const Title = styled.h1`
   z-index: 700;
   color: ${style.black};
 
-  /*
-  @media (min-width: $tablet) {
+  @media (min-width: ${style.tablet}) {
     right: auto;
     background-color: transparent;
   }
-  */
 `
 
 const Social = styled.div`
