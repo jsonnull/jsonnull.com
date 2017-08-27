@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import feather from 'feather-icons'
 import { colors, fonts, fontSize, lineUnit, breakpoints } from 'styles/base'
+import { background, color, underlineIn, underlineOut } from 'styles/links'
 
 type Props = {
   home: boolean
@@ -38,7 +39,6 @@ const Title = styled.h1`
   display: flex;
   font-size: ${fontSize.large};
   font-family: ${fonts.heading};
-  font-weight: bold;
   line-height: ${lineUnit};
   height: ${lineUnit};
   background-color: ${colors.white};
@@ -49,6 +49,18 @@ const Title = styled.h1`
   @media (min-width: ${breakpoints.tablet}) {
     right: auto;
     background-color: transparent;
+  }
+
+  a, a:link, a:visited, a:hover, a:active {
+    transition: background-size ease 100ms;
+    ${props => background(props.background)}
+    ${color(colors.black)}
+    ${underlineOut}
+    background-position: 0 100%;
+  }
+
+  a:hover {
+    ${underlineIn}
   }
 `
 
@@ -75,7 +87,7 @@ const Icon = ({ name }) => (
 
 class Header extends React.Component<*, Props, *> {
   render () {
-    const { home = false } = this.props
+    const { home = false, background = colors.white } = this.props
 
       /*
     const photo = (!home)
@@ -85,7 +97,9 @@ class Header extends React.Component<*, Props, *> {
 
     return (
       <Wrapper>
-        <Title>Jason Nall</Title>
+        <Title background={background}>
+          <a href='/'>Jason Nall</a>
+        </Title>
         <Description>
           Designer &amp; Developer
         </Description>
