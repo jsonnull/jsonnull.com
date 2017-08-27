@@ -75,14 +75,16 @@ const IconWrapper = styled.div`
   padding-top: 2px;
 `
 
-const Icon = ({ name }) => (
-  <IconWrapper dangerouslySetInnerHTML={{
-    __html: feather.toSvg(name, {
-      color: colors.gray,
-      width: 20,
-      height: 20
-    })
-  }} />
+const Icon = ({ name, href }) => (
+  <a href={href} target="_blank">
+    <IconWrapper dangerouslySetInnerHTML={{
+      __html: feather.toSvg(name, {
+        color: colors.gray,
+        width: 20,
+        height: 20
+      })
+    }} />
+  </a>
 )
 
 class Header extends React.Component<*, Props, *> {
@@ -104,8 +106,8 @@ class Header extends React.Component<*, Props, *> {
           Designer &amp; Developer
         </Description>
         <Social>
-          <Icon name='github' />
-          <Icon name='twitter' />
+          <Icon name='github' href="https://github.com/jsonnull" />
+          <Icon name='twitter' href="https://twitter.com/jsonnull" />
         </Social>
       </Wrapper>
     )
