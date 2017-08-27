@@ -5,6 +5,7 @@ import { colors, fonts, fontSize, lineUnit } from 'styles/base'
 import Overlay from 'App/components/Overlay'
 import Title from 'App/components/Title'
 import Links from 'App/components/Links'
+import mouseOver from 'App/containers/mouseOver'
 
 const borderColor = colors.lightGray
 
@@ -73,7 +74,12 @@ const Paragraph = styled.p`
 `
 
 const InterestsSection = props => (
-  <Interests>
+  <Interests
+    onMouseEnter={props.onMouseEnter}
+    onMouseOver={props.onMouseEnter}
+    onMouseLeave={props.onMouseLeave}
+    onMouseOut={props.onMouseLeave}
+  >
     <Inner>
       <Heading>
         Experience and skills for today's web.
@@ -107,11 +113,11 @@ const InterestsSection = props => (
         </Interest>
       </List>
     </Inner>
-    <Overlay>
+    <Overlay allowPointerEvents={props.isMouseOver}>
       <Title background={colors.veryLightGray} />
       <Links background={colors.veryLightGray} />
     </Overlay>
   </Interests>
 )
 
-export default InterestsSection
+export default mouseOver(InterestsSection)

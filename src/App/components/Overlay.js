@@ -7,6 +7,7 @@ const Overlay = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: ${({ allowPointerEvents = false }) => allowPointerEvents ? 'auto' : 'none'};
 
   /*
    * Holy shit this hack for Safari tho

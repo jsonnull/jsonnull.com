@@ -52,7 +52,7 @@ const Title = styled.h1`
   }
 
   a, a:link, a:visited, a:hover, a:active {
-    transition: background-size ease 100ms;
+    transition: background-size 100ms ease;
     ${props => background(props.background)}
     ${color(colors.black)}
     ${underlineOut}

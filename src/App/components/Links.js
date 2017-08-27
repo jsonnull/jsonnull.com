@@ -29,7 +29,7 @@ const List = styled.ul`
   z-index: 710;
 
   a, a:link, a:visited, a:hover, a:active {
-    transition: background-size ease 100ms;
+    transition: background-size 100ms ease;
     ${props => background(props.background)}
     ${color(colors.black)}
     ${underlineOut}
@@ -53,7 +53,7 @@ const Source = styled.div`
   text-align: right;
 
   a, a:link, a:visited, a:hover, a:active {
-    transition: background-size ease 100ms;
+    transition: background-size 100ms ease;
     ${props => background(props.background)}
     ${color(colors.gray)}
     ${underlineOut}

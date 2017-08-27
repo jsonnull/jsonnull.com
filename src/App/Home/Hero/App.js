@@ -9,7 +9,6 @@ const Container = styled.div`
   height: 200px;
   border-radius: 5px;
   margin: 0 0 auto;
-  display: flex;
   flex-direction: column;
   background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
   box-shadow: 0 35px 40px -20px rgba(0, 10, 20, 0.3);
@@ -17,8 +16,7 @@ const Container = styled.div`
 
 const TabBar = styled.div`
   background: ${colors.darkGray};
-  height: 3.6rem;
-  display: flex;
+  height: 36px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 `
@@ -26,25 +24,26 @@ const TabBar = styled.div`
 const Tab = styled.div`
   background: ${colors.white};
   border-top: 3px solid ${colors.blue};
-  height: 3.6rem;
+  height: 36px;
   line-height: 3.6rem;
   color: ${colors.gray};
   margin-left: 4.8rem;
   font-size: ${fontSize.small};
   padding: 0 1rem;
   min-width: 200px;
-  flex: 0;
+  display: inline-block;
 `
 
 const AddressBar = styled.div`
   height: 3.6rem;
+  padding: 4px 0;
   background: ${colors.white};
 `
 
 const Address = styled.div`
   height: 2.8rem;
   border: 1px solid ${colors.lightGray};
-  margin: 4px 1rem;
+  margin: 0 1rem;
   line-height: 2.8rem;
   padding: 0 9px;
   color: ${colors.gray};
@@ -54,6 +53,7 @@ const Address = styled.div`
 
 const Content = styled.div`
   margin: auto 0;
+  height: 128px;
   overflow: hidden;
 `
 
