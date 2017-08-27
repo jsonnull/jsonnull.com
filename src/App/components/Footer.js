@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize } from 'styles/base'
+import Overlay from 'App/components/Overlay'
+import Title from 'App/components/Title'
+import Links from 'App/components/Links'
 
 const Background = styled.div`
   background: ${colors.black};
   padding: 14.4rem 0;
+  position: relative;
 `
 
 const Content = styled.div`
@@ -43,6 +47,10 @@ const Footer = props => (
         —Ralph Waldo Emerson
       </Attrib>
     </Content>
+    <Overlay>
+      <Title />
+      <Links background={colors.black} />
+    </Overlay>
   </Background>
 )
 

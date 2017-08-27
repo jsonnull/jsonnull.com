@@ -2,6 +2,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit } from 'styles/base'
+import Overlay from 'App/components/Overlay'
+import Title from 'App/components/Title'
+import Links from 'App/components/Links'
 
 const borderColor = colors.lightGray
 
@@ -45,6 +48,7 @@ const Interests = styled.div`
   margin-bottom: 14.4rem;
   padding: 14.4rem 0;
   background-color: ${colors.veryLightGray};
+  position: relative;
 `
 
 const Inner = styled.div`
@@ -53,7 +57,7 @@ const Inner = styled.div`
   position: relative;
 `
 
-const Title = styled.h3`
+const Heading = styled.h3`
   font-family: ${fonts.heading};
   font-size: ${fontSize.large};
   font-weight: 700;
@@ -71,9 +75,9 @@ const Paragraph = styled.p`
 const InterestsSection = props => (
   <Interests>
     <Inner>
-      <Title>
+      <Heading>
         Experience and skills for today's web.
-      </Title>
+      </Heading>
       <Paragraph>
         Having a diverse and always-growing skillset is key to staying adaptable.
         I've worked with clients on a variety of platforms, and in my free time I dive into cutting-edge technologies to see what's good.
@@ -103,6 +107,10 @@ const InterestsSection = props => (
         </Interest>
       </List>
     </Inner>
+    <Overlay>
+      <Title background={colors.veryLightGray} />
+      <Links background={colors.veryLightGray} />
+    </Overlay>
   </Interests>
 )
 

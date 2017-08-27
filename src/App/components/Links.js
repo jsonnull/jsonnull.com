@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit } from 'styles/base'
+import { background, color, underlineIn, underlineOut } from 'styles/links'
 
 type Props = {
 }
@@ -28,7 +29,14 @@ const List = styled.ul`
   z-index: 710;
 
   a, a:link, a:visited, a:hover, a:active {
-    color: ${colors.black};
+    transition: background-size ease 100ms;
+    ${props => background(props.background)}
+    ${color(colors.black)}
+    ${underlineOut}
+  }
+
+  a:hover {
+    ${underlineIn}
   }
 `
 
@@ -44,29 +52,36 @@ const Source = styled.div`
   color: ${colors.gray};
   text-align: right;
 
-  a {
-    color: ${colors.gray};
+  a, a:link, a:visited, a:hover, a:active {
+    transition: background-size ease 100ms;
+    ${props => background(props.background)}
+    ${color(colors.gray)}
+    ${underlineOut}
+  }
+
+  a:hover {
+    ${underlineIn}
   }
 `
 
-class Links extends React.Component<*, Props, *> {
-  render () {
-    return (
-      <Wrapper>
-        <List>
-          <Link><a href="/writing">Writing</a></Link>
-          <Link><a href="/work">Work</a></Link>
-          <Link><a href="/scratch">Scratch</a></Link>
-          <Link><a href="/contact">Contact</a></Link>
-        </List>
-        <Source>
-          <a href="https://github.com/jsonnull/jsonnull.com">
-            Source on GitHub
-          </a>
-        </Source>
-      </Wrapper>
-    )
-  }
+const Links = (props) => {
+  const { background = colors.white } = props
+
+  return (
+    <Wrapper>
+      <List background={background}>
+        <Link><a href="/writing">Writing</a></Link>
+        <Link><a href="/work">Work</a></Link>
+        <Link><a href="/scratch">Scratch</a></Link>
+        <Link><a href="/contact">Contact</a></Link>
+      </List>
+      <Source background={background}>
+        <a href="https://github.com/jsonnull/jsonnull.com">
+          Source on GitHub
+        </a>
+      </Source>
+    </Wrapper>
+  )
 }
 
 export default Links
