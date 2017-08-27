@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize } from 'styles/base'
 import Overlay from 'App/components/Overlay'
-import Title from 'App/components/Title'
-import Links from 'App/components/Links'
 import mouseOver from 'App/containers/mouseOver'
 
 const Background = styled.div`
@@ -53,10 +51,7 @@ const Footer = props => (
         —Ralph Waldo Emerson
       </Attrib>
     </Content>
-    <Overlay allowPointerEvents={props.isMouseOver}>
-      <Title />
-      <Links background={colors.black} />
-    </Overlay>
+    <Overlay background={colors.darkGray} isMouseOver={props.isMouseOver} />
   </Background>
 )
 

@@ -3,8 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit } from 'styles/base'
 import Overlay from 'App/components/Overlay'
-import Title from 'App/components/Title'
-import Links from 'App/components/Links'
 import mouseOver from 'App/containers/mouseOver'
 
 const borderColor = colors.lightGray
@@ -113,10 +111,7 @@ const InterestsSection = props => (
         </Interest>
       </List>
     </Inner>
-    <Overlay allowPointerEvents={props.isMouseOver}>
-      <Title background={colors.veryLightGray} />
-      <Links background={colors.veryLightGray} />
-    </Overlay>
+    <Overlay background={colors.veryLightGray} isMouseOver={props.isMouseOver} />
   </Interests>
 )
 
