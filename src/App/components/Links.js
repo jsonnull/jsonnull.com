@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize, lineUnit } from 'styles/base'
 
 type Props = {
 }
@@ -21,14 +21,14 @@ const Wrapper = styled.div`
 
 const List = styled.ul`
   text-align: right;
-  font-family: ${style.heading};
+  font-family: ${fonts.heading};
   font-weight: 700;
-  font-size: ${style.fontSize};
-  line-height: ${style.lineUnit};
+  font-size: ${fontSize.normal};
+  line-height: ${lineUnit};
   z-index: 710;
 
   a, a:link, a:visited, a:hover, a:active {
-    color: ${style.black};
+    color: ${colors.black};
   }
 `
 
@@ -40,12 +40,12 @@ const Link = styled.li`
 const Source = styled.div`
   margin-top: auto;
   line-height: $lineUnit;
-  font-size: ${style.fontSizeSmall};
-  color: ${style.gray};
+  font-size: ${fontSize.small};
+  color: ${colors.gray};
   text-align: right;
 
   a {
-    color: ${style.gray};
+    color: ${colors.gray};
   }
 `
 

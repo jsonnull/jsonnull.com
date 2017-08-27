@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize } from 'styles/base'
 
 const Background = styled.div`
-  background: ${style.black};
+  background: ${colors.black};
   padding: 14.4rem 0;
 `
 
@@ -14,18 +14,18 @@ const Content = styled.div`
 `
 
 const Quote = styled.p`
-  font-family: ${style.serif};
-  color: ${style.gray};
-  font-size: ${style.fontSizeLarge};
+  font-family: ${fonts.serif};
+  color: ${colors.gray};
+  font-size: ${fontSize.large};
   width: 50%;
   line-height: 3.6rem;
   margin: 0 25%;
 `
 
 const Attrib = styled.span`
-  font-family: ${style.serif};
-  color: ${style.gray};
-  font-size: ${style.fontSize};
+  font-family: ${fonts.serif};
+  color: ${colors.gray};
+  font-size: ${fontSize.normal};
   margin: 0 25%;
   width: 50%;
   display: block;

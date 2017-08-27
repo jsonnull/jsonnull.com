@@ -1,14 +1,14 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize, lineUnit } from 'styles/base'
 
-const borderColor = style.lightGray
+const borderColor = colors.lightGray
 
 const List = styled.ul`
-  margin-top: ${style.lineUnit};
+  margin-top: ${lineUnit};
   display: flex;
-  line-height: ${style.lineUnit};
+  line-height: ${lineUnit};
 
 `
 const ListItem = styled.li`
@@ -20,18 +20,18 @@ const ListItem = styled.li`
 
 const Name = styled.h3`
   font-weight: 700;
-  font-size: ${style.fontSize};
-  line-height: ${style.lineUnit};
+  font-size: ${fontSize.normal};
+  line-height: ${lineUnit};
   color: ${props => props.color};
 `
 
 const Description = styled.p`
   margin: 0;
-  font-size: ${style.fontSizeSmall};
+  font-size: ${fontSize.small};
 `
 
 const Interest = (props) => {
-  const { title, children = null, color = style.black } = props
+  const { title, children = null, color = colors.black } = props
 
   return (
     <ListItem>
@@ -44,7 +44,7 @@ const Interest = (props) => {
 const Interests = styled.div`
   margin-bottom: 14.4rem;
   padding: 14.4rem 0;
-  background-color: ${style.veryLightGray};
+  background-color: ${colors.veryLightGray};
 `
 
 const Inner = styled.div`
@@ -54,17 +54,17 @@ const Inner = styled.div`
 `
 
 const Title = styled.h3`
-  font-family: ${style.heading};
-  font-size: ${style.fontSizeLarge};
+  font-family: ${fonts.heading};
+  font-size: ${fontSize.large};
   font-weight: 700;
-  color: ${style.black};
+  color: ${colors.black};
   margin: 0;
 `
 
 const Paragraph = styled.p`
   width: 750px;
   margin: 3.6rem 0;
-  font-size: ${style.fontSize};
+  font-size: ${fontSize.normal};
   line-height: 3rem;
 `
 
@@ -80,25 +80,25 @@ const InterestsSection = props => (
         Here are the areas I readily turn into client wins.
       </Paragraph>
       <List>
-        <Interest color={style.blue} title='JavaScript'>
+        <Interest color={colors.blue} title='JavaScript'>
           Web projects using modern JavaScript, particularly React, Flow, and TypeScript
         </Interest>
-        <Interest color={style.orange} title='Firebase'>
+        <Interest color={colors.orange} title='Firebase'>
           Realtime web apps backed by Firebase
         </Interest>
-        <Interest color={style.green} title='Progressive Web Apps'>
+        <Interest color={colors.green} title='Progressive Web Apps'>
           <a href="https://developers.google.com/web/progressive-web-apps/">PWAs are</a>
           {' crazy fast, offline-first web apps'}
         </Interest>
       </List>
       <List>
-        <Interest color={style.gray} title='Performance'>
+        <Interest color={colors.gray} title='Performance'>
           Sites facing performance challenges of any kind
         </Interest>
-        <Interest color={style.red} title='Interactive'>
+        <Interest color={colors.red} title='Interactive'>
           Browser games are an interesting blend of UX and performance concerns
         </Interest>
-        <Interest color={style.gray} title='New Languages'>
+        <Interest color={colors.gray} title='New Languages'>
           Any project using Rust, PureScript, Haskell
         </Interest>
       </List>

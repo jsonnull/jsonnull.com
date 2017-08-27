@@ -1,9 +1,9 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize, lineUnit } from 'styles/base'
 
-const borderColor = style.lightGray
+const borderColor = colors.lightGray
 
 const Inner = styled.div`
   width: 1000px;
@@ -12,14 +12,14 @@ const Inner = styled.div`
 `
 
 const Tag = styled.span`
-  line-height: ${style.lineUnit};
+  line-height: ${lineUnit};
   margin: 0;
   margin-right: 1rem;
-  font-size: ${style.fontSizeSmall};
-  color: ${style.gray};
+  font-size: ${fontSize.small};
+  color: ${colors.gray};
   &:before {
     content: '#';
-    color: ${style.lightGray};
+    color: ${colors.lightGray};
   }
 `
 
@@ -33,7 +33,7 @@ const Project = styled.div`
 
 const Name = styled.h4`
   margin: 0;
-  font-size: ${style.fontSize};
+  font-size: ${fontSize.normal};
   font-weight: 700;
   color: ${props => props.color};
 `
@@ -45,18 +45,18 @@ const Row = styled.div`
 
 const Link = styled.a`
   padding-right: 1rem;
-  font-size: ${style.fontSizeSmall};
-  color: ${style.gray};
+  font-size: ${fontSize.small};
+  color: ${colors.gray};
   display: block;
 `
 
 const Description = styled.div`
   margin: 0 0 1.2rem;;
-  font-size: ${style.fontSizeSmall};
+  font-size: ${fontSize.small};
 `
 
 const Tile = (props) => {
-  const { title, url, address, children, tags, color = style.black } = props
+  const { title, url, address, children, tags, color = colors.black } = props
 
   return <Project>
     <Row>
@@ -77,17 +77,17 @@ const Recent = styled.div`
 `
 
 const Title = styled.h3`
-  font-family: ${style.heading};
-  font-size: ${style.fontSizeLarge};
+  font-family: ${fonts.heading};
+  font-size: ${fontSize.large};
   font-weight: 700;
-  color: ${style.gray};
+  color: ${colors.gray};
   margin: 0;
 `
 
 const Paragraph = styled.p`
   width: 750px;
   margin: 3.6rem 0;
-  font-size: ${style.fontSize};
+  font-size: ${fontSize.normal};
   line-height: 3rem;
 `
 
@@ -110,7 +110,7 @@ const ProjectSection = props => (
           url="https://www.aleamancer.com"
           address="www.aleamancer.com"
           tags={["Design", "Development", "JavaScript", "Open Source"]}
-          color={ style.red }
+          color={ colors.red }
         >
           A groundbreaking online tabletop role-playing platform,
           built with cutting-edge tools and tech from the React+Redux ecosystem.
@@ -119,7 +119,7 @@ const ProjectSection = props => (
           url="https://github.com/jsonnull/jsonnull.com"
           address="github.com/jsonnull/jsonnull.com"
           tags={["Design", "Development", "JavaScript"]}
-          color={ style.orange }
+          color={ colors.orange }
         >
           The content and build system for this site, a statically rendered React application.
         </Tile>

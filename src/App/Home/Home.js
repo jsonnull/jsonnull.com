@@ -6,7 +6,6 @@ import Hero from './Hero'
 import Interests from './Interests'
 import Projects from './Projects'
 import styled from 'styled-components'
-import style from 'styles/base'
 
 const Container = styled.div`
   display: flex;

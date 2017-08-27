@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize } from 'styles/base'
 import App from './App'
 
 type Props = {
@@ -20,22 +20,22 @@ const Container = styled.div`
 const Header = styled.h1`
   width: 750px;
   margin: 0;
-  color: ${style.black};
+  color: ${colors.black};
   padding-bottom: ${padding};
   margin-top: auto;
   font-size: 4.8rem;
   line-height: 5.4rem; 
-  font-family: ${style.heading};
+  font-family: ${fonts.heading};
   font-weight: 300;
 `
 
 const About = styled.p`
   width: 750px;
   margin: 0;
-  color: ${style.black};
+  color: ${colors.black};
   padding-bottom: ${padding};
-  font-family: ${style.serif};
-  font-size: ${style.fontSizeLarge};
+  font-family: ${fonts.serif};
+  font-size: ${fontSize.large};
   line-height: 3.6rem;
 `
 

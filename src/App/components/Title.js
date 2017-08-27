@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import feather from 'feather-icons'
-import * as style from 'styles/base'
+import { colors, fonts, fontSize, lineUnit, breakpoints } from 'styles/base'
 
 type Props = {
   home: boolean
@@ -10,10 +10,10 @@ type Props = {
 
 const Description = styled.h2`
   display: none;
-  font-size: ${style.fontSizeSmall};
-  color: ${style.gray};
+  font-size: ${fontSize.small};
+  color: ${colors.gray};
   font-weight: 700;
-  line-height: ${style.lineUnit};
+  line-height: ${lineUnit};
 
   /*
   @media (min-width: $tablet) {
@@ -36,17 +36,17 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   display: flex;
-  font-size: ${style.fontSizeLarge};
-  font-family: ${style.heading};
+  font-size: ${fontSize.large};
+  font-family: ${fonts.heading};
   font-weight: bold;
-  line-height: ${style.lineUnit};
-  height: ${style.lineUnit};
-  background-color: ${style.white};
+  line-height: ${lineUnit};
+  height: ${lineUnit};
+  background-color: ${colors.white};
   margin-bottom: ${padding};
   z-index: 700;
-  color: ${style.black};
+  color: ${colors.black};
 
-  @media (min-width: ${style.tablet}) {
+  @media (min-width: ${breakpoints.tablet}) {
     right: auto;
     background-color: transparent;
   }
@@ -57,8 +57,8 @@ const Social = styled.div`
 `
 
 const IconWrapper = styled.div`
-  height: ${style.lineUnit};
-  line-height: ${style.lineUnit};
+  height: ${lineUnit};
+  line-height: ${lineUnit};
   margin-top: 1.2rem;
   padding-top: 2px;
 `
@@ -66,7 +66,7 @@ const IconWrapper = styled.div`
 const Icon = ({ name }) => (
   <IconWrapper dangerouslySetInnerHTML={{
     __html: feather.toSvg(name, {
-      color: style.gray,
+      color: colors.gray,
       width: 20,
       height: 20
     })
