@@ -9,6 +9,7 @@ const Background = styled.div`
   background: ${colors.black};
   padding: 4.8rem 0 4.8rem;
   position: relative;
+  margin-top: auto;
 `
 
 const Content = styled.div`
