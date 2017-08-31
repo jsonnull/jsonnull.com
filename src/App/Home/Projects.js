@@ -1,22 +1,33 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize, lineUnit } from 'styles/base'
+import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 
 const borderColor = colors.lightGray
 
 const Inner = styled.div`
-  width: 1000px;
-  margin 0 auto;
   position: relative;
+  padding: 7.2rem 0;
+  ${media.mobile`
+    padding: 7.2rem 0;
+  `}
+  ${media.tablet`
+    padding: 14.4rem 0;
+    margin: 0 auto;
+    width: 700px;
+  `}
+  ${media.desktopHuge`
+    width: 1000px;
+  `}
 `
 
 const Tag = styled.span`
   line-height: ${lineUnit};
   margin: 0;
   margin-right: 1rem;
-  font-size: ${fontSize.small};
+  font-size: ${fontSize.tiny};
   color: ${colors.gray};
+  text-transform: uppercase;
   &:before {
     content: '#';
     color: ${colors.lightGray};
@@ -33,14 +44,14 @@ const Project = styled.div`
 
 const Name = styled.h4`
   margin: 0;
-  font-size: ${fontSize.normal};
+  font-size: ${fontSize.small};
   font-weight: 700;
-  color: ${props => props.color};
-`
+  color: ${colors.darkGray};
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${media.mobile`
+    color: ${props => props.color};
+    font-size: ${fontSize.normal};
+  `}
 `
 
 const Link = styled.a`
@@ -51,7 +62,7 @@ const Link = styled.a`
 `
 
 const Description = styled.div`
-  margin: 0 0 1.2rem;;
+  margin: 0 0 1.2rem;
   font-size: ${fontSize.small};
 `
 
@@ -59,9 +70,7 @@ const Tile = (props) => {
   const { title, url, address, children, tags, color = colors.black } = props
 
   return <Project>
-    <Row>
-      <Name color={color}>{ title }</Name>
-    </Row>
+    <Name color={color}>{ title }</Name>
     <Description>
       { children }
     </Description>
@@ -73,27 +82,43 @@ const Tile = (props) => {
 }
 
 const Recent = styled.div`
-  margin-bottom: 14.4rem;
+  position: relative;
+  padding: 0 2.4rem;
+  ${media.mobile`
+    padding: 0 4.8rem;
+  `}
 `
 
 const Title = styled.h3`
   font-family: ${fonts.heading};
-  font-size: ${fontSize.large};
+  font-size: ${fontSize.normal};
   font-weight: 700;
   color: ${colors.gray};
   margin: 0;
+
+  ${media.mobile`
+    font-size: ${fontSize.large};
+  `}
 `
 
 const Paragraph = styled.p`
-  width: 750px;
   margin: 3.6rem 0;
-  font-size: ${fontSize.normal};
-  line-height: 3rem;
+  font-size: ${fontSize.small};
+  line-height: ${lineUnit};
+  ${media.tablet`
+    font-size: ${fontSize.normal};
+    line-height: 3rem;
+    width: 75%;
+  `}
 `
 
 const Projects = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  ${media.tablet`
+    flex-direction: row;
+  `}
 `
 
 const ProjectSection = props => (

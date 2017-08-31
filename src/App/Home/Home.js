@@ -18,14 +18,14 @@ const Container = styled.div`
 
 const Home = props => (
   <Container>
-    <Title />
-    <Links />
-
     <Hero />
     <Interests />
     <Projects />
 
     <Footer />
+
+    <Title />
+    <Links />
   </Container>
 )
 

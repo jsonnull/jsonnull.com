@@ -2,14 +2,22 @@ import React from 'react'
 import Title from 'App/components/Title'
 import Links from 'App/components/Links'
 import styled from 'styled-components'
+import { media } from 'styles/base'
 
 const Overlay = styled.div`
   clip: rect(0, auto, auto, 0);
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 250px;
-  pointer-events: ${({ allowPointerEvents = false }) => allowPointerEvents ? 'auto' : 'none'};
+  left: 0;
+  right: 0;
+
+  ${media.desktop`
+    left: auto;
+    right: auto;
+    display: block;
+    width: 200px;
+  `}
 
   /*
    * Holy shit this hack for Safari tho
@@ -23,22 +31,34 @@ const Overlay = styled.div`
 `
 
 const LeftOverlay = Overlay.extend`
-  left: 0;
+  width: 170px;
+  right: auto;
+  ${media.desktop`
+    left: 0;
+  `}
 `
 
 const RightOverlay = Overlay.extend`
-  right: 0;
+  left: 170px;
+  ${media.desktop`
+    left: auto;
+    right: 0;
+  `}
 `
 
-const FullOverlay = ({ isMouseOver = false, background }) => (
-  <div>
-    <LeftOverlay allowPointerEvents={isMouseOver}>
-      <Title background={background} />
-    </LeftOverlay>
-    <RightOverlay allowPointerEvents={isMouseOver}>
-      <Links background={background} />
-    </RightOverlay>
-  </div>
-)
+const FullOverlay = (props) => {
+  const { background, zOffset = 0 } = props
+
+  return (
+    <div>
+      <LeftOverlay>
+        <Title background={background} zOffset={zOffset} />
+      </LeftOverlay>
+      <RightOverlay>
+        <Links background={background} zOffset={zOffset} />
+      </RightOverlay>
+    </div>
+  )
+}
 
 export default FullOverlay

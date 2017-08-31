@@ -1,21 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize, lineUnit } from 'styles/base'
+import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
 import Overlay from 'App/components/Overlay'
-import mouseOver from 'App/containers/mouseOver'
 
 const Background = styled.div`
   background: ${colors.black};
-  padding: 4.8rem 0 4.8rem;
+  padding: 2.4rem;
   position: relative;
   margin-top: auto;
+  ${media.mobile`
+    padding: 4.8rem;
+  `}
 `
 
 const Content = styled.div`
   position: relative;
-  width: 1000px;
   margin: 0 auto;
+
+  ${media.desktop`
+    width: 700px;
+  `}
+  ${media.desktopHuge`
+    width: 1000px;
+  `}
 `
 
 const Quote = styled.p`
@@ -81,12 +89,8 @@ const Link = styled.a`
 `
 
 const Footer = props => (
-  <Background
-    onMouseEnter={props.onMouseEnter}
-    onMouseOver={props.onMouseEnter}
-    onMouseLeave={props.onMouseLeave}
-    onMouseOut={props.onMouseLeave}
-  >
+  <Background>
+    <Overlay background={colors.black} isMouseOver={props.isMouseOver} zOffset={99} />
     <Content>
       <Quote>
         "Though we travel the world over to find the beautiful, we must carry it with us, or we find it not."
@@ -102,8 +106,7 @@ const Footer = props => (
         <Link href="/contact">Contact</Link>
       </Links>
     </Content>
-    <Overlay background={colors.black} isMouseOver={props.isMouseOver} />
   </Background>
 )
 
-export default mouseOver(Footer)
+export default Footer

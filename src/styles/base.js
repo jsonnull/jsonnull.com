@@ -1,3 +1,5 @@
+import { css } from 'styled-components'
+
 export const fonts = {
   base: `
     /* 1 */ -apple-system, BlinkMacSystemFont,
@@ -38,8 +40,20 @@ export const colors = {
 export const breakpoints = {
   mobileSmall: '300px',
   mobile: '480px',
-  tablet: '768px',
+  tablet: '800px',
   tabletLarge: '960px',
-  desktop: '1024px',
-  desktopLarge: '1200px'
+  desktop: '1050px',
+  desktopLarge: '1200px',
+  desktopHuge: '1400px'
 }
+
+// Iterate through the sizes and create a media template
+export const media = Object.keys(breakpoints).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${breakpoints[label]}) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})

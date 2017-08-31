@@ -1,42 +1,74 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize } from 'styles/base'
+import { colors, fonts, fontSize, media } from 'styles/base'
 import App from './App'
 
 type Props = {
 }
 
-const padding = '4.8rem'
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1000px;
-  margin: 0 auto;
   min-height: ${props => props.currentHeight};
+  margin: 0 2.4rem;
+  padding-top: 12rem;
+  padding-bottom: 7.2rem;
+
+  ${media.mobile`
+    margin: 0 4.8rem;
+    padding-top: 14.4rem;
+  `}
+
+  ${media.tablet`
+    margin: 0 auto;
+    width: 700px;
+  `}
+  ${media.desktop`
+    padding-top: 0;
+    padding-bottom: 0;
+  `}
+  ${media.desktopHuge`
+    width: 1000px;
+  `}
 `
 
 const Header = styled.h1`
-  width: 750px;
-  margin: 0;
+  margin: auto 0 0 ;
   color: ${colors.black};
-  padding-bottom: ${padding};
-  margin-top: auto;
-  font-size: 4.8rem;
-  line-height: 5.4rem; 
+  padding-bottom: 4.8rem;
   font-family: ${fonts.heading};
   font-weight: 300;
+  font-size: ${fontSize.large};
+  line-height: 3rem;
+
+  ${media.mobile`
+    font-size: ${fontSize.huge};
+    line-height: 3.6rem;
+  `}
+  ${media.tablet`width: 500px;`}
+  ${media.desktopLarge`width: 600px;`}
+  ${media.desktopHuge`
+    font-size: 4.8rem;
+    line-height: 5.4rem; 
+    width: 750px;
+  `}
 `
 
 const About = styled.p`
-  width: 750px;
   margin: 0;
   color: ${colors.black};
-  padding-bottom: ${padding};
-  font-family: ${fonts.serif};
-  font-size: ${fontSize.large};
-  line-height: 3.6rem;
+  padding-bottom: 4.8rem;
+  font-family: ${fonts.content};
+  font-size: ${fontSize.normal};
+  line-height: 2.4rem;
+  ${media.tablet`width: 500px;`}
+  ${media.desktopHuge`
+    font-family: ${fonts.serif};
+    font-size: ${fontSize.large};
+    line-height: 3.6rem;
+    width: 750px;
+  `}
 `
 
 class Hero extends React.Component<*, Props, *> {
@@ -68,9 +100,7 @@ class Hero extends React.Component<*, Props, *> {
     return (
       <Container currentHeight={height}>
         <Header>
-          I design and build&nbsp;
-          <strong>high-performance user interfaces</strong>
-          &nbsp;for the web.
+          I design and build <strong>high-performance user&nbsp;interfaces</strong> for the web.
         </Header>
         <About>
           I specialize

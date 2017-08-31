@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import feather from 'feather-icons'
-import { colors, fonts, fontSize, lineUnit, breakpoints } from 'styles/base'
+import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
 
 type Props = {
@@ -14,7 +14,6 @@ const Description = styled.h2`
   font-size: ${fontSize.small};
   color: ${colors.gray};
   font-weight: 700;
-  line-height: ${lineUnit};
 
   /*
   @media (min-width: $tablet) {
@@ -23,43 +22,55 @@ const Description = styled.h2`
   */
 `
 
-const padding = '4.8rem'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 250px;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  padding: ${padding};
+  right: 0;
+  height: 7.2rem;
+  padding: 2.4rem;
+  padding-right: 0;
+  background: ${colors.white};
+
+  ${media.mobile`
+    height: 12rem;
+    padding: 4.8rem;
+    padding-right: 0;
+  `}
+
+  ${media.desktop`
+    height: auto;
+    right: auto;
+    background: transparent;
+    width: 200px;
+    bottom: 0;
+  `}
 `
 
 const Title = styled.h1`
-  display: flex;
-  font-size: ${fontSize.large};
+  font-size: ${fontSize.normal};
   font-family: ${fonts.heading};
   line-height: ${lineUnit};
   height: ${lineUnit};
-  background-color: ${colors.white};
-  margin-bottom: ${padding};
   z-index: 700;
   color: ${colors.black};
 
-  @media (min-width: ${breakpoints.tablet}) {
-    right: auto;
-    background-color: transparent;
-  }
+  ${media.mobile`
+    font-size: ${fontSize.large};
+  `}
 
   a, a:link, a:visited, a:hover, a:active {
     transition: background-size 100ms ease;
-    ${props => background(props.background)}
+    text-shadow: none;
     ${color(colors.black)}
     ${underlineOut}
     background-position: 0 100%;
   }
 
   a:hover {
+    text-shadow: none;
     ${underlineIn}
   }
 `
@@ -68,15 +79,29 @@ const Social = styled.div`
   margin-top: auto;
 `
 
+const SocialLink = styled.a`
+  background: none !important;
+`
+
 const IconWrapper = styled.div`
   height: ${lineUnit};
   line-height: ${lineUnit};
   margin-top: 1.2rem;
   padding-top: 2px;
+  display: none;
+  margin-right: 1rem;
+
+  ${media.mobile`
+    display: inline-block;
+  `}
+
+  ${media.desktop`
+    display: block;
+  `}
 `
 
 const Icon = ({ name, href }) => (
-  <a href={href} target="_blank">
+  <SocialLink href={href} target="_blank">
     <IconWrapper dangerouslySetInnerHTML={{
       __html: feather.toSvg(name, {
         color: colors.gray,
@@ -84,34 +109,22 @@ const Icon = ({ name, href }) => (
         height: 20
       })
     }} />
-  </a>
+  </SocialLink>
 )
 
-class Header extends React.Component<*, Props, *> {
-  render () {
-    const { home = false, background = colors.white } = this.props
-
-      /*
-    const photo = (!home)
-      ? <img className={styles.photo} src={img} />
-      : null
-      */
-
-    return (
-      <Wrapper>
-        <Title background={background}>
-          <a href='/'>Jason Nall</a>
-        </Title>
-        <Description>
-          Designer &amp; Developer
-        </Description>
-        <Social>
-          <Icon name='github' href="https://github.com/jsonnull" />
-          <Icon name='twitter' href="https://twitter.com/jsonnull" />
-        </Social>
-      </Wrapper>
-    )
-  }
-}
+const Header = props => (
+  <Wrapper>
+    <Title>
+      <a href='/'>Jason Nall</a>
+    </Title>
+    <Description>
+      Designer &amp; Developer
+    </Description>
+    <Social>
+      <Icon name='github' href="https://github.com/jsonnull" />
+      <Icon name='twitter' href="https://twitter.com/jsonnull" />
+    </Social>
+  </Wrapper>
+)
 
 export default Header

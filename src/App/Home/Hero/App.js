@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize } from 'styles/base'
+import { colors, fonts, fontSize, media } from 'styles/base'
 import heroText from 'raw-loader!App/Home/Hero'
 
 const Container = styled.div`
@@ -27,11 +27,15 @@ const Tab = styled.div`
   height: 36px;
   line-height: 3.6rem;
   color: ${colors.gray};
-  margin-left: 4.8rem;
+  margin-left: 3.6rem;
   font-size: ${fontSize.small};
   padding: 0 1rem;
-  min-width: 200px;
   display: inline-block;
+  min-width: 120px;
+  ${media.mobile`
+    min-width: 200px;
+    margin-left: 4.8rem;
+  `}
 `
 
 const AddressBar = styled.div`
@@ -64,6 +68,7 @@ const Code = styled.pre`
   color: white;
   opacity: 0.2;
   overflow: hidden;
+  height: 128px;
 `
 
 export default () => (
