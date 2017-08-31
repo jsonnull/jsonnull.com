@@ -1,0 +1,16 @@
+language: node_js
+cache: yarn
+node_js:
+  - node
+script:
+  - npm run build
+deploy:
+  repo: jsonnull/jsonnull.github.io
+  local_dir: public/
+  fqdn: jsonnull.com
+  target_branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master

@@ -1,6 +1,9 @@
 {
   "name": "jsonnull.com",
   "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "core-js": "^2.4.1",
     "feather-icons": "^3.2.2",
