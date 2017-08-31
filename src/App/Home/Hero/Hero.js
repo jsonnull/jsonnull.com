@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import { colors, fonts, fontSize, media } from 'styles/base'
 import App from './App'
 
-type Props = {
-}
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
