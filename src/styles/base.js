@@ -25,7 +25,7 @@ export const lineUnit = '2.4rem'
 
 export const colors = {
   white: '#fdfffb',
-  lightGray: '#D3D8D2', /* #E7EAE1; */
+  lightGray: '#D3D8D2' /* #E7EAE1; */,
   veryLightGray: '#F2F7F0',
   gray: '#838784',
   darkGray: '#26282B',
@@ -51,7 +51,7 @@ export const breakpoints = {
 export const media = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (min-width: ${breakpoints[label]}) {
-      ${css(...args)}
+      ${css(...args)};
     }
   `
 

@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
-const DirectoryNamed = require("directory-named-webpack-plugin");
+const DirectoryNamed = require('directory-named-webpack-plugin')
 const Render = require('./render')
 
 const browser = {
@@ -13,7 +13,7 @@ const browser = {
     rules: [
       {
         test: /\.js$/,
-        exclude: [ /\/node_modules\// ],
+        exclude: [/\/node_modules\//],
         use: 'babel-loader?cacheDirectory'
       },
       {
@@ -25,13 +25,11 @@ const browser = {
   resolve: {
     modules: ['node_modules', 'src', 'static'],
     extensions: ['.js', '.json'],
-    plugins: [
-      new DirectoryNamed(true)
-    ]
+    plugins: [new DirectoryNamed(true)]
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"',
+      'process.env.NODE_ENV': '"production"'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new Render()

@@ -16,7 +16,7 @@ require('../public/bundle.js')
 const App = global.App
 
 // On the server side, export a function to perform the render
-module.exports = (raw) => {
+module.exports = raw => {
   // frontmatter pass
   const { data, content } = matter(raw, matterOpts)
 
@@ -44,10 +44,13 @@ module.exports = (raw) => {
   const head = Helmet.renderStatic()
 
   // render full markup
-  const html = createHtml(
-    { body, content: rendered, head, template, styles: styleElements }
-  )
+  const html = createHtml({
+    body,
+    content: rendered,
+    head,
+    template,
+    styles: styleElements
+  })
 
   return html
 }
-

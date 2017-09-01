@@ -7,7 +7,6 @@ import { injectGlobal } from 'styled-components'
 
 // On the client side, render the app
 if (typeof window !== 'undefined') {
-
   injectGlobal`
     a, a:link, a:visited, a:hover, a:active {
       ${color(colors.blue)}

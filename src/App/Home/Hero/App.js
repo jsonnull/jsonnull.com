@@ -35,7 +35,7 @@ const Tab = styled.div`
   ${media.mobile`
     min-width: 200px;
     margin-left: 4.8rem;
-  `}
+  `};
 `
 
 const AddressBar = styled.div`
@@ -77,12 +77,10 @@ export default () => (
       <Tab />
     </TabBar>
     <AddressBar>
-      <Address>
-        https://
-      </Address>
+      <Address>https://</Address>
     </AddressBar>
     <Content>
-      <Code dangerouslySetInnerHTML={{__html: heroText }} />
+      <Code dangerouslySetInnerHTML={{ __html: heroText }} />
     </Content>
   </Container>
 )

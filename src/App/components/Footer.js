@@ -11,7 +11,7 @@ const Background = styled.div`
   margin-top: auto;
   ${media.mobile`
     padding: 4.8rem;
-  `}
+  `};
 `
 
 const Content = styled.div`
@@ -20,10 +20,9 @@ const Content = styled.div`
 
   ${media.desktop`
     width: 700px;
-  `}
-  ${media.desktopHuge`
+  `} ${media.desktopHuge`
     width: 1000px;
-  `}
+  `};
 `
 
 const Quote = styled.p`
@@ -51,22 +50,23 @@ const Title = styled.a`
   margin-bottom: 1.2rem;
   display: inline-block;
 
-  &, &:link, &:visited, &:hover, &:active {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
     transition: background-size 100ms ease;
-    ${props => background(colors.black)}
-    ${color(colors.gray)}
-    ${underlineOut}
-    background-position: 0 100%;
+    ${props => background(colors.black)} ${color(
+        colors.gray
+      )} ${underlineOut} background-position: 0 100%;
   }
 
   &:hover {
-    ${underlineIn}
+    ${underlineIn};
   }
 `
 
-const Links = styled.div`
-  line-height: 2.4rem;
-`
+const Links = styled.div`line-height: 2.4rem;`
 
 const Link = styled.a`
   font-family: ${fonts.heading};
@@ -76,27 +76,32 @@ const Link = styled.a`
   margin-right: 1em;
   display: inline-block;
 
-  &, &:link, &:visited, &:hover, &:active {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
     transition: background-size 100ms ease;
-    ${props => background(colors.black)}
-    ${color(colors.gray)}
-    ${underlineOut}
+    ${props => background(colors.black)} ${color(colors.gray)} ${underlineOut};
   }
 
   &:hover {
-    ${underlineIn}
+    ${underlineIn};
   }
 `
 
 const Footer = props => (
   <Background>
-    <Overlay background={colors.black} isMouseOver={props.isMouseOver} zOffset={99} />
+    <Overlay
+      background={colors.black}
+      isMouseOver={props.isMouseOver}
+      zOffset={99}
+    />
     <Content>
       <Quote>
-        "Though we travel the world over to find the beautiful, we must carry it with us, or we find it not."
-        <Attrib>
-          {' '}—&nbsp;Ralph&nbsp;Waldo&nbsp;Emerson
-        </Attrib>
+        "Though we travel the world over to find the beautiful, we must carry it
+        with us, or we find it not."
+        <Attrib> —&nbsp;Ralph&nbsp;Waldo&nbsp;Emerson</Attrib>
       </Quote>
       <Links>
         <Link href="/">Home</Link>

@@ -38,15 +38,13 @@ const Wrapper = styled.div`
     height: 12rem;
     padding: 4.8rem;
     padding-right: 0;
-  `}
-
-  ${media.desktop`
+  `} ${media.desktop`
     height: auto;
     right: auto;
     background: transparent;
     width: 200px;
     bottom: 0;
-  `}
+  `};
 `
 
 const Title = styled.h1`
@@ -59,29 +57,21 @@ const Title = styled.h1`
 
   ${media.mobile`
     font-size: ${fontSize.large};
-  `}
-
-  a, a:link, a:visited, a:hover, a:active {
+  `} a, a:link, a:visited, a:hover, a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.black)}
-    ${underlineOut}
-    background-position: 0 100%;
+    ${color(colors.black)} ${underlineOut} background-position: 0 100%;
   }
 
   a:hover {
     text-shadow: none;
-    ${underlineIn}
+    ${underlineIn};
   }
 `
 
-const Social = styled.div`
-  margin-top: auto;
-`
+const Social = styled.div`margin-top: auto;`
 
-const SocialLink = styled.a`
-  background: none !important;
-`
+const SocialLink = styled.a`background: none !important;`
 
 const IconWrapper = styled.div`
   height: ${lineUnit};
@@ -93,36 +83,34 @@ const IconWrapper = styled.div`
 
   ${media.mobile`
     display: inline-block;
-  `}
-
-  ${media.desktop`
+  `} ${media.desktop`
     display: block;
-  `}
+  `};
 `
 
 const Icon = ({ name, href }) => (
   <SocialLink href={href} target="_blank">
-    <IconWrapper dangerouslySetInnerHTML={{
-      __html: feather.toSvg(name, {
-        color: colors.gray,
-        width: 20,
-        height: 20
-      })
-    }} />
+    <IconWrapper
+      dangerouslySetInnerHTML={{
+        __html: feather.toSvg(name, {
+          color: colors.gray,
+          width: 20,
+          height: 20
+        })
+      }}
+    />
   </SocialLink>
 )
 
 const Header = props => (
   <Wrapper>
     <Title>
-      <a href='/'>Jason Nall</a>
+      <a href="/">Jason Nall</a>
     </Title>
-    <Description>
-      Designer &amp; Developer
-    </Description>
+    <Description>Designer &amp; Developer</Description>
     <Social>
-      <Icon name='github' href="https://github.com/jsonnull" />
-      <Icon name='twitter' href="https://twitter.com/jsonnull" />
+      <Icon name="github" href="https://github.com/jsonnull" />
+      <Icon name="twitter" href="https://twitter.com/jsonnull" />
     </Social>
   </Wrapper>
 )

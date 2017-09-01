@@ -15,23 +15,19 @@ const Container = styled.div`
   ${media.mobile`
     margin: 0 4.8rem;
     padding-top: 14.4rem;
-  `}
-
-  ${media.tablet`
+  `} ${media.tablet`
     margin: 0 auto;
     width: 700px;
-  `}
-  ${media.desktop`
+  `} ${media.desktop`
     padding-top: 0;
     padding-bottom: 0;
-  `}
-  ${media.desktopHuge`
+  `} ${media.desktopHuge`
     width: 1000px;
-  `}
+  `};
 `
 
 const Header = styled.h1`
-  margin: auto 0 0 ;
+  margin: auto 0 0;
   color: ${colors.black};
   padding-bottom: 4.8rem;
   font-family: ${fonts.heading};
@@ -42,14 +38,11 @@ const Header = styled.h1`
   ${media.mobile`
     font-size: ${fontSize.huge};
     line-height: 3.6rem;
-  `}
-  ${media.tablet`width: 500px;`}
-  ${media.desktopLarge`width: 600px;`}
-  ${media.desktopHuge`
+  `} ${media.tablet`width: 500px;`} ${media.desktopLarge`width: 600px;`} ${media.desktopHuge`
     font-size: 4.8rem;
     line-height: 5.4rem; 
     width: 750px;
-  `}
+  `};
 `
 
 const About = styled.p`
@@ -59,29 +52,28 @@ const About = styled.p`
   font-family: ${fonts.content};
   font-size: ${fontSize.normal};
   line-height: 2.4rem;
-  ${media.tablet`width: 500px;`}
-  ${media.desktopHuge`
+  ${media.tablet`width: 500px;`} ${media.desktopHuge`
     font-family: ${fonts.serif};
     font-size: ${fontSize.large};
     line-height: 3.6rem;
     width: 750px;
-  `}
+  `};
 `
 
 class Hero extends React.Component<*, Props, *> {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       height: '100vh'
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.setHeight()
     window.addEventListener('resize', this.setHeight)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.setHeight)
   }
 
@@ -91,19 +83,18 @@ class Hero extends React.Component<*, Props, *> {
     })
   }
 
-  render () {
+  render() {
     const { height } = this.state
 
     return (
       <Container currentHeight={height}>
         <Header>
-          I design and build <strong>high-performance user&nbsp;interfaces</strong> for the web.
+          I design and build{' '}
+          <strong>high-performance user&nbsp;interfaces</strong> for the web.
         </Header>
         <About>
-          I specialize
-          in distilling elegant solutions from complexity,
-          engineering fast interfaces,
-          and simplifying processes.
+          I specialize in distilling elegant solutions from complexity,
+          engineering fast interfaces, and simplifying processes.
         </About>
         <App />
       </Container>

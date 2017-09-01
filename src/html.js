@@ -1,4 +1,4 @@
-module.exports = function createHtml (props) {
+module.exports = function createHtml(props) {
   const fonts = [
     'Lato:300,400,700',
     'Cardo:400,700',
@@ -74,7 +74,7 @@ a, a:link, a:hover, a:visited {
   opacity: 1;
 }
         </style>
-        ${ styles }
+        ${styles}
       </head>
       <body>
         <div id="react-root">

@@ -10,15 +10,13 @@ const Inner = styled.div`
   padding: 7.2rem 0;
   ${media.mobile`
     padding: 7.2rem 0;
-  `}
-  ${media.tablet`
+  `} ${media.tablet`
     padding: 14.4rem 0;
     margin: 0 auto;
     width: 700px;
-  `}
-  ${media.desktopHuge`
+  `} ${media.desktopHuge`
     width: 1000px;
-  `}
+  `};
 `
 
 const Tag = styled.span`
@@ -51,7 +49,7 @@ const Name = styled.h4`
   ${media.mobile`
     color: ${props => props.color};
     font-size: ${fontSize.normal};
-  `}
+  `};
 `
 
 const Link = styled.a`
@@ -66,19 +64,19 @@ const Description = styled.div`
   font-size: ${fontSize.small};
 `
 
-const Tile = (props) => {
+const Tile = props => {
   const { title, url, address, children, tags, color = colors.black } = props
 
-  return <Project>
-    <Name color={color}>{ title }</Name>
-    <Description>
-      { children }
-    </Description>
-    { tags.map(tag => <Tag>{ tag }</Tag>) }
-    {/*
+  return (
+    <Project>
+      <Name color={color}>{title}</Name>
+      <Description>{children}</Description>
+      {tags.map(tag => <Tag>{tag}</Tag>)}
+      {/*
     <Link href={url}>{ address }</Link>
     */}
-  </Project>
+    </Project>
+  )
 }
 
 const Recent = styled.div`
@@ -86,7 +84,7 @@ const Recent = styled.div`
   padding: 0 2.4rem;
   ${media.mobile`
     padding: 0 4.8rem;
-  `}
+  `};
 `
 
 const Title = styled.h3`
@@ -98,7 +96,7 @@ const Title = styled.h3`
 
   ${media.mobile`
     font-size: ${fontSize.large};
-  `}
+  `};
 `
 
 const Paragraph = styled.p`
@@ -109,7 +107,7 @@ const Paragraph = styled.p`
     font-size: ${fontSize.normal};
     line-height: 3rem;
     width: 75%;
-  `}
+  `};
 `
 
 const Projects = styled.div`
@@ -118,35 +116,38 @@ const Projects = styled.div`
 
   ${media.tablet`
     flex-direction: row;
-  `}
+  `};
 `
 
 const ProjectSection = props => (
   <Recent>
     <Inner>
-      <Title>I { '<3' } open source.</Title>
+      <Title>I {'<3'} open source.</Title>
       <Paragraph>
-        I love consuming and contributing to open source.
-        Side projects are a regular opportunity to learn and try new things.
-        Here are some I've been involved with recently.
+        I love consuming and contributing to open source. Side projects are a
+        regular opportunity to learn and try new things. Here are some I've been
+        involved with recently.
       </Paragraph>
       <Projects>
-        <Tile title="Aleamancer"
+        <Tile
+          title="Aleamancer"
           url="https://www.aleamancer.com"
           address="www.aleamancer.com"
-          tags={["Design", "Development", "JavaScript", "Open Source"]}
-          color={ colors.red }
+          tags={['Design', 'Development', 'JavaScript', 'Open Source']}
+          color={colors.red}
         >
-          A groundbreaking online tabletop role-playing platform,
-          built with cutting-edge tools and tech from the React+Redux ecosystem.
+          A groundbreaking online tabletop role-playing platform, built with
+          cutting-edge tools and tech from the React+Redux ecosystem.
         </Tile>
-        <Tile title="jsonnull"
+        <Tile
+          title="jsonnull"
           url="https://github.com/jsonnull/jsonnull.com"
           address="github.com/jsonnull/jsonnull.com"
-          tags={["Design", "Development", "JavaScript"]}
-          color={ colors.orange }
+          tags={['Design', 'Development', 'JavaScript']}
+          color={colors.orange}
         >
-          The content and build system for this site, a statically rendered React application.
+          The content and build system for this site, a statically rendered
+          React application.
         </Tile>
       </Projects>
     </Inner>

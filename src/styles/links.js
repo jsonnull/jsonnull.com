@@ -1,17 +1,12 @@
 import { css } from 'styled-components'
 
-export const background = (color) => css`
+export const background = color => css`
   // Clear descendors from underline
-  text-shadow:
-    3px 0 ${color}, 
-    2px 0 ${color},
-    1px 0 ${color},
-    -1px 0 ${color},
-    -2px 0 ${color},
-    -3px 0 ${color};
+  text-shadow: 3px 0 ${color}, 2px 0 ${color}, 1px 0 ${color}, -1px 0 ${color},
+    -2px 0 ${color}, -3px 0 ${color};
 `
 
-export const color = (color) => css`
+export const color = color => css`
   // Underline via gradient background
   color: ${color};
   text-decoration: none;
@@ -30,11 +25,6 @@ export const color = (color) => css`
   background-image: linear-gradient(${color} 0%, ${color} 100%);
 `
 
-export const underlineOut = css`
-  background-size: 0 1px;
-`
+export const underlineOut = css`background-size: 0 1px;`
 
-export const underlineIn = css`
-  background-size: 100% 1px;
-`
-
+export const underlineIn = css`background-size: 100% 1px;`

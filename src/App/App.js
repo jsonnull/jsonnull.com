@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Home from './Home'
 import Page from './Page'
 
-const Template = (props) => {
+const Template = props => {
   const { template, ...rest } = props
 
   if (template == 'home') {
@@ -14,17 +14,13 @@ const Template = (props) => {
 }
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
-        <Helmet
-          title="☕️💻🎨✏️🎵"
-          titleTemplate="Jason Nall - %s"
-        />
+        <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
         <Template {...this.props} />
       </div>
     )
   }
 }
-
 export default App

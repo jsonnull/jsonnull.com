@@ -4,8 +4,7 @@ import styled, { css } from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
 
-type Props = {
-}
+type Props = {}
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,15 +23,13 @@ const Wrapper = styled.div`
     left: 170px;
     padding: 4.8rem;
     padding-left: 0;
-  `}
-
-  ${media.desktop`
+  `} ${media.desktop`
     background: transparent;
     width: 200px;
     height: auto;
     left: auto;
     bottom: 0;
-  `}
+  `};
 `
 
 const List = styled.ul`
@@ -45,7 +42,7 @@ const List = styled.ul`
 
   ${media.mobile`
     font-size: ${fontSize.normal};
-  `}
+  `};
 `
 
 const Link = styled.li`
@@ -55,17 +52,14 @@ const Link = styled.li`
 
   ${media.desktop`
     display: block;
-  `}
-
-  a, a:link, a:visited, a:hover, a:active {
+  `} a, a:link, a:visited, a:hover, a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.black)}
-    ${underlineOut}
+    ${color(colors.black)} ${underlineOut};
   }
 
   a:hover {
-    background-size: ${props => props.writing ? '82% 1px' : '100% 1px'};
+    background-size: ${props => (props.writing ? '82% 1px' : '100% 1px')};
   }
 `
 
@@ -79,37 +73,42 @@ const Source = styled.div`
 
   ${media.mobile`
     display: block;
-  `}
-
-  ${media.desktop`
+  `} ${media.desktop`
     font-size: ${fontSize.small};
-  `}
-
-  a, a:link, a:visited, a:hover, a:active {
+  `} a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.gray)}
-    ${underlineOut}
+    ${color(colors.gray)} ${underlineOut};
   }
 
   a:hover {
     text-shadow: none;
-    ${underlineIn}
+    ${underlineIn};
   }
 `
 
-const Links = (props) => (
+const Links = props => (
   <Wrapper>
     <List>
-      <Link writing={true} ><a href="/writing">Writing</a></Link>
-      <Link><a href="/work">Work</a></Link>
-      <Link><a href="/scratch">Scratch</a></Link>
-      <Link><a href="/contact">Contact</a></Link>
+      <Link writing={true}>
+        <a href="/writing">Writing</a>
+      </Link>
+      <Link>
+        <a href="/work">Work</a>
+      </Link>
+      <Link>
+        <a href="/scratch">Scratch</a>
+      </Link>
+      <Link>
+        <a href="/contact">Contact</a>
+      </Link>
     </List>
     <Source>
-      <a href="https://github.com/jsonnull/jsonnull.com">
-        Source on GitHub
-      </a>
+      <a href="https://github.com/jsonnull/jsonnull.com">Source on GitHub</a>
     </Source>
   </Wrapper>
 )

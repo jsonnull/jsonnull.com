@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `
 
 class Page extends React.Component {
-  render () {
+  render() {
     return (
       <Container>
         <Wrapper>

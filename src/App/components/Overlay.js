@@ -17,16 +17,9 @@ const Overlay = styled.div`
     right: auto;
     display: block;
     width: 200px;
-  `}
-
-  /*
-   * Holy shit this hack for Safari tho
-   * https://stackoverflow.com/questions/28488059/safari-rendering-bug-with-css-clip/28640880#28640880
-   * Also seems to fix clicking on chrome
-   */
-  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+  `} @media screen and (-webkit-min-device-pixel-ratio: 0) {
     clip: auto;
-    -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%)
+    -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
   }
 `
 
@@ -35,7 +28,7 @@ const LeftOverlay = Overlay.extend`
   right: auto;
   ${media.desktop`
     left: 0;
-  `}
+  `};
 `
 
 const RightOverlay = Overlay.extend`
@@ -43,10 +36,10 @@ const RightOverlay = Overlay.extend`
   ${media.desktop`
     left: auto;
     right: 0;
-  `}
+  `};
 `
 
-const FullOverlay = (props) => {
+const FullOverlay = props => {
   const { background, zOffset = 0 } = props
 
   return (
