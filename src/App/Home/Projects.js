@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 
@@ -64,7 +64,15 @@ const Description = styled.div`
   font-size: ${fontSize.small};
 `
 
-const Tile = props => {
+type TileProps = {
+  title: string,
+  url?: string,
+  address?: string,
+  children?: React.ChildrenArray<*>,
+  tags: Array<string>,
+  color?: string
+}
+const Tile = (props: TileProps) => {
   const { title, url, address, children, tags, color = colors.black } = props
 
   return (
@@ -119,7 +127,7 @@ const Projects = styled.div`
   `};
 `
 
-const ProjectSection = props => (
+const ProjectSection = () => (
   <Recent>
     <Inner>
       <Title>I {'<3'} open source.</Title>

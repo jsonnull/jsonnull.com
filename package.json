@@ -24,7 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "directory-named-webpack-plugin": "2",
     "file-loader": "^0.10.1",
-    "flow-bin": "^0.38.0",
+    "flow-bin": "^0.56.0",
     "gray-matter": "^3.0.0",
     "gulp": "^3.9.1",
     "html-loader": "^0.4.5",

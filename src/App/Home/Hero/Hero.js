@@ -60,7 +60,12 @@ const About = styled.p`
   `};
 `
 
-class Hero extends React.Component<*, Props, *> {
+type Props = {}
+type State = {
+  height: string
+}
+
+class Hero extends React.Component<Props, State> {
   constructor() {
     super()
     this.state = {

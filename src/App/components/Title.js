@@ -5,10 +5,6 @@ import feather from 'feather-icons'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
 
-type Props = {
-  home: boolean
-}
-
 const Description = styled.h2`
   display: none;
   font-size: ${fontSize.small};
@@ -88,7 +84,11 @@ const IconWrapper = styled.div`
   `};
 `
 
-const Icon = ({ name, href }) => (
+type IconProps = {
+  name: string,
+  href: string
+}
+const Icon = ({ name, href }: IconProps) => (
   <SocialLink href={href} target="_blank">
     <IconWrapper
       dangerouslySetInnerHTML={{
@@ -102,7 +102,7 @@ const Icon = ({ name, href }) => (
   </SocialLink>
 )
 
-const Header = props => (
+const Header = () => (
   <Wrapper>
     <Title>
       <a href="/">Jason Nall</a>

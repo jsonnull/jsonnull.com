@@ -91,7 +91,7 @@ const Source = styled.div`
   }
 `
 
-const Links = props => (
+const Links = () => (
   <Wrapper>
     <List>
       <Link writing={true}>
