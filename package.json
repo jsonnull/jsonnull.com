@@ -15,13 +15,13 @@
     "styled-components": "^2.2.1"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.4.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.3.3",
-    "babel-preset-react": "^6.16.0",
+    "babel-preset-react": "^6.24.1",
     "directory-named-webpack-plugin": "2",
     "file-loader": "^0.10.1",
     "flow-bin": "^0.38.0",
@@ -32,6 +32,6 @@
     "prettier": "^1.6.1",
     "raw-loader": "^0.5.1",
     "through2": "^2.0.3",
-    "webpack": "^3.5.5"
+    "webpack": "^3.7.1"
   }
 }
