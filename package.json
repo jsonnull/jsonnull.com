@@ -8,11 +8,11 @@
   "dependencies": {
     "core-js": "^2.4.1",
     "feather-icons": "^3.2.2",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-helmet": "5",
-    "recompose": "^0.25.0",
-    "styled-components": "^2.1.2"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
+    "recompose": "^0.26.0",
+    "styled-components": "^2.2.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
