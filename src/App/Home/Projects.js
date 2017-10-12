@@ -79,7 +79,7 @@ const Tile = (props: TileProps) => {
     <Project>
       <Name color={color}>{title}</Name>
       <Description>{children}</Description>
-      {tags.map(tag => <Tag>{tag}</Tag>)}
+      {tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
       {/*
     <Link href={url}>{ address }</Link>
     */}

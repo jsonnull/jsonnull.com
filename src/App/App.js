@@ -1,26 +1,34 @@
+// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 import Home from './Home'
 import Page from './Page'
+import Twitter from './containers/templates/Twitter'
 
-const Template = props => {
+type Props = {
+  template: string,
+  content: string
+}
+
+const Template = (props: Props) => {
   const { template, ...rest } = props
 
-  if (template == 'home') {
-    return <Home {...rest} />
-  } else {
-    return <Page {...rest} />
+  switch (template) {
+    case 'home':
+      return <Home {...rest} />
+    case 'twitter':
+      return <Twitter {...rest} />
+    default:
+      return <Page {...rest} />
   }
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
-        <Template {...this.props} />
-      </div>
-    )
-  }
+const App = (props: Props) => {
+  return (
+    <div>
+      <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
+      <Template {...props} />
+    </div>
+  )
 }
 export default App

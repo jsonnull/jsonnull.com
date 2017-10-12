@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production'
+
 // Server
 const React = require('react')
 const createHtml = require('./html')

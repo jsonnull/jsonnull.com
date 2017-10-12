@@ -77,9 +77,7 @@ a, a:link, a:hover, a:visited {
         ${styles}
       </head>
       <body>
-        <div id="react-root">
-          ${body}
-        </div>
+        <div id="react-root">${body}</div>
       </body>
     </html>
   `

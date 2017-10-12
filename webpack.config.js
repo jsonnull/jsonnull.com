@@ -29,7 +29,7 @@ const browser = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': JSON.stringify('development')
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new Render()
