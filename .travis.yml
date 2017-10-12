@@ -3,7 +3,7 @@ cache: yarn
 node_js:
   - node
 before_script:
-  - http-server &
+  - http-server public
 script:
   - npm run build
 deploy:
