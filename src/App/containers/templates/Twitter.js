@@ -9,7 +9,7 @@ const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 800px;
-  height: 421px;
+  height: 500px;
 `
 
 const Headline = styled.h1`
