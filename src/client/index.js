@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './App'
+import Site from './containers/Site'
 import ReactDOM from 'react-dom'
 import { colors } from 'styles/base'
 import { background, color } from 'styles/links'
@@ -15,9 +15,9 @@ if (typeof window !== 'undefined') {
   `
 
   ReactDOM.render(
-    <App {...window.__PROPS} />,
+    <Site {...window.__PROPS} />,
     document.getElementById('react-root')
   )
 } else {
-  global.App = App
+  global.App = Site
 }

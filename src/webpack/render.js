@@ -7,14 +7,14 @@ Renderer.prototype.apply = function(compiler) {
   //now you have access to all the compiler instance methods
   compiler.plugin('done', function() {
     gulp
-      .src('./content/**/*.md')
+      .src('../../content/**/*.md')
       .pipe(render())
       .pipe(gulp.dest('./public'))
   })
 }
 
 function render(content) {
-  const renderPage = require('./src/render.js')
+  const renderPage = require('../server')
 
   return through.obj(function(file, encoding, callback) {
     // chang path extension to html

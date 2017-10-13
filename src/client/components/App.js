@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, media } from 'styles/base'
-import heroText from '!raw-loader!App/Home/Hero'
+import heroText from '!raw-loader!components/home/Hero'
 
 const Container = styled.div`
   border: 1px solid ${colors.darkGray};

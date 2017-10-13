@@ -1,9 +1,9 @@
 // @flow
 import React from 'react'
 import Helmet from 'react-helmet'
-import Home from './Home'
-import Page from './Page'
-import Twitter from './containers/templates/Twitter'
+import Home from 'containers/templates/Home'
+import Page from 'containers/templates/Page'
+import Twitter from 'containers/templates/Twitter'
 
 type Props = {
   template: string,
@@ -23,7 +23,7 @@ const Template = (props: Props) => {
   }
 }
 
-const App = (props: Props) => {
+const Site = (props: Props) => {
   return (
     <div>
       <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
@@ -31,4 +31,4 @@ const App = (props: Props) => {
     </div>
   )
 }
-export default App
+export default Site

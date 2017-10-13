@@ -2,10 +2,10 @@ const webpack = require('webpack')
 const path = require('path')
 const DirectoryNamed = require('directory-named-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
-const Render = require('./render')
+const Render = require('./src/webpack/render')
 
 const browser = {
-  entry: './src/index.js',
+  entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
@@ -24,7 +24,7 @@ const browser = {
     ]
   },
   resolve: {
-    modules: ['node_modules', 'src', 'static'],
+    modules: ['node_modules', 'src/client', 'static'],
     extensions: ['.js', '.json'],
     plugins: [new DirectoryNamed(true)]
   },

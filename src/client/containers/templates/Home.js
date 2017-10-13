@@ -1,10 +1,10 @@
 import React from 'react'
-import Links from 'App/components/Links'
-import Title from 'App/components/Title'
-import Footer from 'App/components/Footer'
-import Hero from './Hero'
-import Interests from './Interests'
-import Projects from './Projects'
+import Links from 'components/Links'
+import Title from 'components/Title'
+import Footer from 'components/Footer'
+import Hero from 'components/home/Hero'
+import Interests from 'components/home/Interests'
+import Projects from 'components/home/Projects'
 import styled from 'styled-components'
 
 const Container = styled.div`

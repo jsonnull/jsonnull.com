@@ -1,5 +1,5 @@
 import React from 'react'
-import App from 'App/components/App'
+import App from 'components/App'
 import styled from 'styled-components'
 import { colors, fonts, fontSize } from 'styles/base'
 

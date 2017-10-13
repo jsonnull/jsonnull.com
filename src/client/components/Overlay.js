@@ -1,6 +1,6 @@
 import React from 'react'
-import Title from 'App/components/Title'
-import Links from 'App/components/Links'
+import Title from 'components/Title'
+import Links from 'components/Links'
 import styled from 'styled-components'
 import { media } from 'styles/base'
 
