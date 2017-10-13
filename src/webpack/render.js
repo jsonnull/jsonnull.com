@@ -1,5 +1,9 @@
 const gulp = require('gulp')
 const through = require('through2')
+const path = require('path')
+
+const contentPath = path.resolve(__dirname, '../../content/')
+const publicPath = path.resolve(__dirname, '../../public')
 
 function Renderer() {}
 
@@ -7,9 +11,9 @@ Renderer.prototype.apply = function(compiler) {
   //now you have access to all the compiler instance methods
   compiler.plugin('done', function() {
     gulp
-      .src('../../content/**/*.md')
+      .src(contentPath + '/**/*.md')
       .pipe(render())
-      .pipe(gulp.dest('./public'))
+      .pipe(gulp.dest(publicPath))
   })
 }
 
