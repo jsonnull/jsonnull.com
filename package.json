@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "format": "prettier --write 'src/**/*.js' './*.js'",
-    "twitter": "node scripts/twitter.js",
+    "twitter": "node src/server/twitter.js",
     "build": "webpack",
     "build:production": "webpack --config webpack.config.prod.js && npm run twitter"
   },
