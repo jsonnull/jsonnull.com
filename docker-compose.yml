@@ -7,4 +7,4 @@ services:
       - NODE_ENV=production
     volumes:
       - ./:/home/node/app
-    command: "yarn && yarn build:production"
+    command: "rm -rf /home/node/app/public && yarn && yarn build:production"
