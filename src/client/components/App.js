@@ -6,7 +6,7 @@ import heroText from '!raw-loader!components/home/Hero'
 
 const Container = styled.div`
   border: 1px solid ${colors.darkGray};
-  height: 200px;
+  height: 100%;
   border-radius: 5px;
   margin: 0 0 auto;
   flex-direction: column;
@@ -57,7 +57,7 @@ const Address = styled.div`
 
 const Content = styled.div`
   margin: auto 0;
-  height: 128px;
+  height: 100%;
   overflow: hidden;
 `
 
@@ -68,7 +68,7 @@ const Code = styled.pre`
   color: white;
   opacity: 0.2;
   overflow: hidden;
-  height: 128px;
+  height: 100%;
 `
 
 export default () => (

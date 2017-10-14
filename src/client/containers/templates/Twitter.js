@@ -23,10 +23,17 @@ const Headline = styled.h1`
   text-align: center;
 `
 
+const AppWrapper = styled.div`
+  height: 200px;
+  margin: 0 0 auto;
+`
+
 const Twitter = props => (
   <Container>
     <Headline>jsonnull</Headline>
-    <App />
+    <AppWrapper>
+      <App />
+    </AppWrapper>
   </Container>
 )
 

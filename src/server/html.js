@@ -2,7 +2,7 @@ module.exports = function createHtml(props) {
   const fonts = [
     'Lato:300,400,700',
     'Cardo:400,700',
-    'Merriweather:400,400italic,700',
+    'Merriweather:300,300italic,700',
     'Source+Code+Pro:300,400,700'
   ].join('|')
 
@@ -39,7 +39,7 @@ html {
 
 body {
   font-size: 1.6rem; 
-  line-height: 2.4rem;
+  line-height: 1.5;
   background-color: #fdfffb;
 }
 
