@@ -1,0 +1,10 @@
+version: "3"
+services:
+  build:
+    image: node:alpine 
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    command: "yarn && yarn build:production"
