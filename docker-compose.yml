@@ -16,4 +16,4 @@ services:
       - NODE_ENV=production
     volumes:
       - ./:/home/node/app
-    command: sh -c "rm -rf ./public/* && yarn install --frozen-lockfile --production=false && yarn run build:production"
+    command: ./run-node-build.sh
