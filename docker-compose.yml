@@ -1,5 +1,13 @@
 version: "3"
 services:
+  server:
+    image: abiosoft:caddy
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ~/.caddy:/root/.caddy
+    ports:
+      - 80:80
+      - 443:443
   build:
     image: node:alpine 
     working_dir: /home/node/app

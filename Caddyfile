@@ -1,0 +1,8 @@
+jsonnull.com {
+  root ./public
+  gzip
+}
+
+www.jsonnull.com {
+  redir / http://{host}{uri} 302
+}
