@@ -1,5 +1,6 @@
 jsonnull.com {
-  root ./public
+  ext .html
+  root /srv
   gzip
 }
 
