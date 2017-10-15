@@ -17,7 +17,7 @@ module.exports = function createHtml(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         ${head.title.toString()}
 
-        <link href="http://fonts.googleapis.com/css?family=${fonts}" rel='stylesheet' type='text/css' />
+        <link href="//fonts.googleapis.com/css?family=${fonts}" rel='stylesheet' type='text/css' />
         <link rel="icon" type="image/png" href={favicon} />
 
         <script>
