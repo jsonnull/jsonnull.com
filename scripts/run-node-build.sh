@@ -11,7 +11,7 @@ apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups
   ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
 
 # Working dir to project root
-cd ../
+cd /home/node/app
 rm -r ./public/*
 git fetch
 git reset --hard origin/master
