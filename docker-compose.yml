@@ -16,4 +16,4 @@ services:
       - NODE_ENV=production
     volumes:
       - ./:/home/node/app
-    command: ./run-node-build.sh
+    command: ./scripts/run-node-build.sh
