@@ -24,8 +24,8 @@ const server = createServer((req, res) => {
         body.push(chunk)
       })
       .on('end', () => {
-        body = Buffer.concat(body).toString()
-        const data = urlencoded({ extended: true })(body)
+        req.body = Buffer.concat(body).toString()
+        const data = urlencoded({ extended: true })(req)
         console.log(data)
       })
   }
