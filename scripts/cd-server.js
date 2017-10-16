@@ -26,7 +26,12 @@ const server = createServer((req, res) => {
       .on('end', () => {
         req.body = Buffer.concat(body).toString()
         const data = urlencoded({ extended: true })(req)
-        console.log(data)
+        console.log(req.body.payload)
+        if (req.body.payload) {
+          const passed = req.body.payload.state == 'passed'
+          const master = req.body.payload.branch == 'master'
+          process.exit(0)
+        }
       })
   }
 
