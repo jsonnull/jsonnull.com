@@ -26,11 +26,12 @@ const server = createServer((req, res) => {
       .on('end', () => {
         body = Buffer.concat(body).toString()
         const { payload } = parse(body)
+        const data = JSON.parse(payload)
 
-        console.log(payload.result + ' ' + payload.branch)
+        console.log(data.result + ' ' + data.branch)
 
-        const passed = payload.result == 0
-        const master = payload.branch == 'master'
+        const passed = data.result == 0
+        const master = data.branch == 'master'
 
         if (passed && master) {
           process.exit(0)
