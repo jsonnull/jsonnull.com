@@ -28,7 +28,7 @@ export const colors = {
   lightGray: '#D3D8D2' /* #E7EAE1; */,
   veryLightGray: '#F2F7F0',
   gray: '#838784',
-  darkGray: '#26282B',
+  darkGray: '#464C4B',
   black: '#18191C',
 
   blue: '#3A7ADE',

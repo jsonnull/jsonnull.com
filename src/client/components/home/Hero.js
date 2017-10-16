@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, media } from 'styles/base'
@@ -83,7 +83,7 @@ const Header = styled.h1`
 
 const About = styled.p`
   margin: 0 0 auto;
-  color: ${colors.gray};
+  color: ${colors.darkGray};
   padding-bottom: 4.8rem;
   font-family: ${fonts.content};
   font-size: ${fontSize.small};
@@ -163,8 +163,8 @@ class Hero extends React.Component<Props, State> {
             <strong>high-performance user&nbsp;interfaces</strong> for the web.
           </Header>
           <About>
-            I specialize in distilling elegant solutions from complexity,
-            engineering fast interfaces, and simplifying processes.
+            I craft elegant interfaces, engineer fast systems, and find simple
+            solutions to complex problems.
           </About>
         </Inner>
       </Container>

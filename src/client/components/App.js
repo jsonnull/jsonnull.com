@@ -64,13 +64,12 @@ const Content = styled.div`
   overflow: hidden;
   top: 72px;
   right: 0;
-  left: 0;
+  left: 1.2rem;
   bottom: 0;
 `
 
 const Code = styled.pre`
   font-family: ${fonts.monospace};
-  line-height: 1.4rem;
   font-size: 1.2rem;
   color: white;
   opacity: 0.2;
