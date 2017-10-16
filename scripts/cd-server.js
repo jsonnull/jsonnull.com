@@ -26,9 +26,10 @@ const server = createServer((req, res) => {
       .on('end', () => {
         body = Buffer.concat(body).toString()
         const { payload } = parse(body)
-        const data = JSON.parse(payload)
+        console.log('payload: ' + payload.branch + ' ' + payload)
 
-        console.log(data.result + ' ' + data.branch)
+        const data = JSON.parse(payload)
+        console.log('data: ' + data.branch + ' ' + data)
 
         const passed = data.result == 0
         const master = data.branch == 'master'
