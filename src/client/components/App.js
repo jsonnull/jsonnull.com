@@ -5,20 +5,23 @@ import { colors, fonts, fontSize, media } from 'styles/base'
 import heroText from '!raw-loader!components/home/Hero'
 
 const Container = styled.div`
-  border: 1px solid ${colors.darkGray};
   height: 100%;
   border-radius: 5px;
   margin: 0 0 auto;
   flex-direction: column;
   background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
-  box-shadow: 0 35px 40px -20px rgba(0, 10, 20, 0.3);
+  position: relative;
+
+  ${media.tablet`
+    box-shadow: 0 35px 40px -20px rgba(0, 10, 20, 0.3);
+  `};
 `
 
 const TabBar = styled.div`
-  background: ${colors.darkGray};
   height: 36px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  opacity: 0.7;
 `
 
 const Tab = styled.div`
@@ -42,6 +45,7 @@ const AddressBar = styled.div`
   height: 3.6rem;
   padding: 4px 0;
   background: ${colors.white};
+  opacity: 0.7;
 `
 
 const Address = styled.div`
@@ -56,9 +60,12 @@ const Address = styled.div`
 `
 
 const Content = styled.div`
-  margin: auto 0;
-  height: 100%;
+  position: absolute;
   overflow: hidden;
+  top: 72px;
+  right: 0;
+  left: 0;
+  bottom: 0;
 `
 
 const Code = styled.pre`
@@ -67,8 +74,6 @@ const Code = styled.pre`
   font-size: 1.2rem;
   color: white;
   opacity: 0.2;
-  overflow: hidden;
-  height: 100%;
 `
 
 export default () => (
