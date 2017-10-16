@@ -9,10 +9,14 @@ services:
     ports:
       - 80:80
       - 443:443
-  build:
+    restart: always
+  cd:
     build: .
     working_dir: /home/node/app
     environment:
       - NODE_ENV=production
     volumes:
       - ./:/home/node/app
+    ports:
+      - 82:80
+    restart: always

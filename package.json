@@ -5,9 +5,11 @@
     "format": "prettier --write 'src/**/*.js' './*.js'",
     "twitter": "node src/server/twitter.js",
     "build": "webpack",
-    "build:production": "webpack --config webpack.config.prod.js && npm run twitter"
+    "build:production": "webpack --config webpack.config.prod.js && npm run twitter",
+    "continuous-delivery": "node ./scripts/cd-server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
     "feather-icons": "^3.2.2",
     "react": "^16.0.0",

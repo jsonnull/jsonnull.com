@@ -10,8 +10,7 @@ RUN apt-get update \
     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
 
-# Build from the project root
+# Start the continuous delivery server from the project root
 CMD cd /home/node/app \
-  && rm -r ./public/* \
-  && yarn install --frozen-lockfile --production=false \
-  && yarn build:production
+  && ./scripts/run-node-build.sh
+  && yarn continuous-delivery
