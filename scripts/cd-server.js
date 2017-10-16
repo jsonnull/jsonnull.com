@@ -25,7 +25,7 @@ const server = createServer((req, res) => {
       })
       .on('end', () => {
         body = Buffer.concat(body).toString()
-        const data = urlencoded(body)
+        const data = urlencoded({ extended: true })(body)
         console.log(data)
       })
   }
