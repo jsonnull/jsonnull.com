@@ -27,6 +27,8 @@ const server = createServer((req, res) => {
         body = Buffer.concat(body).toString()
         const { payload } = parse(body)
 
+        console.log(payload.result + ' ' + payload.branch)
+
         const passed = payload.result == 0
         const master = payload.branch == 'master'
 
