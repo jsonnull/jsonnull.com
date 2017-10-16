@@ -27,7 +27,7 @@ const server = createServer((req, res) => {
         body = Buffer.concat(body).toString()
         const { payload } = parse(body)
 
-        const passed = payload.status == 0
+        const passed = payload.result == 0
         const master = payload.branch == 'master'
 
         if (passed && master) {
