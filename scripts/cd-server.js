@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   const { headers, method, url } = request
 
   // When a successful build has happened, kill the process, triggering a restart
-  if (req.method === 'POST' && req.url === '/echo') {
+  if (req.method === 'POST' && req.url === '/webhook') {
     // Send response
     res.statusCode = 200
     res.end()
