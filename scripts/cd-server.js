@@ -2,7 +2,7 @@
 const { spawn } = require('child_process')
 const { resolve } = require('path')
 const { createServer } = require('http')
-const { urlencoded } = require('body-parser')
+const { parse } = require('qs')
 
 const hostname = '127.0.0.1'
 const port = 80
@@ -24,15 +24,15 @@ const server = createServer((req, res) => {
         body.push(chunk)
       })
       .on('end', () => {
-        req.body = Buffer.concat(body).toString()
-        urlencoded({ extended: true })(req)
-        console.log(req.body)
-        if (req.body.payload) {
-          const passed = req.body.payload.state == 'passed'
-          const master = req.body.payload.branch == 'master'
-          if (passed && master) {
-            process.exit(0)
-          }
+        const body = Buffer.concat(body).toString()
+        const { payload } = parse(body)
+
+        console.log(payload)
+
+        const passed = payload.state == 'passed'
+        const master = payload.branch == 'master'
+        if (passed && master) {
+          process.exit(0)
         }
       })
   }

@@ -9,9 +9,9 @@
     "continuous-delivery": "node ./scripts/cd-server.js"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
     "feather-icons": "^3.2.2",
+    "qs": "^6.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
