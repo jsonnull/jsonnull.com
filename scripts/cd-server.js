@@ -32,4 +32,4 @@ const server = createServer((req, res) => {
 
   res.statusCode = 404
   res.end()
-})
+}).listen(port)
