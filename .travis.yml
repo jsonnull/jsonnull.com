@@ -6,16 +6,6 @@ before_script:
 - http-server public &
 script:
 - npm run build:production
-deploy:
-  repo: jsonnull/jsonnull.github.io
-  local_dir: public/
-  fqdn: jsonnull.com
-  target_branch: master
-  provider: pages
-  skip_cleanup: true
-  github_token: "$GITHUB_TOKEN"
-  on:
-    branch: master
 notifications:
   webhooks: http://jsonnull.com:82/webhook
   slack:
