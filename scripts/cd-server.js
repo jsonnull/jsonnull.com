@@ -7,7 +7,7 @@ const { urlencoded } = require('body-parser')
 const hostname = '127.0.0.1'
 const port = 80
 const server = createServer((req, res) => {
-  const { headers, method, url } = request
+  const { headers, method, url } = req
 
   // When a successful build has happened, kill the process, triggering a restart
   if (req.method === 'POST' && req.url === '/webhook') {
