@@ -16,7 +16,7 @@ const server = createServer((req, res) => {
     res.end()
 
     let body = []
-    request
+    req
       .on('error', err => {
         console.error(err)
       })
