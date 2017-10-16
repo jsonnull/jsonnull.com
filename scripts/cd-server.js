@@ -26,16 +26,14 @@ const server = createServer((req, res) => {
       .on('end', () => {
         body = Buffer.concat(body).toString()
         const { payload } = parse(body)
-        console.log('payload: ' + payload.branch + ' ' + payload)
-
         const data = JSON.parse(payload)
-        console.log('data: ' + data.branch + ' ' + data)
 
         const passed = data.result == 0
         const master = data.branch == 'master'
 
         if (passed && master) {
-          process.exit(0)
+          console.log('Build passed, exiting process...')
+          process.kill(process.pid, 'SIGKILL')
         }
       })
   }
