@@ -24,7 +24,7 @@ const server = createServer((req, res) => {
         body.push(chunk)
       })
       .on('end', () => {
-        const body = Buffer.concat(body).toString()
+        body = Buffer.concat(body).toString()
         const { payload } = parse(body)
 
         console.log(payload)
