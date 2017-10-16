@@ -5,14 +5,25 @@ import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 
 const borderColor = colors.lightGray
 
+const Heading = styled.h3`
+  font-family: ${fonts.heading};
+  font-size: ${fontSize.normal};
+  font-weight: 700;
+  color: ${colors.black};
+  margin: 0 0 1em;
+
+  ${media.mobile`
+    font-size: ${fontSize.large};
+  `};
+`
+
 const List = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   line-height: ${lineUnit};
-
   ${media.desktop`
-    margin-top: ${lineUnit};
+    width: 50%;
   `};
 `
 
@@ -22,9 +33,6 @@ const ListItem = styled.li`
   padding: 0 1.2rem;
   border-left: 1px solid ${borderColor};
   width: 50%;
-  ${media.desktop`
-    width: 33%;
-  `};
 `
 
 const Name = styled.h3`
@@ -33,17 +41,21 @@ const Name = styled.h3`
   font-weight: 700;
   text-transform: uppercase;
   color: ${props => props.color};
+  margin-bottom: 1em;
 
   ${media.mobile`
     font-size: ${fontSize.small};
   `};
 `
 
-const Description = styled.p`
+const Description = styled.ul`
   margin: 0;
+  margin-left: 1.2rem;
   font-size: ${fontSize.small};
-  ${media.mobile`
-  `};
+  color: ${colors.darkGray};
+  li {
+    list-style-type: circle;
+  }
 `
 
 type InterestProps = {
@@ -52,12 +64,14 @@ type InterestProps = {
   color?: string
 }
 const Interest = (props: InterestProps) => {
-  const { title, children = null, color = colors.black } = props
+  const { title, children = [], color = colors.black } = props
 
   return (
     <ListItem>
       <Name color={color}>{title}</Name>
-      <Description>{children}</Description>
+      <Description>
+        {children.map(text => <li key={text}>{text}</li>)}
+      </Description>
     </ListItem>
   )
 }
@@ -80,31 +94,32 @@ const Inner = styled.div`
 
   ${media.tablet`
     width: 700px;
-  `} ${media.desktopHuge`
+  `};
+  ${media.desktopHuge`
     width: 1000px;
   `};
 `
 
-const Heading = styled.h3`
-  font-family: ${fonts.heading};
-  font-size: ${fontSize.normal};
-  font-weight: 700;
-  color: ${colors.black};
-  margin: 0;
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
 
-  ${media.mobile`
-    font-size: ${fontSize.large};
+  ${media.desktop`
+    flex-direction: row;
   `};
 `
 
 const Paragraph = styled.p`
-  margin: 3.6rem 0;
+  margin: 0;
+  margin-bottom: 2em;
   font-size: ${fontSize.small};
-  line-height: ${lineUnit};
   ${media.tablet`
-    font-size: ${fontSize.normal};
-    line-height: 3rem;
     width: 75%;
+    font-size: ${fontSize.normal};
+  `};
+  ${media.desktop`
+    width: 50%;
+    padding-right: 2.4rem;
   `};
 `
 
@@ -112,38 +127,33 @@ const InterestsSection = () => {
   return (
     <Interests>
       <Inner>
-        <Heading>Experience and skills for today's web.</Heading>
-        <Paragraph>
-          Having a diverse and always-growing skillset is key to staying
-          adaptable. I've worked with clients on a variety of platforms, and in
-          my free time I dive into cutting-edge technologies to see what's good.
-          Here are the areas I readily turn into client wins.
-        </Paragraph>
-        <List>
-          <Interest color={colors.blue} title="JavaScript">
-            Web projects using modern JavaScript, particularly React, Flow, and
-            TypeScript
-          </Interest>
-          <Interest color={colors.orange} title="Firebase">
-            Realtime web apps backed by Firebase
-          </Interest>
-          <Interest color={colors.green} title="Progressive Web Apps">
-            <a href="https://developers.google.com/web/progressive-web-apps/">
-              PWAs are
-            </a>
-            {' crazy fast, offline-first web apps'}
-          </Interest>
-          <Interest color={colors.gray} title="Performance">
-            Sites facing performance challenges of any kind
-          </Interest>
-          <Interest color={colors.red} title="Interactive">
-            Browser games are an interesting blend of UX and performance
-            concerns
-          </Interest>
-          <Interest color={colors.gray} title="New Languages">
-            Any project using Rust, PureScript, Haskell
-          </Interest>
-        </List>
+        <Heading>Experience and skills</Heading>
+        <Section>
+          <Paragraph>
+            Maintaining a diverse skillset is key to staying adaptable. I've
+            worked with clients on a variety of platforms, and in my free time I
+            dive into cutting-edge technologies to see what's good. Here are the
+            areas I readily turn into client wins.
+          </Paragraph>
+          <List>
+            <Interest color={colors.blue} title="JavaScript">
+              {['React & Redux', 'Flow', 'Webpack', 'ES6+']}
+            </Interest>
+            <Interest color={colors.orange} title="Interactive & UX">
+              {[
+                'Firebase realtime apps',
+                'WebGL and HTML5 games',
+                'Interface design'
+              ]}
+            </Interest>
+            <Interest color={colors.green} title="Full Stack">
+              {['Progressive Web Apps', 'Performance auditing', 'Optimization']}
+            </Interest>
+            <Interest color={colors.red} title="Exploration">
+              {['Rust', 'PureScript', 'New technologies']}
+            </Interest>
+          </List>
+        </Section>
       </Inner>
     </Interests>
   )
