@@ -7,14 +7,10 @@ const borderColor = colors.lightGray
 
 const Heading = styled.h3`
   font-family: ${fonts.heading};
-  font-size: ${fontSize.normal};
+  font-size: ${fontSize.large};
   font-weight: 700;
   color: ${colors.black};
   margin: 0 0 1em;
-
-  ${media.mobile`
-    font-size: ${fontSize.large};
-  `};
 `
 
 const List = styled.ul`

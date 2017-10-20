@@ -108,15 +108,11 @@ const Recent = styled.div`
 
 const Title = styled.h3`
   font-family: ${fonts.heading};
-  font-size: ${fontSize.normal};
+  font-size: ${fontSize.large};
   font-weight: 700;
   color: ${colors.gray};
   margin: 0;
   margin-bottom: 1em;
-
-  ${media.mobile`
-    font-size: ${fontSize.large};
-  `};
 `
 
 const Paragraph = styled.p`

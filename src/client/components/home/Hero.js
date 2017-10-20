@@ -7,14 +7,14 @@ import App from 'components/App'
 const Container = styled.div`
   position: relative;
   min-height: ${props => props.currentHeight};
-  margin: 0 2.4rem;
+  background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
 
-  ${media.mobile`
-    margin: 0 4.8rem;
+  ${media.tablet`
+    background: none;
   `};
   ${media.tabletLarge`
-    margin: 0 auto;
     width: 600px;
+    margin: 0 auto;
   `};
   ${media.desktopLarge`
     width: 800px;
@@ -28,15 +28,24 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  left: 2.4rem;
+  right: 2.4rem;
   bottom: 0;
-  padding-top: 12rem;
-  padding-bottom: 7.2rem;
+  top: 7.2rem;
 
   ${media.mobile`
+    top: 12rem;
+    left: 4.8rem;
+    right: 4.8rem;
+  `};
+  ${media.tabletLarge`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     padding-top: 14.4rem;
+    padding-bottom: 7.2rem;
   `};
   ${media.desktop`
     padding-top: 0;
@@ -46,27 +55,28 @@ const Inner = styled.div`
 
 const Header = styled.h1`
   margin: 0;
-  color: ${colors.black};
+  color: ${colors.white};
   padding: 2.4rem;
   padding-left: 0;
   font-family: ${fonts.heading};
   font-weight: 300;
-  font-size: 2.4rem;
+  font-size: 3rem;
   line-height: 1.2;
-  background: ${colors.white};
   letter-spacing: -1;
-  width: 75%;
+  width: 270px;
 
   ${media.mobile`
-    font-size: 3rem;
+    font-size: 3.6rem;
+    width: 330px;
   `};
   ${media.tablet`
     font-size: 3.6rem;
+    width: 75%;
+    background: ${colors.white};
+    color: ${colors.black};
   `};
-
-  ${media.tablet`
+  ${media.tabletLarge`
     font-size: 2.8rem;
-  `} ${media.tabletLarge`
     margin-bottom: 2.4rem;
   `};
   ${media.desktopLarge`
@@ -83,33 +93,33 @@ const Header = styled.h1`
 
 const About = styled.p`
   margin: 0 0 auto;
-  color: ${colors.darkGray};
-  padding-bottom: 4.8rem;
+  color: ${colors.white};
   font-family: ${fonts.content};
   font-size: ${fontSize.small};
-  background: ${colors.white};
-  width: 75%;
+  width: 270px;
   ${media.tablet`
     width: 50%;
     font-size: ${fontSize.normal};
-    background: transparent;
+    color: ${colors.darkGray};
   `};
 `
 
 const Spacer = styled.div`
   margin-top: auto;
-  height: 9.6rem;
+
+  ${media.tablet`
+    height: 12rem;
+  `};
+  ${media.desktop`
+    height: 9.6rem;
+  `};
 `
 
 const AppContainer = styled.div`
-  margin-top: 12rem;
-  position: absolute;
-  top: 0;
-  bottom: 2.4rem;
-  right: 0;
-  left: 0;
+  display: none;
 
   ${media.tablet`
+    display: block;
     height: 50%;
     width: 50%;
     margin-top: auto;
