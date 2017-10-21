@@ -109,6 +109,8 @@ const Paragraph = styled.p`
   margin: 0;
   margin-bottom: 2em;
   font-size: ${fontSize.small};
+  font-family: ${fonts.content};
+  line-height: 2;
   ${media.tablet`
     width: 75%;
     font-size: ${fontSize.normal};

@@ -95,6 +95,7 @@ const About = styled.p`
   margin: 0 0 auto;
   color: ${colors.white};
   font-family: ${fonts.content};
+  line-height: 2;
   font-size: ${fontSize.small};
   width: 270px;
   ${media.tablet`

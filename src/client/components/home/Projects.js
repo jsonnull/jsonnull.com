@@ -119,14 +119,15 @@ const Paragraph = styled.p`
   margin: 0;
   margin-bottom: 2em;
   font-size: ${fontSize.small};
-  line-height: ${lineUnit};
   width: 100%;
+  font-family: ${fonts.content};
+  line-height: 2;
   ${media.tablet`
     width: 75%;
     font-size: ${fontSize.normal};
   `};
   ${media.desktop`
-    width: 33%;
+    width: 50%;
     padding-right: 2.4rem;
   `};
 `
@@ -135,7 +136,7 @@ const Projects = styled.div`
   width: 100%;
 
   ${media.desktop`
-    width: 66%;
+    width: 50%;
   `};
 `
 
