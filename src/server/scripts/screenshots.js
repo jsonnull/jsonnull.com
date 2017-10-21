@@ -29,7 +29,7 @@ const twitter = {
   }
 }
 
-const screenshots = [twitter]
+const screenshots = [readme, twitter]
 
 const main = async () => {
   const browser = await puppeteer.launch({
