@@ -56,10 +56,9 @@ const Name = styled.h4`
   margin: 0;
   font-size: ${fontSize.small};
   font-weight: 700;
-  color: ${colors.darkGray};
+  color: ${props => props.color};
 
   ${media.mobile`
-    color: ${props => props.color};
     font-size: ${fontSize.normal};
   `};
 `
@@ -82,7 +81,13 @@ const Link = styled.a`
   }
 `
 
-const Description = styled.div`margin: 0 0 1em;`
+const Description = styled.div`
+  margin: 0 0 1em;
+  font-size: ${fontSize.small};
+  ${media.tablet`
+    font-size: ${fontSize.normal};
+  `};
+`
 
 type TileProps = {
   title: string,
@@ -98,7 +103,9 @@ const Tile = (props: TileProps) => {
   return (
     <Project>
       <Name color={color}>{title}</Name>
-      <Link href={url}>{address}</Link>
+      <Link href={url} target="_blank" rel="noopener">
+        {address}
+      </Link>
       <Description>{children}</Description>
       {tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
     </Project>
