@@ -7,18 +7,19 @@ const { ServerStyleSheet } = require('styled-components')
 const matter = require('gray-matter')
 const MarkdownIt = require('markdown-it')
 
+// The bundle will insert itself in the global context in the server environment
+require('../../../public/bundle.js')
+const App = global.App
+
 const matterOpts = {
   language: 'json',
   delimiters: '```'
 }
 
-require('../../../public/bundle.js')
-const App = global.App
-
 // On the server side, export a function to perform the render
-module.exports = raw => {
+module.exports = (rawMarkdownContent, siteMeta) => {
   // frontmatter pass
-  const { data, content } = matter(raw, matterOpts)
+  const { data, content } = matter(rawMarkdownContent, matterOpts)
 
   // render markdown
   const md = new MarkdownIt()
@@ -33,7 +34,11 @@ module.exports = raw => {
   // render body
   const body = ReactDOMServer.renderToString(
     sheet.collectStyles(
-      React.createElement(App, { content: rendered, template: template })
+      React.createElement(App, {
+        content: rendered,
+        template,
+        siteMeta
+      })
     )
   )
 
@@ -49,6 +54,7 @@ module.exports = raw => {
     content: rendered,
     head,
     template,
+    siteMeta,
     styles: styleElements
   })
 

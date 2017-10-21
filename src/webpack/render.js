@@ -2,35 +2,46 @@ const gulp = require('gulp')
 const through = require('through2')
 const path = require('path')
 
-const contentPath = path.resolve(__dirname, '../../content/')
-const publicPath = path.resolve(__dirname, '../../public')
+const PUBLIC_PATH = path.resolve(__dirname, '../../public')
+const CONTENT_GLOB = path.resolve(__dirname, '../../content/') + '/**/*.md'
+const REACT_SERVER_RENDER = '../server/render'
 
-function Renderer() {}
+// Multipass process to render all site content
+function buildSite() {
+  // First pass, collect site metadata
+  const siteMeta = {}
 
-Renderer.prototype.apply = function(compiler) {
-  //now you have access to all the compiler instance methods
-  compiler.plugin('done', function() {
-    gulp
-      .src(contentPath + '/**/*.md')
-      .pipe(render())
-      .pipe(gulp.dest(publicPath))
-  })
+  // Second pass, render content
+  gulp
+    .src(CONTENT_GLOB)
+    .pipe(render(siteMeta))
+    .pipe(gulp.dest(PUBLIC_PATH))
 }
 
-function render(content) {
-  const renderPage = require('../server/render')
+// Returns a stream object which will render a page with the given content
+function render(siteMeta) {
+  const reactServerRender = require(REACT_SERVER_RENDER)
 
-  return through.obj(function(file, encoding, callback) {
-    // chang path extension to html
+  return through.obj((file, encoding, callback) => {
+    // Change path extension to html
     file.path = file.path.replace('.md', '.html')
 
-    // operate on contents
+    // Replace the contents with the rendered version
     const content = file.contents.toString()
-    const buf = Buffer.from(renderPage(content))
+    const buf = Buffer.from(reactServerRender(content, siteMeta))
     file.contents = buf
 
     callback(null, file)
   })
+}
+
+// This webpack plugin builds the site when the compilation process finishes
+class Renderer {
+  apply(compiler) {
+    compiler.plugin('done', () => {
+      buildSite()
+    })
+  }
 }
 
 module.exports = Renderer

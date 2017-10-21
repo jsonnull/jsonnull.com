@@ -10,9 +10,9 @@ module.exports = function createHtml(props) {
     'Source+Code+Pro:300,400,700'
   ].join('|')
 
-  const { template, content, body, head, styles } = props
+  const { template, content, body, head, siteMeta, styles } = props
 
-  const windowProps = { template, content, head }
+  const windowProps = { template, content, head, siteMeta }
 
   return `
     <html>
