@@ -86,7 +86,7 @@ type IconProps = {
   href: string
 }
 const Icon = ({ name, href }: IconProps) => (
-  <SocialLink href={href} target="_blank">
+  <SocialLink href={href} target="_blank" rel="noopener">
     <IconWrapper
       dangerouslySetInnerHTML={{
         __html: feather.toSvg(name, {
