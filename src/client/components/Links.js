@@ -71,15 +71,15 @@ const Source = styled.div`
   font-size: ${fontSize.tiny};
   display: none;
 
-  ${media.mobile`
+  ${media.desktop`
     display: block;
-  `} ${media.desktop`
     font-size: ${fontSize.small};
-  `} a,
-    a:link,
-    a:visited,
-    a:hover,
-    a:active {
+  `};
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
     ${color(colors.gray)} ${underlineOut};

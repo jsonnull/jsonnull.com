@@ -75,11 +75,8 @@ const IconWrapper = styled.div`
   margin-top: 1.2rem;
   padding-top: 2px;
   display: none;
-  margin-right: 1rem;
 
-  ${media.mobile`
-    display: inline-block;
-  `} ${media.desktop`
+  ${media.desktop`
     display: block;
   `};
 `
