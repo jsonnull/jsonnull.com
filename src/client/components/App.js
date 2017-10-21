@@ -54,7 +54,7 @@ const Address = styled.div`
   margin: 0 1rem;
   line-height: 2.8rem;
   padding: 0 9px;
-  color: ${colors.gray};
+  color: ${colors.lightGray};
   font-size: ${fontSize.small};
   border-radius: 3px;
 `
