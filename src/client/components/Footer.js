@@ -27,19 +27,18 @@ const Content = styled.div`
 
 const Quote = styled.p`
   font-family: ${fonts.serif};
-  color: ${colors.gray};
-  font-size: ${fontSize.normal};
+  color: ${colors.darkGray};
+  font-size: ${fontSize.large};
   margin: 0 0 4.8rem;
-  width: 75%;
-  line-height: 2.4rem;
+  text-align: center;
 `
 
 const Attrib = styled.span`
   font-family: ${fonts.base};
-  color: ${colors.gray};
-  font-size: ${fontSize.tiny};
-  text-align: right;
-  line-height: 2.4rem;
+  color: ${colors.darkGray};
+  font-size: ${fontSize.small};
+  display: block;
+  text-align: center;
 `
 
 const Title = styled.a`
@@ -66,7 +65,10 @@ const Title = styled.a`
   }
 `
 
-const Links = styled.div`line-height: 2.4rem;`
+const Links = styled.div`
+  line-height: 2.4rem;
+  text-align: center;
+`
 
 const Link = styled.a`
   font-family: ${fonts.heading};
@@ -99,9 +101,8 @@ const Footer = props => (
     />
     <Content>
       <Quote>
-        "Though we travel the world over to find the beautiful, we must carry it
-        with us, or we find it not."
-        <Attrib> —&nbsp;Ralph&nbsp;Waldo&nbsp;Emerson</Attrib>
+        "It is the power of the mind to be unconquerable."
+        <Attrib> —&nbsp;Seneca</Attrib>
       </Quote>
       <Links>
         <Link href="/">Home</Link>
