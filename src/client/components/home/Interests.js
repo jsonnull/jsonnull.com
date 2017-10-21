@@ -48,7 +48,6 @@ const Description = styled.ul`
   margin: 0;
   margin-left: 1.2rem;
   font-size: ${fontSize.small};
-  color: ${colors.darkGray};
   li {
     list-style-type: circle;
   }
@@ -79,7 +78,8 @@ const Interests = styled.div`
 
   ${media.mobile`
     padding: 7.2rem 4.8rem;
-  `} ${media.tablet`
+  `};
+  ${media.tablet`
     padding: 14.4rem 4.8rem;
   `};
 `

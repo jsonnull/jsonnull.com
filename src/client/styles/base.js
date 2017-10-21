@@ -13,12 +13,12 @@ export const fonts = {
 }
 
 export const fontSize = {
-  tiny: '1.1rem',
-  small: '1.4rem',
-  normal: '1.6rem',
-  medium: '1.8rem',
-  large: '2.4rem',
-  huge: '3rem'
+  tiny: '1.107692rem', // * 1.625 = 1.8rem
+  small: '1.358461rem', // * 1.625 = 2.2rem
+  normal: '1.6rem', // * 1.625 = 2.6rem
+  medium: '1.846153rem', // * 1.625 = 3.0rem
+  large: '2.4rem', // * 1.625 = 3.9rem
+  huge: '3.076923rem' // * 1.625 = 5rem
 }
 
 export const lineUnit = '2.4rem'

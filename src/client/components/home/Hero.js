@@ -62,7 +62,7 @@ const Header = styled.h1`
   font-weight: 300;
   font-size: 3rem;
   line-height: 1.2;
-  letter-spacing: -1;
+  letter-spacing: -1.1;
   width: 270px;
 
   ${media.mobile`

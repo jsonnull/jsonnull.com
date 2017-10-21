@@ -2,6 +2,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
+import { background, color, underlineIn, underlineOut } from 'styles/links'
 
 const borderColor = colors.lightGray
 
@@ -31,23 +32,23 @@ const Section = styled.div`
 `
 
 const Tag = styled.span`
-  line-height: ${lineUnit};
   margin: 0;
-  margin-right: 1rem;
+  margin-right: 0.5em;
   font-size: ${fontSize.tiny};
-  color: ${colors.gray};
-  text-transform: uppercase;
+  color: ${colors.darkGray};
+  border: 1px solid ${colors.lightGray};
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
   &:before {
     content: '#';
-    color: ${colors.lightGray};
+    color: ${colors.gray};
   }
 `
 
 const Project = styled.div`
   padding: 0 0 0 1.2rem;
   border-left: 1px solid ${borderColor};
-  margin-bottom: 2.4rem;
-  margin-right: 1.2rem;
+  margin-bottom: 2em;
   flex: 1;
 `
 
@@ -64,16 +65,24 @@ const Name = styled.h4`
 `
 
 const Link = styled.a`
-  padding-right: 1rem;
   font-size: ${fontSize.small};
-  color: ${colors.gray};
-  display: block;
+  display: inline-block;
+  margin-bottom: 1em;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    ${color(colors.gray)} ${background(colors.white)} ${underlineOut};
+    background-position: 0 18px;
+  }
+
+  &:hover {
+    ${underlineIn};
+  }
 `
 
-const Description = styled.div`
-  margin: 0 0 1.2rem;
-  font-size: ${fontSize.small};
-`
+const Description = styled.div`margin: 0 0 1em;`
 
 type TileProps = {
   title: string,
@@ -89,11 +98,9 @@ const Tile = (props: TileProps) => {
   return (
     <Project>
       <Name color={color}>{title}</Name>
+      <Link href={url}>{address}</Link>
       <Description>{children}</Description>
       {tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
-      {/*
-    <Link href={url}>{ address }</Link>
-    */}
     </Project>
   )
 }
@@ -160,6 +167,15 @@ const ProjectSection = () => (
           >
             A groundbreaking online tabletop role-playing platform, built with
             cutting-edge tools and tech from the React+Redux ecosystem.
+          </Tile>
+          <Tile
+            title="Redux Render"
+            url="https://github.com/jsonnull/redux-render"
+            address="github.com/jsonnull/redux-render"
+            tags={['Development', 'JavaScript', 'Open Source']}
+            color={colors.blue}
+          >
+            Ergonomic React bindings for Redux using the render prop pattern.
           </Tile>
           <Tile
             title="jsonnull"
