@@ -9,8 +9,8 @@ const HOST =
 const readme = {
   url: '',
   size: {
-    width: 1920,
-    height: 1080
+    width: 1280,
+    height: 768
   },
   options: {
     path: 'public/readme.jpeg',
