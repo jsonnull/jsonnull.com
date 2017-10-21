@@ -11,6 +11,8 @@ const server = createServer((req, res) => {
 
   // When a successful build has happened, kill the process, triggering a restart
   if (req.method === 'POST' && req.url === '/webhook') {
+    console.log('Received POST request on /webhook')
+
     // Send response
     res.statusCode = 200
     res.end()
@@ -30,6 +32,13 @@ const server = createServer((req, res) => {
 
         const passed = data.result == 0
         const master = data.branch == 'master'
+
+        console.log(
+          'Parsed payload of webhook, result is ' +
+            data.result +
+            ' on branch ' +
+            data.branch
+        )
 
         if (passed && master) {
           console.log('Build passed, exiting process...')
