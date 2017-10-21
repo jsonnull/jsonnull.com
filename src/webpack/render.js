@@ -18,7 +18,7 @@ Renderer.prototype.apply = function(compiler) {
 }
 
 function render(content) {
-  const renderPage = require('../server')
+  const renderPage = require('../server/render')
 
   return through.obj(function(file, encoding, callback) {
     // chang path extension to html

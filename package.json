@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "format": "prettier --write 'src/**/*.js' './*.js'",
-    "twitter": "node src/server/twitter.js",
+    "screenshots": "node src/server/scripts/screenshots.js",
     "build": "webpack",
-    "build:production": "webpack --config webpack.config.prod.js && npm run twitter",
-    "continuous-delivery": "node ./scripts/cd-server.js"
+    "build:production": "webpack --config webpack.config.prod.js && npm run screenshots",
+    "continuous-deployment": "node ./src/server/continuous-deployment/"
   },
   "dependencies": {
     "core-js": "^2.4.1",

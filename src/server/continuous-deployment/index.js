@@ -1,4 +1,4 @@
-// Continuous delivery server
+// Continuous deployment server
 const { spawn } = require('child_process')
 const { resolve } = require('path')
 const { createServer } = require('http')
