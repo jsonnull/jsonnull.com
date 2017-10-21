@@ -12,7 +12,7 @@ const matterOpts = {
   delimiters: '```'
 }
 
-require('../../public/bundle.js')
+require('../../../public/bundle.js')
 const App = global.App
 
 // On the server side, export a function to perform the render
