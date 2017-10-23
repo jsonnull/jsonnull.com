@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, media } from 'styles/base'
 
@@ -37,11 +37,11 @@ const Inner = styled.div`
 
 type Props = {
   mixin?: string,
-  style?: object,
-  children?: React.ChildrenArray<*>
+  style?: Object,
+  children?: React.Node
 }
 
-const Section = props => {
+const Section = (props: Props) => {
   return (
     <Container mixin={props.mixin} style={props.style}>
       <Inner>{props.children}</Inner>

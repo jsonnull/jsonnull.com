@@ -56,7 +56,7 @@ const Description = styled.ul`
 
 type InterestProps = {
   title: string,
-  children?: React.ChildrenArray<*>,
+  children?: Array<string>,
   color?: string
 }
 const Interest = (props: InterestProps) => {
