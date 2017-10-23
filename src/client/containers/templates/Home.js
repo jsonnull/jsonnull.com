@@ -1,4 +1,5 @@
 import React from 'react'
+import Wrapper from 'components/Wrapper'
 import Links from 'components/navigation/Links'
 import Title from 'components/navigation/Title'
 import Footer from 'components/navigation/Footer'
@@ -7,17 +8,8 @@ import Interests from 'components/home/Interests'
 import Projects from 'components/home/Projects'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-`
-
 const Home = props => (
-  <Container>
+  <Wrapper>
     <Hero />
     <Interests />
     <Projects />
@@ -26,7 +18,7 @@ const Home = props => (
 
     <Title />
     <Links />
-  </Container>
+  </Wrapper>
 )
 
 export default Home

@@ -95,15 +95,8 @@ const AppContainer = styled.div`
 
 const headerMixin = css`
   background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
-  margin-top: 7.2rem;
-  ${media.mobile`
-    margin-top: 12rem;
-  `};
   ${media.tablet`
     background: none;
-  `};
-  ${media.desktop`
-    margin-top: 0;
   `};
 `
 
