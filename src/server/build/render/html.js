@@ -15,11 +15,13 @@ module.exports = function createHtml(props) {
   const windowProps = { template, content, head, siteMeta }
 
   return `
-    <html>
+    <html ${head.htmlAttributes.toString()}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         ${head.title.toString()}
+        ${head.meta.toString()}
+        ${head.link.toString()}
 
         <link href="//fonts.googleapis.com/css?family=${fonts}" rel='stylesheet' type='text/css' />
         <link rel="icon" type="image/png" href={favicon} />

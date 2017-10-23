@@ -3,27 +3,26 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Home from 'containers/templates/Home'
 import Page from 'containers/templates/Page'
+import Blog from 'containers/templates/Blog'
 import Twitter from 'containers/templates/Twitter'
+import type { RenderProps } from 'types'
 
-type Props = {
-  template: string,
-  content: string
-}
-
-const Template = (props: Props) => {
-  const { template, ...rest } = props
+const Template = (props: RenderProps) => {
+  const { template } = props
 
   switch (template) {
     case 'home':
-      return <Home {...rest} />
+      return <Home {...props} />
     case 'twitter':
-      return <Twitter {...rest} />
+      return <Twitter {...props} />
+    case 'blog':
+      return <Blog {...props} />
     default:
-      return <Page {...rest} />
+      return <Page {...props} />
   }
 }
 
-const Site = (props: Props) => {
+const Site = (props: RenderProps) => {
   return (
     <div>
       <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
