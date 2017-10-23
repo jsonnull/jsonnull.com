@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "app-root-path": "^2.0.1",
+    "clean-webpack-plugin": "^0.1.17",
     "core-js": "^2.4.1",
     "feather-icons": "^3.2.2",
     "glob": "^7.1.2",

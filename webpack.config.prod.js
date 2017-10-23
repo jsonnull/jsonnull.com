@@ -1,8 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const DirectoryNamed = require('directory-named-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
 const Render = require('./src/webpack/render')
+
+const pathsToClean = ['public/*/*']
 
 const browser = {
   entry: './src/client/index.js',
@@ -29,6 +32,7 @@ const browser = {
     plugins: [new DirectoryNamed(true)]
   },
   plugins: [
+    new CleanWebpackPlugin(pathsToClean),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
