@@ -5,5 +5,5 @@ jsonnull.com {
 }
 
 www.jsonnull.com {
-  redir / http://{host}{uri} 302
+  redir / https://jsonnull.com/{uri} 302
 }
