@@ -2,16 +2,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { fonts } from 'styles/base'
-
-const Title = styled.h1`
-  font-family: ${fonts.heading};
-  font-weight: 700;
-`
+import Heading from 'components/Heading'
 
 type Props = {
   title: string
 }
 
-const Header = (props: Props) => <Title>{props.title}</Title>
+const Header = (props: Props) => <Heading>{props.title}</Heading>
 
 export default Header

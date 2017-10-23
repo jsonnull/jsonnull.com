@@ -2,17 +2,12 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
+import Heading from 'components/Heading'
 import Section from 'components/Section'
 
 const borderColor = colors.lightGray
 
-const Heading = styled.h3`
-  font-family: ${fonts.heading};
-  font-size: ${fontSize.large};
-  font-weight: 700;
-  color: ${colors.black};
-  margin: 0 0 1em;
-`
+const SectionHeading = Heading.withComponent('h3')
 
 const List = styled.ul`
   display: flex;
@@ -102,7 +97,7 @@ const interestsMixin = css`background: ${colors.veryLightGray};`
 const InterestsSection = () => {
   return (
     <Section mixin={interestsMixin}>
-      <Heading>Experience and skills</Heading>
+      <SectionHeading>Experience and skills</SectionHeading>
       <Inner>
         <Paragraph>
           Maintaining a diverse skillset is key to staying adaptable. I've

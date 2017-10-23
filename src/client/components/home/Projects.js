@@ -3,9 +3,14 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
+import Heading from 'components/Heading'
 import Section from 'components/Section'
 
 const borderColor = colors.lightGray
+
+const SectionHeading = Heading.withComponent('h3').extend`
+  color: ${colors.gray};
+`
 
 const Inner = styled.div`
   display: flex;
@@ -97,15 +102,6 @@ const Tile = (props: TileProps) => {
   )
 }
 
-const Title = styled.h3`
-  font-family: ${fonts.heading};
-  font-size: ${fontSize.large};
-  font-weight: 700;
-  color: ${colors.gray};
-  margin: 0;
-  margin-bottom: 1em;
-`
-
 const Paragraph = styled.p`
   margin: 0;
   margin-bottom: 2em;
@@ -133,7 +129,7 @@ const Projects = styled.div`
 
 const Recent = () => (
   <Section>
-    <Title>I {'<3'} open source</Title>
+    <SectionHeading>I {'<3'} open source</SectionHeading>
     <Inner>
       <Paragraph>
         I love consuming and contributing to open source. Side projects are a
