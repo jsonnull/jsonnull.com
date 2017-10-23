@@ -25,7 +25,9 @@ const Template = (props: RenderProps) => {
 const Site = (props: RenderProps) => {
   return (
     <div>
-      <Helmet title="☕️💻🎨✏️🎵" titleTemplate="Jason Nall - %s" />
+      <Helmet titleTemplate="Jason Nall - %s">
+        <title>Designer and Developer</title>
+      </Helmet>
       <Template {...props} />
     </div>
   )

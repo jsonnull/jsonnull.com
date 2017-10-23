@@ -2,7 +2,6 @@
 const React = require('react')
 const createHtml = require('./html')
 const ReactDOMServer = require('react-dom/server')
-const { Helmet } = require('react-helmet')
 const { ServerStyleSheet } = require('styled-components')
 const appRoot = require('app-root-path')
 const renderMarkdown = require('./markdown')
@@ -10,6 +9,10 @@ const renderMarkdown = require('./markdown')
 // The bundle will insert itself in the global context in the server environment
 require(appRoot + '/public/bundle.js')
 const App = global.App
+
+// Also import the Helmet instance from the app
+// See https://github.com/nfl/react-helmet/issues/125
+const Helmet = global.Helmet
 
 // On the server side, export a function to perform the render
 module.exports = (rawMarkdownContent, siteMeta) => {

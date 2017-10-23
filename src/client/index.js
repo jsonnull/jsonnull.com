@@ -1,6 +1,7 @@
 import React from 'react'
 import Site from './containers/Site'
 import ReactDOM from 'react-dom'
+import Helmet from 'react-helmet'
 import { colors } from 'styles/base'
 import { background, color } from 'styles/links'
 import { injectGlobal } from 'styled-components'
@@ -20,4 +21,5 @@ if (typeof window !== 'undefined') {
   )
 } else {
   global.App = Site
+  global.Helmet = Helmet
 }
