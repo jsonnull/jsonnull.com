@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   background: ${colors.white};
   padding: 2.4rem;
   padding-left: 0;
+  z-index: 300;
 
   ${media.mobile`
     height: 12rem;
@@ -59,7 +60,7 @@ const Link = styled.li`
   }
 
   a:hover {
-    background-size: ${props => (props.writing ? '82% 1px' : '100% 1px')};
+    background-size: ${props => (props.blog ? '70% 1px' : '100% 1px')};
   }
 `
 
@@ -94,8 +95,8 @@ const Source = styled.div`
 const Links = () => (
   <Wrapper>
     <List>
-      <Link writing={true}>
-        <a href="/writing">Writing</a>
+      <Link blog={true}>
+        <a href="/blog">Blog</a>
       </Link>
       <Link>
         <a href="/work">Work</a>

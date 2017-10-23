@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Content from 'components/Content'
-import Title from 'components/Title'
-import Links from 'components/Links'
-import Footer from 'components/Footer'
+import Title from 'components/navigation/Title'
+import Links from 'components/navigation/Links'
+import Footer from 'components/navigation/Footer'
 
 const Container = styled.div`
   display: flex;

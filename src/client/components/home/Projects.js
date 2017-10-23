@@ -3,26 +3,11 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
 import { background, color, underlineIn, underlineOut } from 'styles/links'
+import Section from 'components/Section'
 
 const borderColor = colors.lightGray
 
 const Inner = styled.div`
-  position: relative;
-  padding: 7.2rem 0;
-  ${media.mobile`
-    padding: 7.2rem 0;
-  `};
-  ${media.tablet`
-    padding: 14.4rem 0;
-    margin: 0 auto;
-    width: 700px;
-  `};
-  ${media.desktopHuge`
-    width: 1000px;
-  `};
-`
-
-const Section = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -112,14 +97,6 @@ const Tile = (props: TileProps) => {
   )
 }
 
-const Recent = styled.div`
-  position: relative;
-  padding: 0 2.4rem;
-  ${media.mobile`
-    padding: 0 4.8rem;
-  `};
-`
-
 const Title = styled.h3`
   font-family: ${fonts.heading};
   font-size: ${fontSize.large};
@@ -154,50 +131,48 @@ const Projects = styled.div`
   `};
 `
 
-const ProjectSection = () => (
-  <Recent>
+const Recent = () => (
+  <Section>
+    <Title>I {'<3'} open source</Title>
     <Inner>
-      <Title>I {'<3'} open source</Title>
-      <Section>
-        <Paragraph>
-          I love consuming and contributing to open source. Side projects are a
-          regular opportunity to learn and try new things. Here are some I've
-          been involved with recently.
-        </Paragraph>
-        <Projects>
-          <Tile
-            title="Aleamancer"
-            url="https://www.aleamancer.com"
-            address="www.aleamancer.com"
-            tags={['Design', 'Development', 'JavaScript', 'Open Source']}
-            color={colors.red}
-          >
-            A groundbreaking online tabletop role-playing platform, built with
-            cutting-edge tools and tech from the React+Redux ecosystem.
-          </Tile>
-          <Tile
-            title="Redux Render"
-            url="https://github.com/jsonnull/redux-render"
-            address="github.com/jsonnull/redux-render"
-            tags={['Development', 'JavaScript', 'Open Source']}
-            color={colors.blue}
-          >
-            Ergonomic React bindings for Redux using the render prop pattern.
-          </Tile>
-          <Tile
-            title="jsonnull"
-            url="https://github.com/jsonnull/jsonnull.com"
-            address="github.com/jsonnull/jsonnull.com"
-            tags={['Design', 'Development', 'JavaScript']}
-            color={colors.orange}
-          >
-            The content and build system for this site, a statically rendered
-            React application.
-          </Tile>
-        </Projects>
-      </Section>
+      <Paragraph>
+        I love consuming and contributing to open source. Side projects are a
+        regular opportunity to learn and try new things. Here are some I've been
+        involved with recently.
+      </Paragraph>
+      <Projects>
+        <Tile
+          title="Aleamancer"
+          url="https://www.aleamancer.com"
+          address="www.aleamancer.com"
+          tags={['Design', 'Development', 'JavaScript', 'Open Source']}
+          color={colors.red}
+        >
+          A groundbreaking online tabletop role-playing platform, built with
+          cutting-edge tools and tech from the React+Redux ecosystem.
+        </Tile>
+        <Tile
+          title="Redux Render"
+          url="https://github.com/jsonnull/redux-render"
+          address="github.com/jsonnull/redux-render"
+          tags={['Development', 'JavaScript', 'Open Source']}
+          color={colors.blue}
+        >
+          Ergonomic React bindings for Redux using the render prop pattern.
+        </Tile>
+        <Tile
+          title="jsonnull"
+          url="https://github.com/jsonnull/jsonnull.com"
+          address="github.com/jsonnull/jsonnull.com"
+          tags={['Design', 'Development', 'JavaScript']}
+          color={colors.orange}
+        >
+          The content and build system for this site, a statically rendered
+          React application.
+        </Tile>
+      </Projects>
     </Inner>
-  </Recent>
+  </Section>
 )
 
-export default ProjectSection
+export default Recent

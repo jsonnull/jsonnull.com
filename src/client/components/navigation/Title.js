@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   padding: 2.4rem;
   padding-right: 0;
   background: ${colors.white};
+  z-index: 300;
 
   ${media.mobile`
     height: 12rem;

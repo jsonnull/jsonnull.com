@@ -1,57 +1,9 @@
 // @flow
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors, fonts, fontSize, media } from 'styles/base'
 import App from 'components/App'
-
-const Container = styled.div`
-  position: relative;
-  min-height: ${props => props.currentHeight};
-  background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
-
-  ${media.tablet`
-    background: none;
-  `};
-  ${media.tabletLarge`
-    width: 600px;
-    margin: 0 auto;
-  `};
-  ${media.desktopLarge`
-    width: 800px;
-  `};
-  ${media.desktopHuge`
-    width: 1000px;
-  `};
-`
-
-const Inner = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 2.4rem;
-  right: 2.4rem;
-  bottom: 0;
-  top: 7.2rem;
-
-  ${media.mobile`
-    top: 12rem;
-    left: 4.8rem;
-    right: 4.8rem;
-  `};
-  ${media.tabletLarge`
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding-top: 14.4rem;
-    padding-bottom: 7.2rem;
-  `};
-  ${media.desktop`
-    padding-top: 0;
-    padding-bottom: 0;
-  `};
-`
+import Section from 'components/Section'
 
 const Header = styled.h1`
   margin: 0;
@@ -64,6 +16,7 @@ const Header = styled.h1`
   line-height: 1.2;
   letter-spacing: -1.1;
   width: 270px;
+  z-index: 200;
 
   ${media.mobile`
     font-size: 3.6rem;
@@ -77,7 +30,7 @@ const Header = styled.h1`
   `};
   ${media.tabletLarge`
     font-size: 2.8rem;
-    margin-bottom: 2.4rem;
+    margin: 2.4rem 0;
   `};
   ${media.desktopLarge`
     font-size: 3.6rem;
@@ -109,23 +62,48 @@ const Spacer = styled.div`
   margin-top: auto;
 
   ${media.tablet`
-    height: 12rem;
+    height: 9.6rem;
   `};
   ${media.desktop`
-    height: 9.6rem;
+    height: 6.4rem;
   `};
 `
 
 const AppContainer = styled.div`
   display: none;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  bottom: 25%;
+  z-index: 100;
+  right: 4.8rem;
 
   ${media.tablet`
     display: block;
-    height: 50%;
-    width: 50%;
-    margin-top: auto;
-    margin-left: auto;
-    margin-bottom: auto;
+  `};
+  ${media.tabletLarge`
+    right: auto;
+    width: 300px;
+  `};
+  ${media.desktopLarge`
+    width: 400px;
+  `};
+  ${media.desktopHuge`
+    width: 500px;
+  `};
+`
+
+const headerMixin = css`
+  background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
+  margin-top: 7.2rem;
+  ${media.mobile`
+    margin-top: 12rem;
+  `};
+  ${media.tablet`
+    background: none;
+  `};
+  ${media.desktop`
+    margin-top: 0;
   `};
 `
 
@@ -152,8 +130,18 @@ class Hero extends React.Component<Props, State> {
   }
 
   setHeight = () => {
+    const height = window.innerHeight
+    const width = window.innerWidth
+
+    let newHeight = height
+    if (width < 800) {
+      newHeight = height - 72
+    } else if (width < 1050) {
+      newHeight = height - 120
+    }
+
     this.setState({
-      height: window.innerHeight + 'px'
+      height: newHeight + 'px'
     })
   }
 
@@ -161,24 +149,20 @@ class Hero extends React.Component<Props, State> {
     const { height } = this.state
 
     return (
-      <Container currentHeight={height}>
-        <Inner>
-          <AppContainer>
-            <App />
-          </AppContainer>
-        </Inner>
-        <Inner>
-          <Spacer />
-          <Header>
-            I design and build{' '}
-            <strong>high-performance user&nbsp;interfaces</strong> for the web.
-          </Header>
-          <About>
-            I craft elegant interfaces, engineer fast systems, and find simple
-            solutions to complex problems.
-          </About>
-        </Inner>
-      </Container>
+      <Section mixin={headerMixin} style={{ minHeight: height }}>
+        <AppContainer>
+          <App />
+        </AppContainer>
+        <Spacer />
+        <Header>
+          I design and build{' '}
+          <strong>high-performance user&nbsp;interfaces</strong> for the web.
+        </Header>
+        <About>
+          I craft elegant interfaces, engineer fast systems, and find simple
+          solutions to complex problems.
+        </About>
+      </Section>
     )
   }
 }
