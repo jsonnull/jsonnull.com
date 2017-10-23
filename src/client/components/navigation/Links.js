@@ -24,7 +24,8 @@ const Wrapper = styled.div`
     left: 170px;
     padding: 4.8rem;
     padding-left: 0;
-  `} ${media.desktop`
+  `};
+  ${media.desktop`
     background: transparent;
     width: 200px;
     height: auto;
@@ -36,10 +37,10 @@ const Wrapper = styled.div`
 const List = styled.ul`
   text-align: right;
   font-family: ${fonts.heading};
-  font-weight: 700;
   font-size: ${fontSize.small};
-  line-height: ${lineUnit};
+  line-height: 1.2;
   z-index: 710;
+  letter-spacing: 0.1;
 
   ${media.mobile`
     font-size: ${fontSize.normal};
@@ -51,16 +52,36 @@ const Link = styled.li`
   margin-bottom: 1.2rem;
   display: inline-block;
 
+  ${props => {
+    if (props.small) {
+      return `font-weight: normal;`
+    }
+    return `font-weight: 700;`
+  }};
+
   ${media.desktop`
     display: block;
-  `} a, a:link, a:visited, a:hover, a:active {
+  `};
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.black)} ${underlineOut};
+    ${props => {
+      if (props.small) {
+        return color(colors.gray)
+      } else if (props.emphasis) {
+        return color(colors.blue)
+      }
+      return color(colors.black)
+    }};
+    ${underlineOut};
   }
 
   a:hover {
-    background-size: ${props => (props.blog ? '70% 1px' : '100% 1px')};
+    background-size: ${props => (props.blog ? '60% 1px' : '100% 1px')};
   }
 `
 
@@ -95,17 +116,20 @@ const Source = styled.div`
 const Links = () => (
   <Wrapper>
     <List>
+      <Link>
+        <a href="/case-studies">Work</a>
+      </Link>
       <Link blog={true}>
         <a href="/blog">Blog</a>
       </Link>
       <Link>
-        <a href="/work">Work</a>
+        <a href="/about">About</a>
       </Link>
-      <Link>
-        <a href="/scratch">Scratch</a>
+      <Link emphasis>
+        <a href="/about#contact">Contact</a>
       </Link>
-      <Link>
-        <a href="/contact">Contact</a>
+      <Link small>
+        <a href="/lists">Lists</a>
       </Link>
     </List>
     <Source>
