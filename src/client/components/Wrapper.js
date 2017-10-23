@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   top: 7.2rem;
   left: 0;
   right: 0;
+  min-height: 100%;
 
   ${media.mobile`
     top: 12rem;
