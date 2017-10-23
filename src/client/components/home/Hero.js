@@ -143,9 +143,6 @@ class Hero extends React.Component<Props, State> {
 
     return (
       <Section mixin={headerMixin} style={{ minHeight: height }}>
-        <AppContainer>
-          <App />
-        </AppContainer>
         <Spacer />
         <Header>
           I design and build{' '}
@@ -155,6 +152,9 @@ class Hero extends React.Component<Props, State> {
           I craft elegant interfaces, engineer fast systems, and find simple
           solutions to complex problems.
         </About>
+        <AppContainer>
+          <App />
+        </AppContainer>
       </Section>
     )
   }
