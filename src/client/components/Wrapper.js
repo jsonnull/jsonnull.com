@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import styled from 'styled-components'
-import { media } from 'styles/base'
+import { media } from '../styles/base'
 
 const Wrapper = styled.div`
   display: flex;

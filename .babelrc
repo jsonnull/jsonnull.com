@@ -5,15 +5,22 @@
       "targets": {
         "browsers": ["last 2 versions"]
       },
-      "useBuiltIns": true,
+      "useBuiltIns": "true",
       "modules": false
     }]
   ],
   "plugins": [
     "transform-class-properties",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "syntax-dynamic-import"
   ],
   "env": {
+    "static": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    },
     "test": {
       "plugins": [
         "transform-es2015-modules-commonjs"

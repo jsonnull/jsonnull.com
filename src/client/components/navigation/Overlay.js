@@ -1,8 +1,8 @@
 import React from 'react'
-import Title from 'components/navigation/Title'
-import Links from 'components/navigation/Links'
+import Title from './Title'
+import Links from './Links'
 import styled from 'styled-components'
-import { media } from 'styles/base'
+import { media } from '../../styles/base'
 
 const Overlay = styled.div`
   clip: rect(0, auto, auto, 0);

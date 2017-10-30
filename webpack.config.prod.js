@@ -3,7 +3,7 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const DirectoryNamed = require('directory-named-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
-const Render = require('./src/webpack/render')
+const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
 const pathsToClean = ['public/*/*']
 
@@ -11,7 +11,7 @@ const browser = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -19,6 +19,14 @@ const browser = {
         test: /\.js$/,
         exclude: [/\/node_modules\//],
         use: 'babel-loader?cacheDirectory'
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: path.resolve('./src/webpack/loader.js')
+          }
+        ]
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
@@ -37,8 +45,7 @@ const browser = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new MinifyPlugin(),
-    new Render()
+    new MinifyPlugin()
   ]
 }
 

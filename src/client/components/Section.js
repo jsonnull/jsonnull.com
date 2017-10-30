@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize, media } from 'styles/base'
+import { colors, fonts, fontSize, media } from '../styles/base'
 
 const Container = styled.div`
   position: relative;

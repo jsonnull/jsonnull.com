@@ -1,9 +1,9 @@
 // @flow
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { colors, fonts, fontSize, media } from 'styles/base'
-import App from 'components/App'
-import Section from 'components/Section'
+import { colors, fonts, fontSize, media } from '../../styles/base'
+import App from '../App'
+import Section from '../Section'
 
 const Header = styled.h1`
   margin: 0;

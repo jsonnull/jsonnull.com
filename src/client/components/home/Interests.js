@@ -1,9 +1,9 @@
 /* @flow */
 import * as React from 'react'
 import styled, { css } from 'styled-components'
-import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
-import Heading from 'components/Heading'
-import Section from 'components/Section'
+import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
+import Heading from '../Heading'
+import Section from '../Section'
 
 const borderColor = colors.lightGray
 

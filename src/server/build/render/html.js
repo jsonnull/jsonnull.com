@@ -1,4 +1,5 @@
 const fs = require('fs')
+const serialize = require('serialize-javascript')
 
 const inlineStyles = fs.readFileSync(__dirname + '/style.css').toString()
 
@@ -10,9 +11,7 @@ module.exports = function createHtml(props) {
     'Source+Code+Pro:300,400,700'
   ].join('|')
 
-  const { template, content, body, head, siteMeta, styles } = props
-
-  const windowProps = { template, content, head, siteMeta }
+  const { body, head, styles, asyncState } = props
 
   return `
     <html ${head.htmlAttributes.toString()}>
@@ -26,8 +25,8 @@ module.exports = function createHtml(props) {
         <link href="//fonts.googleapis.com/css?family=${fonts}" rel='stylesheet' type='text/css' />
         <link rel="icon" type="image/png" href={favicon} />
 
-        <script>
-          window.__PROPS = ${JSON.stringify(windowProps)}
+        <script type="text/javascript">
+          window.ASYNC_COMPONENTS_STATE = ${serialize(asyncState)}
         </script>
         <script src="/bundle.js" async></script>
         <style type="text/css">

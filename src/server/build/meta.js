@@ -1,7 +1,7 @@
 const { promisify } = require('util')
 const glob = promisify(require('glob'))
 const readFile = promisify(require('fs').readFile)
-const renderMarkdown = require('./render/markdown')
+// const renderMarkdown = require('./render/markdown')
 
 async function collectSiteMeta(contentGlob) {
   const siteMeta = {}

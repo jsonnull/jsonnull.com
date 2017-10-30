@@ -1,4 +1,4 @@
 # .prettierrc
-parser: flow
+parser: babylon
 semi: false
 singleQuote: true

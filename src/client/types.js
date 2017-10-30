@@ -1,9 +1,5 @@
 // @flow
-export type RenderProps = {
-  content: string,
-  template: string,
-  siteMeta: SiteMeta
-}
+export type RenderProps = {}
 
 export type SiteMeta = {
   files: Array<FilePreview>

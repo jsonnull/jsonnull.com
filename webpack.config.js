@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
 const DirectoryNamed = require('directory-named-webpack-plugin')
-const Render = require('./src/webpack/render')
 
 const browser = {
   entry: './src/client/index.js',
@@ -17,22 +16,33 @@ const browser = {
         use: 'babel-loader?cacheDirectory'
       },
       {
+        test: /\.md$/,
+        use: [
+          {
+            loader: path.resolve('./src/webpack/loader.js')
+          }
+        ]
+      },
+      {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/,
         use: 'file-loader?name=static/[hash].[ext]'
       }
     ]
   },
   resolve: {
-    modules: ['node_modules', 'src/client', 'static'],
+    modules: ['node_modules'],
     extensions: ['.js', '.json'],
     plugins: [new DirectoryNamed(true)]
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, './public'),
+    historyApiFallback: true
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new Render()
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 }
 

@@ -2,8 +2,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import feather from 'feather-icons'
-import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
-import { background, color, underlineIn, underlineOut } from 'styles/links'
+import { Link } from 'react-router-dom'
+import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
+import {
+  background,
+  color,
+  underlineIn,
+  underlineOut
+} from '../../styles/links'
 
 const Description = styled.h2`
   display: none;
@@ -103,7 +109,7 @@ const Icon = ({ name, href }: IconProps) => (
 const Header = () => (
   <Wrapper>
     <Title>
-      <a href="/">Jason Nall</a>
+      <Link to="/">Jason Nall</Link>
     </Title>
     <Description>Designer &amp; Developer</Description>
     <Social>

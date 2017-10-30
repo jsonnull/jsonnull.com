@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import styled from 'styled-components'
-import { fonts, fontSize, colors } from 'styles/base'
+import { fonts, fontSize, colors } from '../styles/base'
 
 const Heading = styled.h1`
   font-family: ${fonts.heading};

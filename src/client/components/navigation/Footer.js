@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
-import { background, color, underlineIn, underlineOut } from 'styles/links'
-import Overlay from 'components/navigation/Overlay'
+import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
+import {
+  background,
+  color,
+  underlineIn,
+  underlineOut
+} from '../../styles/links'
+import Overlay from './Overlay'
 
 const Background = styled.div`
   background: ${colors.black};

@@ -1,26 +1,41 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
-import Home from 'containers/templates/Home'
-import Page from 'containers/templates/Page'
-import Blog from 'containers/templates/Blog'
-import Twitter from 'containers/templates/Twitter'
-import type { RenderProps } from 'types'
+import { Switch, Route } from 'react-router-dom'
+import { asyncComponent } from 'react-async-component'
 
-const Template = (props: RenderProps) => {
-  const { template } = props
-
-  switch (template) {
-    case 'home':
-      return <Home {...props} />
-    case 'twitter':
-      return <Twitter {...props} />
-    case 'blog':
-      return <Blog {...props} />
-    default:
-      return <Page {...props} />
-  }
+const Home = {
+  path: '/',
+  exact: true,
+  component: asyncComponent({
+    resolve: () => import(/* webpackChunkName: "home" */ './templates/Home')
+  })
 }
+
+const Blog = {
+  path: '/blog',
+  exact: true,
+  component: asyncComponent({
+    resolve: () => import(/* webpackChunkName: "blog" */ './templates/Blog')
+  })
+}
+
+const Twitter = {
+  path: '/twitter',
+  exact: true,
+  component: asyncComponent({
+    resolve: () =>
+      import(/* webpackChunkName: "twitter" */ './templates/Twitter')
+  })
+}
+
+const Page = {
+  component: asyncComponent({
+    resolve: () => import(/* webpackChunkName: "page" */ './templates/Page')
+  })
+}
+
+const routes = [Home, Blog, Twitter, Page]
 
 const Site = (props: RenderProps) => {
   return (
@@ -28,7 +43,10 @@ const Site = (props: RenderProps) => {
       <Helmet titleTemplate="Jason Nall - %s">
         <title>Designer and Developer</title>
       </Helmet>
-      <Template {...props} />
+
+      <Switch>
+        ${routes.map((routeProps, i) => <Route key={i} {...routeProps} />)}
+      </Switch>
     </div>
   )
 }

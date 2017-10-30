@@ -1,7 +1,7 @@
 import React from 'react'
-import App from 'components/App'
+import App from '../../components/App'
 import styled from 'styled-components'
-import { colors, fonts, fontSize } from 'styles/base'
+import { colors, fonts, fontSize } from '../../styles/base'
 
 const Container = styled.div`
   display: flex;

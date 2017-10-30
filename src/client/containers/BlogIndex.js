@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import styled from 'styled-components'
-import { fonts } from 'styles/base'
+import { fonts } from '../styles/base'
 import type { RenderProps } from 'types'
 
 const filterOnlyBlog = file =>

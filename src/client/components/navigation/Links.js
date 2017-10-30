@@ -1,8 +1,14 @@
 /* @flow */
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { colors, fonts, fontSize, lineUnit, media } from 'styles/base'
-import { background, color, underlineIn, underlineOut } from 'styles/links'
+import { Link } from 'react-router-dom'
+import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
+import {
+  background,
+  color,
+  underlineIn,
+  underlineOut
+} from '../../styles/links'
 
 type Props = {}
 
@@ -47,7 +53,7 @@ const List = styled.ul`
   `};
 `
 
-const Link = styled.li`
+const ListItem = styled.li`
   margin-left: 1rem;
   margin-bottom: 1.2rem;
   display: inline-block;
@@ -116,24 +122,30 @@ const Source = styled.div`
 const Links = () => (
   <Wrapper>
     <List>
-      <Link>
-        <a href="/case-studies">Work</a>
-      </Link>
-      <Link blog={true}>
-        <a href="/blog">Blog</a>
-      </Link>
-      <Link>
-        <a href="/about">About</a>
-      </Link>
-      <Link emphasis>
-        <a href="/about#contact">Contact</a>
-      </Link>
-      <Link small>
-        <a href="/lists">Lists</a>
-      </Link>
+      <ListItem>
+        <Link to="/case-studies">Work</Link>
+      </ListItem>
+      <ListItem blog={true}>
+        <Link to="/blog">Blog</Link>
+      </ListItem>
+      <ListItem>
+        <Link to="/about">About</Link>
+      </ListItem>
+      <ListItem emphasis>
+        <Link to="/about#contact">Contact</Link>
+      </ListItem>
+      <ListItem small>
+        <Link to="/lists">Lists</Link>
+      </ListItem>
     </List>
     <Source>
-      <a href="https://github.com/jsonnull/jsonnull.com">Source on GitHub</a>
+      <a
+        href="https://github.com/jsonnull/jsonnull.com"
+        target="_blank"
+        rel="noopener"
+      >
+        Source on GitHub
+      </a>
     </Source>
   </Wrapper>
 )

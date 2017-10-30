@@ -1,8 +1,10 @@
 /* @flow */
 import React from 'react'
 import styled from 'styled-components'
-import { colors, fonts, fontSize, media } from 'styles/base'
-import heroText from '!raw-loader!components/home/Hero'
+import { colors, fonts, fontSize, media } from '../styles/base'
+// import heroText from '!raw-loader!./home/Hero'
+
+const heroText = ''
 
 const Container = styled.div`
   height: 100%;
