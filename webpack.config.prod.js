@@ -1,9 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const DirectoryNamed = require('directory-named-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
-const { ReactLoadablePlugin } = require('react-loadable/webpack')
 
 const pathsToClean = ['public/*/*']
 
@@ -36,8 +34,7 @@ const browser = {
   },
   resolve: {
     modules: ['node_modules', 'src/client', 'static'],
-    extensions: ['.js', '.json'],
-    plugins: [new DirectoryNamed(true)]
+    extensions: ['.js', '.json']
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean),

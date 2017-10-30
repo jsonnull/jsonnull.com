@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const DirectoryNamed = require('directory-named-webpack-plugin')
 
 const browser = {
   entry: './src/client/index.js',
@@ -31,8 +30,7 @@ const browser = {
   },
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.json'],
-    plugins: [new DirectoryNamed(true)]
+    extensions: ['.js', '.json']
   },
   devServer: {
     contentBase: path.resolve(__dirname, './public'),

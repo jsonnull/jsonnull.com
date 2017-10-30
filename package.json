@@ -37,7 +37,6 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
     "core-js": "^2.5.1",
-    "directory-named-webpack-plugin": "2",
     "file-loader": "^0.10.1",
     "flow-bin": "^0.56.0",
     "glob": "^7.1.2",
