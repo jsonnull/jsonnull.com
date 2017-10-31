@@ -2,6 +2,9 @@ jsonnull.com {
   ext .html
   root /srv
   gzip
+
+  # On homepage, push the homepage bundle
+  push /index.html /0.bundle.js
 }
 
 www.jsonnull.com {
