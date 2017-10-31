@@ -2,9 +2,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, fonts, fontSize, media } from '../styles/base'
-// import heroText from '!raw-loader!./home/Hero'
 
-const heroText = ''
+// On the server, require is polyfilled to handle this case
+const heroText = require('!raw-loader!./home/Hero.js')
 
 const Container = styled.div`
   height: 100%;

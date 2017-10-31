@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import path from 'path'
 import through from 'through2'
 import appRoot from 'app-root-path'
+import './require'
 import collectSiteMeta from './meta'
 import reactServerRender from './render'
 
