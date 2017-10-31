@@ -5,7 +5,7 @@ node_js:
 before_script:
 - http-server public &
 script:
-- npm run build:production
+- npm run build:ci
 notifications:
   webhooks: http://jsonnull.com:82/webhook
   slack:

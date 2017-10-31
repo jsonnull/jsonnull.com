@@ -28,7 +28,7 @@ module.exports = function createHtml(props) {
         <script type="text/javascript">
           window.ASYNC_COMPONENTS_STATE = ${serialize(asyncState)}
         </script>
-        <script src="/bundle.js" async></script>
+        <script src="/main.bundle.js" async></script>
         <style type="text/css">
           @import url('//fonts.googleapis.com/css?family=${fonts}');
           ${inlineStyles}

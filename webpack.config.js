@@ -5,7 +5,7 @@ const browser = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
