@@ -3,6 +3,8 @@ jsonnull.com {
   root /srv
   gzip
 
+  push / /main.bundle.js
+
   # On homepage, push the homepage bundle
   push /index.html /0.bundle.js
 }
