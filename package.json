@@ -12,7 +12,7 @@
     "continuous-deployment": "node ./src/server/continuous-deployment/"
   },
   "dependencies": {
-    "feather-icons": "^3.2.2",
+    "feather-icons": "^4.0.0",
     "react": "^16.0.0",
     "react-async-bootstrapper": "^1.1.2",
     "react-async-component": "^1.0.2",
