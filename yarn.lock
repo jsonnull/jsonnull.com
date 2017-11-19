@@ -1344,6 +1344,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1:
   dependencies:
     inherits "^2.0.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.0.x:
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.12.tgz#a02e61707f1840bd3338f54dbc9acbda4e772fa3"
@@ -2135,9 +2139,11 @@ fd-slicer@~1.0.1:
   dependencies:
     pend "~1.2.0"
 
-feather-icons@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-3.2.2.tgz#96c132e4a401d5cc18c03063c87999f47dce442b"
+feather-icons@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.0.0.tgz#2354532a4a4c849fe1a8fe373f793a957f575c9e"
+  dependencies:
+    classnames "^2.2.5"
 
 file-loader@^1.1.5:
   version "1.1.5"
