@@ -1344,6 +1344,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1:
   dependencies:
     inherits "^2.0.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.0.x:
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.12.tgz#a02e61707f1840bd3338f54dbc9acbda4e772fa3"
@@ -2135,9 +2139,11 @@ fd-slicer@~1.0.1:
   dependencies:
     pend "~1.2.0"
 
-feather-icons@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-3.2.2.tgz#96c132e4a401d5cc18c03063c87999f47dce442b"
+feather-icons@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.0.1.tgz#98f06032c08d5d01d4bd7e6188c60578118fbd7d"
+  dependencies:
+    classnames "^2.2.5"
 
 file-loader@^1.1.5:
   version "1.1.5"
@@ -2226,9 +2232,9 @@ flagged-respawn@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-0.3.2.tgz#ff191eddcd7088a675b2610fffc976be9b8074b5"
 
-flow-bin@0.60.0:
-  version "0.60.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.60.0.tgz#885d0d92a90f94c29445e0f9a0382f5b5debaaed"
+flow-bin@^0.60.0:
+  version "0.60.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.60.1.tgz#0f4fa7b49be2a916f18cd946fc4a51e32ffe4b48"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -4067,9 +4073,9 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-puppeteer@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-0.12.0.tgz#9c421930851594dfdd479d07646666a74ced7719"
+puppeteer@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-0.13.0.tgz#2e6956205f2c640964c2107f620ae1eef8bde8fd"
   dependencies:
     debug "^2.6.8"
     extract-zip "^1.6.5"

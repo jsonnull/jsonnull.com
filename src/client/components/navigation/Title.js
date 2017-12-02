@@ -96,7 +96,7 @@ const Icon = ({ name, href }: IconProps) => (
   <SocialLink href={href} target="_blank" rel="noopener">
     <IconWrapper
       dangerouslySetInnerHTML={{
-        __html: feather.toSvg(name, {
+        __html: feather.icons[name].toSvg({
           color: colors.gray,
           width: 20,
           height: 20

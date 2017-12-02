@@ -24,8 +24,8 @@ export const fontSize = {
 export const lineUnit = '2.4rem'
 
 export const colors = {
-  white: '#fbfffd',
-  lightGray: '#D3D8D3' /* #E7EAE1; */,
+  white: '#fff',
+  lightGray: '#D4D8D3' /* #E7EAE1; */,
   veryLightGray: '#F2F7F0',
   gray: '#838784',
   darkGray: '#464C4B',

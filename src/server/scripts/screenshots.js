@@ -45,7 +45,7 @@ const main = async () => {
     }
     try {
       await page.goto(HOST + screenshot.url, {
-        waitUntil: 'networkidle'
+        waitUntil: 'networkidle0'
       })
       await page.screenshot(screenshot.options)
     } catch (e) {
