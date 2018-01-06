@@ -39,7 +39,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "core-js": "^2.5.1",
     "file-loader": "^1.1.5",
-    "flow-bin": "^0.61.0",
+    "flow-bin": "^0.63.1",
     "glob": "^7.1.2",
     "gray-matter": "^3.0.0",
     "gulp": "^3.9.1",
