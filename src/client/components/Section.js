@@ -36,7 +36,7 @@ const Inner = styled.div`
 `
 
 type Props = {
-  mixin?: string,
+  mixin?: any,
   style?: Object,
   children?: React.Node
 }

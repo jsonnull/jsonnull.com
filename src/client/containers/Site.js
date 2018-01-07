@@ -3,6 +3,7 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { Switch, Route } from 'react-router-dom'
 import { asyncComponent } from 'react-async-component'
+import type { RenderProps } from 'types'
 
 const Home = {
   path: '/',
