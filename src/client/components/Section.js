@@ -15,22 +15,17 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 2.4rem;
-  padding: 7.2rem 0;
+  padding: 2.4rem 0;
 
   ${media.mobile`
     margin: 0 4.8rem;
+    padding: 7.2rem 0;
   `};
-  ${media.tablet`
-    padding: 14.4rem 0;
-  `};
-  ${media.tabletLarge`
-    width: 600px;
-    margin: 0 auto;
-  `};
-  ${media.desktopLarge`
-    width: 800px;
+  ${media.desktop`
+    margin: 0 200px;
   `};
   ${media.desktopHuge`
+    margin: 0 auto;
     width: 1000px;
   `};
 `
