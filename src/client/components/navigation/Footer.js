@@ -20,81 +20,30 @@ const Background = styled.div`
 `
 
 const Content = styled.div`
-  position: relative;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 
   ${media.desktop`
-    width: 700px;
-  `} ${media.desktopHuge`
+    margin: 0 200px;
+  `};
+  ${media.desktopHuge`
+    margin: 0 auto;
     width: 1000px;
   `};
 `
 
 const Quote = styled.p`
+  margin: 0;
   font-family: ${fonts.serif};
   color: ${colors.darkGray};
-  font-size: ${fontSize.large};
-  margin: 0 0 4.8rem;
-  text-align: center;
+  font-size: ${fontSize.normal};
+  padding-top: 100px;
 `
 
 const Attrib = styled.span`
   font-family: ${fonts.base};
   color: ${colors.darkGray};
   font-size: ${fontSize.small};
-  display: block;
-  text-align: center;
-`
-
-const Title = styled.a`
-  font-family: ${fonts.heading};
-  font-weight: 400;
-  font-size: ${fontSize.medium};
-  line-height: ${lineUnit};
-  margin-bottom: 1.2rem;
-  display: inline-block;
-
-  &,
-  &:link,
-  &:visited,
-  &:hover,
-  &:active {
-    transition: background-size 100ms ease;
-    ${props => background(colors.black)} ${color(
-        colors.gray
-      )} ${underlineOut} background-position: 0 100%;
-  }
-
-  &:hover {
-    ${underlineIn};
-  }
-`
-
-const Links = styled.div`
-  line-height: 2.4rem;
-  text-align: center;
-`
-
-const Link = styled.a`
-  font-family: ${fonts.heading};
-  font-weight: 400;
-  font-size: ${fontSize.normal};
-  line-height: ${lineUnit};
-  margin-right: 1em;
-  display: inline-block;
-
-  &,
-  &:link,
-  &:visited,
-  &:hover,
-  &:active {
-    transition: background-size 100ms ease;
-    ${props => background(colors.black)} ${color(colors.gray)} ${underlineOut};
-  }
-
-  &:hover {
-    ${underlineIn};
-  }
 `
 
 const Footer = props => (
@@ -109,13 +58,6 @@ const Footer = props => (
         "It is the power of the mind to be unconquerable."
         <Attrib> —&nbsp;Seneca</Attrib>
       </Quote>
-      <Links>
-        <Link href="/">Home</Link>
-        <Link href="/writing">Writing</Link>
-        <Link href="/work">Work</Link>
-        <Link href="/scratch">Scratch</Link>
-        <Link href="/contact">Contact</Link>
-      </Links>
     </Content>
   </Background>
 )
