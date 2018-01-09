@@ -34,6 +34,16 @@ module.exports = function createHtml(props) {
           ${inlineStyles}
         </style>
         ${styles}
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112190148-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-112190148-1');
+        </script>
       </head>
       <body>
         <div id="react-root">${body}</div>
