@@ -38,12 +38,22 @@ const Page = {
 
 const routes = [Home, Blog, Twitter, Page]
 
+const logPageView = () => {
+  if (typeof window !== 'undefined') {
+    window.gtag('event', 'page_view')
+  }
+
+  return null
+}
+
 const Site = (props: RenderProps) => {
   return (
     <div>
       <Helmet titleTemplate="Jason Nall - %s">
         <title>Designer and Developer</title>
       </Helmet>
+
+      <Route path="/" component={logPageView} />
 
       <Switch>
         ${routes.map((routeProps, i) => <Route key={i} {...routeProps} />)}

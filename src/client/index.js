@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, matchPath } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import { injectGlobal } from 'styled-components'
 import {
