@@ -20,7 +20,7 @@ before_deploy:
 - ssh-add /tmp/deploy_rsa
 deploy:
   provider: script
-  script: ssh root@jsonnull.com -c "cd jsonnull.com && docker-compose run deploy"
+  script: ssh root@jsonnull.com "cd jsonnull.com && docker-compose run deploy"
   on:
     branch: master
 notifications:
