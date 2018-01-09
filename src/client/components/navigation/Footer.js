@@ -15,7 +15,7 @@ const Background = styled.div`
   position: relative;
   margin-top: auto;
   ${media.mobile`
-    padding: 4.8rem;
+    padding: 4.8rem 0;
   `};
 `
 
