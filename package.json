@@ -8,8 +8,7 @@
     "build": "webpack && yarn build:static",
     "build:production": "webpack --config webpack.config.prod.js && yarn build:static",
     "build:static": "NODE_ENV=production babel-node --plugins=transform-es2015-modules-commonjs,dynamic-import-node ./src/server/build/",
-    "build:ci": "yarn build:production && yarn screenshots",
-    "continuous-deployment": "node ./src/server/continuous-deployment/"
+    "build:ci": "yarn build:production && yarn screenshots"
   },
   "dependencies": {
     "feather-icons": "^4.0.0",
