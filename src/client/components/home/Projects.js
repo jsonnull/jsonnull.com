@@ -166,7 +166,7 @@ const Recent = () => (
         title="Aleamancer"
         url="https://www.aleamancer.com"
         github="https://github.com/jsonnull/aleamancer"
-        tags={['Design', 'Dev', 'JavaScript', 'Open Source']}
+        tags={['Design', 'Dev', 'JavaScript']}
         color={colors.red}
       >
         A groundbreaking online tabletop role-playing platform, built with
@@ -175,7 +175,7 @@ const Recent = () => (
       <Tile
         title="WebAssembly Rust Utils"
         url="https://github.com/jsonnull/wasm-rust-utils"
-        tags={['Dev', 'Rust', 'JavaScript', 'Open Source']}
+        tags={['Dev', 'Rust', 'JavaScript']}
         color={colors.gray}
       >
         📦 A Rust and JavaScript utility suite for writing WebAssembly modules.
@@ -183,7 +183,7 @@ const Recent = () => (
       <Tile
         title="Redux Render"
         url="https://github.com/jsonnull/redux-render"
-        tags={['Dev', 'JavaScript', 'Open Source']}
+        tags={['Dev', 'JavaScript']}
         color={colors.blue}
       >
         📦 Ergonomic React bindings for Redux using the render prop pattern.
