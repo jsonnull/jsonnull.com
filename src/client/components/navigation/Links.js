@@ -123,19 +123,19 @@ const Links = () => (
   <Wrapper>
     <List>
       <ListItem>
-        <Link to="/case-studies">Work</Link>
+        <Link to="/case-studies/">Work</Link>
       </ListItem>
       <ListItem blog={true}>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog/">Blog</Link>
       </ListItem>
       <ListItem>
-        <Link to="/about">About</Link>
+        <Link to="/about/">About</Link>
       </ListItem>
       <ListItem emphasis>
-        <Link to="/about#contact">Contact</Link>
+        <Link to="/about/#contact">Contact</Link>
       </ListItem>
       <ListItem small>
-        <Link to="/lists">Lists</Link>
+        <Link to="/lists/">Lists</Link>
       </ListItem>
     </List>
     <Source>

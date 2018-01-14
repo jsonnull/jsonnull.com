@@ -9,6 +9,7 @@ const browser = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
     filename: '[name].bundle.js'
   },
   module: {
