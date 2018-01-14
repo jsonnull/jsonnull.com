@@ -1,12 +1,13 @@
 const webpack = require('webpack')
 const path = require('path')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const browser = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public/'),
     publicPath: '/',
-    filename: '[name].bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -41,7 +42,9 @@ const browser = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new ManifestPlugin()
   ]
 }
 

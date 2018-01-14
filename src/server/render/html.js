@@ -11,7 +11,7 @@ module.exports = function createHtml(props) {
     'Source+Code+Pro:300,400,700'
   ].join('|')
 
-  const { body, head, styles, asyncState } = props
+  const { body, head, styles, asyncState, siteMeta, scriptName } = props
 
   return `
     <html ${head.htmlAttributes.toString()}>
@@ -27,8 +27,9 @@ module.exports = function createHtml(props) {
 
         <script type="text/javascript">
           window.ASYNC_COMPONENTS_STATE = ${serialize(asyncState)}
+          window.SITE_META = ${JSON.stringify(siteMeta)}
         </script>
-        <script src="/main.bundle.js" async></script>
+        <script src="/${scriptName}" async></script>
         <style type="text/css">
           @import url('//fonts.googleapis.com/css?family=${fonts}');
           ${inlineStyles}

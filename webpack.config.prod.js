@@ -2,15 +2,16 @@ const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
-const pathsToClean = ['public/*/*']
+const pathsToClean = ['public/*']
 
 const browser = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/',
-    filename: '[name].bundle.js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -43,7 +44,9 @@ const browser = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new MinifyPlugin()
+    new MinifyPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+    new ManifestPlugin()
   ]
 }
 

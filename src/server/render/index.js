@@ -9,19 +9,18 @@ import {
   createAsyncContext
 } from 'react-async-component'
 import asyncBootstrapper from 'react-async-bootstrapper'
-import appRoot from 'app-root-path'
 import createHtml from './html'
 import Site from '../../client/containers/Site'
 
 // On the server side, export a function to perform the render
-const render = async location => {
+const render = async (siteMeta, location, scriptName) => {
   const asyncContext = createAsyncContext()
   const sheet = new ServerStyleSheet()
 
   const app = (
     <AsyncComponentProvider asyncContext={asyncContext}>
       <StaticRouter location={location} context={{}}>
-        <Site />
+        <Site siteMeta={siteMeta} />
       </StaticRouter>
     </AsyncComponentProvider>
   )
@@ -39,6 +38,8 @@ const render = async location => {
     body,
     head,
     asyncState,
+    siteMeta,
+    scriptName,
     styles: styleElements
   })
 

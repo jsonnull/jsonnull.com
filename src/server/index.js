@@ -14,20 +14,23 @@ process.on('unhandledRejection', (reason, p) => {
   // application specific logging, throwing an error, or other logic here
 })
 
+// Get name of script from manifest
+const scriptName = require(PUBLIC_PATH + '/manifest.json')['main.js']
+
 // Multipass process to render all site content
 async function main() {
   // First pass, collect site metadata
-  // const siteMeta = await collectSiteMeta(CONTENT_GLOB)
+  const siteMeta = await collectSiteMeta(CONTENT_GLOB)
 
   // Second pass, render content
   gulp
     .src(CONTENT_GLOB)
-    .pipe(render())
+    .pipe(render(siteMeta))
     .pipe(gulp.dest(PUBLIC_PATH))
 }
 
 // Returns a stream object which will render a page with the given content
-function render() {
+function render(siteMeta) {
   return through.obj(async (file, encoding, callback) => {
     // Change path extension to html
     file.path = file.path.replace('.md', '.html')
@@ -42,7 +45,9 @@ function render() {
 
     // Replace the contents with the rendered version
     const content = file.contents.toString()
-    const buf = Buffer.from(await reactServerRender(location))
+    const buf = Buffer.from(
+      await reactServerRender(siteMeta, location, scriptName)
+    )
     file.contents = buf
 
     callback(null, file)
