@@ -12,6 +12,7 @@ import asyncBootstrapper from 'react-async-bootstrapper'
 import Site from './containers/Site'
 import { colors } from './styles/base'
 import { background, color } from './styles/links'
+import favicon from '../../static/img/favicon.png'
 
 // On the client side, render the app
 if (typeof window !== 'undefined') {
@@ -24,11 +25,12 @@ if (typeof window !== 'undefined') {
     `
 
     const rehydrateState = window.ASYNC_COMPONENTS_STATE
+    const siteMeta = window.SITE_META
 
     const app = (
       <AsyncComponentProvider rehydrateState={rehydrateState}>
         <BrowserRouter>
-          <Site />
+          <Site siteMeta={siteMeta} />
         </BrowserRouter>
       </AsyncComponentProvider>
     )

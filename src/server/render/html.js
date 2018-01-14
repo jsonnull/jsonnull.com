@@ -11,7 +11,10 @@ module.exports = function createHtml(props) {
     'Source+Code+Pro:300,400,700'
   ].join('|')
 
-  const { body, head, styles, asyncState, siteMeta, scriptName } = props
+  const { body, head, styles, asyncState, siteMeta, manifest } = props
+
+  const scriptName = manifest['main.js']
+  const favicon = manifest['static/favicon.png']
 
   return `
     <html ${head.htmlAttributes.toString()}>
@@ -23,7 +26,7 @@ module.exports = function createHtml(props) {
         ${head.link.toString()}
 
         <link href="//fonts.googleapis.com/css?family=${fonts}" rel='stylesheet' type='text/css' />
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" type="image/png" href=${favicon} />
 
         <script type="text/javascript">
           window.ASYNC_COMPONENTS_STATE = ${serialize(asyncState)}

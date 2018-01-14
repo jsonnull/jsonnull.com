@@ -13,7 +13,7 @@ import createHtml from './html'
 import Site from '../../client/containers/Site'
 
 // On the server side, export a function to perform the render
-const render = async (siteMeta, location, scriptName) => {
+const render = async (siteMeta, location, manifest) => {
   const asyncContext = createAsyncContext()
   const sheet = new ServerStyleSheet()
 
@@ -39,7 +39,7 @@ const render = async (siteMeta, location, scriptName) => {
     head,
     asyncState,
     siteMeta,
-    scriptName,
+    manifest,
     styles: styleElements
   })
 

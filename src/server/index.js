@@ -15,7 +15,7 @@ process.on('unhandledRejection', (reason, p) => {
 })
 
 // Get name of script from manifest
-const scriptName = require(PUBLIC_PATH + '/manifest.json')['main.js']
+const manifest = require(PUBLIC_PATH + '/manifest.json')
 
 // Multipass process to render all site content
 async function main() {
@@ -46,7 +46,7 @@ function render(siteMeta) {
     // Replace the contents with the rendered version
     const content = file.contents.toString()
     const buf = Buffer.from(
-      await reactServerRender(siteMeta, location, scriptName)
+      await reactServerRender(siteMeta, location, manifest)
     )
     file.contents = buf
 
