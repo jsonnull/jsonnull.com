@@ -8,15 +8,17 @@ import About from '../../../components/about'
 import styled from 'styled-components'
 import type { RenderProps } from '../../types'
 
-const Blog = (props: RenderProps) => (
-  <Wrapper>
-    <About />
+const Template = (props: RenderProps) => {
+  return (
+    <Wrapper>
+      <About />
 
-    <Footer />
+      <Footer />
 
-    <Title />
-    <Links />
-  </Wrapper>
-)
+      <Title />
+      <Links />
+    </Wrapper>
+  )
+}
 
-export default Blog
+export default Template
