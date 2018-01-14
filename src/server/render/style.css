@@ -38,11 +38,13 @@ a, a:link, a:hover, a:visited {
 ::-moz-selection {
   color: #fdfffb;
   background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
   opacity: 1;
 }
 
 ::selection {
   color: #fdfffb;
   background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
   opacity: 1;
 }
