@@ -12,4 +12,4 @@ RUN apt-get update \
 
 # Start the continuous delivery server from the project root
 CMD cd /home/node/app \
-  && ./src/server/scripts/run-node-build.sh
+  && ./scripts/run-node-build.sh

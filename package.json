@@ -3,11 +3,11 @@
   "private": true,
   "scripts": {
     "format": "prettier --write 'src/**/*.js' './*.js'",
-    "screenshots": "node src/server/scripts/screenshots.js",
+    "screenshots": "node scripts/screenshots.js",
     "start": "webpack-dev-server",
     "build": "webpack && yarn build:static",
     "build:production": "webpack --config webpack.config.prod.js && yarn build:static",
-    "build:static": "NODE_ENV=production babel-node --plugins=transform-es2015-modules-commonjs,dynamic-import-node ./src/server/build/",
+    "build:static": "NODE_ENV=production babel-node --plugins=transform-es2015-modules-commonjs,dynamic-import-node ./src/server",
     "build:ci": "yarn build:production && yarn screenshots"
   },
   "dependencies": {
