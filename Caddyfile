@@ -3,10 +3,10 @@ jsonnull.com {
   root /srv
   gzip
 
-  push / /main.bundle.js
+  push / /main.js
 
   # On homepage, push the homepage bundle
-  push /index.html /0.bundle.js
+  push /index.html /home.js
 }
 
 www.jsonnull.com {
