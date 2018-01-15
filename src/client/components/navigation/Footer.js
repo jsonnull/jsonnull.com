@@ -7,7 +7,6 @@ import {
   underlineIn,
   underlineOut
 } from '../../styles/links'
-import Overlay from './Overlay'
 
 const Background = styled.div`
   background: ${colors.black};
@@ -48,11 +47,6 @@ const Attrib = styled.span`
 
 const Footer = props => (
   <Background>
-    <Overlay
-      background={colors.black}
-      isMouseOver={props.isMouseOver}
-      zOffset={99}
-    />
     <Content>
       <Quote>
         "It is the power of the mind to be unconquerable."
