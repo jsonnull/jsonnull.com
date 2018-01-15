@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Wrapper from '../../../components/Wrapper'
-import Header from '../../../components/Header'
+import Heading from '../../../components/Heading'
 import Section from '../../../components/Section'
 import Content from '../../../components/Content'
 import Title from '../../../components/navigation/Title'
@@ -28,7 +28,7 @@ const Post = (props: Props) => {
 
         const component = () => (
           <Section>
-            <Header title={data.title} />
+            <Heading>{data.title}</Heading>
             <Content content={content} />
           </Section>
         )
