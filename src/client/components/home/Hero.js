@@ -20,11 +20,10 @@ const Header = styled.h1`
     width: 60vw;
     left: 2.4rem;
     top: 50%;
-    transform: translateY(-13.6vw);
+    transform: translateY(-5.84vw); // (3.2 * 2 * 1.2 + 4) / 2
     padding: 2vw;
     padding-left: 0;
     font-size: 3.2vw;
-    transform: translateY(-6.8vw);
     width: 55vw;
     left: 15vw;
   `};
