@@ -40,7 +40,7 @@ const Projects = styled.div`
 `
 
 const Project = styled.div`
-  padding: 0 0 0 1.2rem;
+  padding: 0 1.2rem 0 1.2rem;
   border-left: 1px solid ${borderColor};
   margin-bottom: 2em;
   position: relative;
