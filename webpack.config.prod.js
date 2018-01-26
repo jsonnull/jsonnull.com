@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const MinifyPlugin = require('babel-minify-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 const pathsToClean = ['public/*']
@@ -44,7 +44,13 @@ const browser = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new MinifyPlugin(),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: false,
+        mangle: true,
+        parallel: true
+      }
+    }),
     new webpack.HashedModuleIdsPlugin(),
     new ManifestPlugin()
   ]
