@@ -20,7 +20,8 @@
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
-    "styled-components": "^2.2.1"
+    "styled-components": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^1.1.6"
   },
   "devDependencies": {
     "app-root-path": "^2.0.1",
@@ -28,7 +29,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-dynamic-import-node": "^1.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
