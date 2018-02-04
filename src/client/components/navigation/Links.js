@@ -44,12 +44,18 @@ const List = styled.ul`
   text-align: right;
   font-family: ${fonts.heading};
   font-size: ${fontSize.small};
-  line-height: 1.2;
+  line-height: ${lineUnit};
+  height: ${lineUnit};
   z-index: 710;
   letter-spacing: 0.1;
 
   ${media.mobile`
     font-size: ${fontSize.normal};
+  `};
+
+  ${media.desktop`
+    height: auto;
+    line-height: 1.2;
   `};
 `
 
