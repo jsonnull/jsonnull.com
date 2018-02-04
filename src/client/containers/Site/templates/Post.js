@@ -9,7 +9,7 @@ import Title from '../../../components/navigation/Title'
 import Links from '../../../components/navigation/Links'
 import Footer from '../../../components/navigation/Footer'
 import { asyncComponent } from 'react-async-component'
-import type { RenderProps } from '../../types'
+import type { RenderProps } from '../../../types'
 
 type Props = {
   match: Object

@@ -8,7 +8,7 @@ import Title from '../../../components/navigation/Title'
 import Footer from '../../../components/navigation/Footer'
 import Heading from '../../../components/Heading'
 import Section from '../../../components/Section'
-import type { RenderProps } from '../../types'
+import type { RenderProps } from '../../../types'
 
 type Props = {
   match: Object
@@ -18,7 +18,7 @@ const filterOnlyBlog = file =>
   file.pathname.indexOf('/blog/') !== -1 &&
   file.pathname.indexOf('index.html') == -1
 
-const Index = (props: Props) => {
+const Index = (props: RenderProps) => {
   const { files } = props.siteMeta
 
   return (

@@ -6,7 +6,7 @@ import Title from '../../../components/navigation/Title'
 import Footer from '../../../components/navigation/Footer'
 import About from '../../../components/about'
 import styled from 'styled-components'
-import type { RenderProps } from '../../types'
+import type { RenderProps } from '../../../types'
 
 const Template = (props: RenderProps) => {
   return (
