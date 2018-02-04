@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 import * as React from 'react'
 import styled from 'styled-components'
 import feather from 'feather-icons'
@@ -9,16 +9,10 @@ import {
   underlineIn,
   underlineOut
 } from '../../styles/links'
-import Paragraph from './shared/Paragraph'
 import Heading from '../Heading'
-import Section from '../Section'
 import { featured } from '../../projects'
 
 const borderColor = colors.lightGray
-
-const SectionHeading = Heading.withComponent('h3').extend`
-  color: ${colors.gray};
-`
 
 const Tag = styled.span`
   margin: 0;
@@ -36,8 +30,7 @@ const Tag = styled.span`
 
 const Projects = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 `
 
 const Project = styled.div`
@@ -48,9 +41,6 @@ const Project = styled.div`
   right: 1.2rem;
   width: 100%;
   line-height: 2;
-  ${media.desktop`
-    width: 50%;
-  `};
 `
 
 const Name = props => {
@@ -155,17 +145,9 @@ const Tile = (props: TileProps) => {
 }
 
 const Recent = () => (
-  <Section>
-    <SectionHeading>I {'<3'} open source</SectionHeading>
-    <Paragraph>
-      I love consuming and contributing to open source. Side projects are a
-      regular opportunity to learn and try new things. Here are some I've been
-      involved with recently.
-    </Paragraph>
-    <Projects>
-      {featured.map(project => <Tile key={project.title} {...project} />)}
-    </Projects>
-  </Section>
+  <Projects>
+    {featured.map(project => <Tile key={project.title} {...project} />)}
+  </Projects>
 )
 
 export default Recent

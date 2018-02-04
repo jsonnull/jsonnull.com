@@ -12,3 +12,12 @@ export type FilePreview = {
   snippet: string,
   data: Object
 }
+
+export type Project = {
+  title: string,
+  url: ?string,
+  github: string,
+  tags: Array<string>,
+  color: ?string,
+  description: string
+}

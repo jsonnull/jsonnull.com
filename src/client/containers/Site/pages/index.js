@@ -10,7 +10,7 @@ export const Work = asyncComponent({
 })
 
 export const Blog = asyncComponent({
-  resolve: () => import(/* webpackChunkName: "work" */ './Blog')
+  resolve: () => import(/* webpackChunkName: "blog" */ './Blog')
 })
 
 export const About = asyncComponent({

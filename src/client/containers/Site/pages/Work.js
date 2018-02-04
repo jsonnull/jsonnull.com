@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Wrapper from '../../../components/Wrapper'
 import Section from '../../../components/Section'
-import Content from '../../../components/Content'
+import Heading from '../../../components/Heading'
+import Inner from '../../../components/work'
 import Title from '../../../components/navigation/Title'
 import Links from '../../../components/navigation/Links'
 import Footer from '../../../components/navigation/Footer'
@@ -10,7 +11,8 @@ import Footer from '../../../components/navigation/Footer'
 const Work = props => (
   <Wrapper>
     <Section>
-      <Content {...props} />
+      <Heading>Projects</Heading>
+      <Inner />
     </Section>
     <Title />
     <Links />
