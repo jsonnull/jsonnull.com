@@ -14,6 +14,23 @@ import Site from '../../client/containers/Site'
 
 // On the server side, export a function to perform the render
 const render = async (siteMeta, location, manifest) => {
+  // In development, don't statically-render all files
+  if (process.env.NODE_ENV === 'development') {
+    const body = ''
+    const head = Helmet.renderStatic()
+    const asyncState = { resolved: {} }
+    const styles = ''
+
+    return createHtml({
+      body,
+      head,
+      asyncState,
+      siteMeta,
+      manifest,
+      styles
+    })
+  }
+
   const asyncContext = createAsyncContext()
   const sheet = new ServerStyleSheet()
 

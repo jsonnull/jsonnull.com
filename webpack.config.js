@@ -36,13 +36,15 @@ const browser = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new ManifestPlugin()
   ]

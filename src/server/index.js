@@ -15,7 +15,10 @@ process.on('unhandledRejection', (reason, p) => {
 })
 
 // Get name of script from manifest
-const manifest = require(PUBLIC_PATH + '/manifest.json')
+const manifest =
+  process.env.NODE_ENV === 'development'
+    ? { 'main.js': 'main.js', 'static/favicon.png': '' }
+    : require(PUBLIC_PATH + '/manifest.json')
 
 // Multipass process to render all site content
 async function main() {
@@ -41,7 +44,6 @@ function render(siteMeta) {
       .substr(path.indexOf('content') + 7)
       .replace('index.html', '')
       .replace('.html', '')
-    // console.log(location)
 
     // Replace the contents with the rendered version
     const content = file.contents.toString()

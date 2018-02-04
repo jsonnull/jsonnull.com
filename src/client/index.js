@@ -35,10 +35,13 @@ if (typeof window !== 'undefined') {
       </AsyncComponentProvider>
     )
 
-    // Wait for existing components to load
-    await asyncBootstrapper(app)
-
-    ReactDOM.hydrate(app, document.getElementById('react-root'))
+    if (process.env.NODE_ENV === 'development') {
+      ReactDOM.render(app, document.getElementById('react-root'))
+    } else {
+      // Wait for existing components to load
+      await asyncBootstrapper(app)
+      ReactDOM.hydrate(app, document.getElementById('react-root'))
+    }
   }
 
   window.onload = main

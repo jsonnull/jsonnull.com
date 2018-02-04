@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import { hot } from 'react-hot-loader'
 import Helmet from 'react-helmet'
 import { Switch, Route } from 'react-router-dom'
 import { Home, Work, Blog, About, Twitter } from './pages'
@@ -34,4 +35,4 @@ const Site = (props: RenderProps) => {
     </div>
   )
 }
-export default Site
+export default hot(module)(Site)
