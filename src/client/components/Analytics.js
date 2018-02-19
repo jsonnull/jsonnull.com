@@ -3,26 +3,23 @@ import * as React from 'react'
 import { Route } from 'react-router-dom'
 
 class LogPageView extends React.Component {
-  location: Object
+  shouldComponentUpdate(nextProps) {
+    const isSamePath =
+      nextProps.location.pathname !== this.props.location.pathname
+    const isSameHash = nextProps.location.hash !== this.props.location.hash
 
-  componentWillMount() {
-    const { location } = this.props
-    this.location = {}
+    if (isSamePath && isSameHash) {
+      return false
+    }
+
+    return true
   }
 
   render() {
-    if (typeof window === 'undefined') {
-      return null
+    if (typeof window !== 'undefined') {
+      window.gtag('event', 'page_view')
     }
 
-    const isSamePath = this.location.pathname !== this.props.location.pathname
-    const isSameHash = this.location.hash !== this.props.location.hash
-
-    if (!isSamePath || !isSameHash) {
-      return null
-    }
-
-    window.gtag('event', 'page_view')
     return null
   }
 }
