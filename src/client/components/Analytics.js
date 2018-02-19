@@ -17,7 +17,10 @@ const LogPageView = () => {
  * Component which runs once on setup and only renders children when the page
  * changes
  */
-class AnalyticsImpl extends React.Component {
+type Props = {
+  location: Object
+}
+class AnalyticsImpl extends React.Component<Props, *> {
   shouldComponentUpdate(nextProps) {
     const isSamePath =
       nextProps.location.pathname !== this.props.location.pathname
