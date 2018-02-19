@@ -34,6 +34,11 @@ const performAnalyticsSetup = () => {
   ga('create', 'UA-112190148-1', 'auto')
   ga('set', 'transport', 'beacon')
 
+  // Disable development tracking
+  if (window.location.hostname == 'localhost') {
+    ga('set', 'sendHitTask', null)
+  }
+
   /*
    * Begin custom dimensions tracking
    */
