@@ -2,16 +2,33 @@
 import * as React from 'react'
 import { Route } from 'react-router-dom'
 
-const logPageView = () => {
-  if (typeof window !== 'undefined') {
-    window.gtag('event', 'page_view')
+class LogPageView extends React.Component {
+  location: Object
+
+  componentWillMount() {
+    const { location } = this.props
+    this.location = {}
   }
 
-  return null
+  render() {
+    if (typeof window === 'undefined') {
+      return null
+    }
+
+    const isSamePath = this.location.pathname !== this.props.location.pathname
+    const isSameHash = this.location.hash !== this.props.location.hash
+
+    if (!isSamePath || !isSameHash) {
+      return null
+    }
+
+    window.gtag('event', 'page_view')
+    return null
+  }
 }
 
 const Analytics = () => {
-  return <Route path="/" component={logPageView} />
+  return <Route path="/" component={LogPageView} />
 }
 
 export default Analytics
