@@ -39,15 +39,14 @@ module.exports = function createHtml(props) {
         </style>
         ${styles}
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112190148-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <!-- Google Analytics -->
 
-          gtag('config', 'UA-112190148-1');
+        <script>
+          window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+          ga('create', 'UA-112190148-1', 'auto');
+          ga('set', 'transport', 'beacon');
         </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
       </head>
       <body>
         <div id="react-root">${body}</div>
