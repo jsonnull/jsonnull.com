@@ -9,6 +9,7 @@ import {
   createAsyncContext
 } from 'react-async-component'
 import asyncBootstrapper from 'react-async-bootstrapper'
+import performAnalyticsSetup from './analytics.js'
 import Site from './containers/Site'
 import { colors } from './styles/base'
 import { background, color } from './styles/links'
@@ -42,6 +43,8 @@ if (typeof window !== 'undefined') {
       await asyncBootstrapper(app)
       ReactDOM.hydrate(app, document.getElementById('react-root'))
     }
+
+    performAnalyticsSetup()
   }
 
   window.onload = main
