@@ -25,6 +25,8 @@ if (typeof window !== 'undefined') {
       }
     `
 
+    performAnalyticsSetup()
+
     const rehydrateState = window.ASYNC_COMPONENTS_STATE
     const siteMeta = window.SITE_META
 
@@ -43,8 +45,6 @@ if (typeof window !== 'undefined') {
       await asyncBootstrapper(app)
       ReactDOM.hydrate(app, document.getElementById('react-root'))
     }
-
-    performAnalyticsSetup()
   }
 
   window.onload = main
