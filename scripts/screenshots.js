@@ -38,6 +38,18 @@ const main = async () => {
 
   const page = await browser.newPage()
 
+  /*
+   * Block google analytics on automated views
+   */
+  await page.setRequestInterception(true)
+  page.on('request', request => {
+    if (request.url().endsWith('analytics.js')) {
+      request.abort()
+    } else {
+      request.continue()
+    }
+  })
+
   for (let i = 0; i < screenshots.length; i++) {
     let screenshot = screenshots[i]
     if (screenshot.size) {
