@@ -1,9 +1,26 @@
 // @flow
 
-const uuid = function b(a) {
-  return a
-    ? (a ^ ((Math.random() * 16) >> (a / 4))).toString(16)
-    : String(1e7 + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b)
+const s4 = () => {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1)
+}
+
+const uuid = () => {
+  return (
+    s4() +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    s4() +
+    s4()
+  )
 }
 
 const performAnalyticsSetup = () => {
