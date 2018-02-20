@@ -41,9 +41,6 @@ const performAnalyticsSetup = () => {
   // Values for custom dimensions
   const TRACKING_VERSION = '1'
 
-  // Initialize the command queue in case analytics.js hasn't loaded yet.
-  window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args))
-
   // Perform setup
   const ga = window.ga
   ga('create', 'UA-112190148-1', 'auto')

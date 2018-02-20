@@ -7,6 +7,10 @@ import { Route } from 'react-router-dom'
  */
 const LogPageView = () => {
   if (typeof window !== 'undefined') {
+    if (window.asyncInProgress) {
+      return null
+    }
+
     window.ga('send', 'pageview')
   }
 

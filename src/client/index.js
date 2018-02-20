@@ -41,8 +41,13 @@ if (typeof window !== 'undefined') {
     if (process.env.NODE_ENV === 'development') {
       ReactDOM.render(app, document.getElementById('react-root'))
     } else {
+      window.asyncInProgress = true
+
       // Wait for existing components to load
       await asyncBootstrapper(app)
+
+      window.asyncInProgress = false
+
       ReactDOM.hydrate(app, document.getElementById('react-root'))
     }
   }
