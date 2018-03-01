@@ -21,7 +21,9 @@ const Background = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: row;
-
+  ${media.mobile`
+    margin: 0 4.8rem;
+  `};
   ${media.desktop`
     margin: 0 200px;
   `};

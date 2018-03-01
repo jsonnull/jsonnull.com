@@ -15,7 +15,7 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 2.4rem;
-  padding: 2.4rem 0;
+  padding: 4.8rem 0;
 
   ${media.mobile`
     margin: 0 4.8rem;
