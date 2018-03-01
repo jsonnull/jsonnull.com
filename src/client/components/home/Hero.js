@@ -87,6 +87,9 @@ const headerMixin = css`
 `
 
 export default class Hero extends React.Component<*, *> {
+  scrollY: number
+  lock: boolean
+
   constructor() {
     super()
     this.state = { top: 0 }
@@ -106,7 +109,7 @@ export default class Hero extends React.Component<*, *> {
     }
   }
 
-  onScroll = e => {
+  onScroll = () => {
     if (window.scrollY > window.innerHeight) {
       return
     }
