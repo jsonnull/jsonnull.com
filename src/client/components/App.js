@@ -11,7 +11,7 @@ const Container = styled.div`
   border-radius: 5px;
   margin: 0 0 auto;
   flex-direction: column;
-  background: linear-gradient(-45deg, ${colors.blue} 0%, ${colors.gray} 100%);
+  background: linear-gradient(135deg, ${colors.gray} 0%, ${colors.blue} 100%);
   position: relative;
 
   ${media.tablet`
@@ -23,7 +23,7 @@ const TabBar = styled.div`
   height: 36px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  opacity: 0.7;
+  opacity: 0.2;
 `
 
 const Tab = styled.div`
@@ -47,7 +47,7 @@ const AddressBar = styled.div`
   height: 3.6rem;
   padding: 4px 0;
   background: ${colors.white};
-  opacity: 0.7;
+  opacity: 0.2;
 `
 
 const Address = styled.div`
@@ -74,7 +74,7 @@ const Code = styled.pre`
   font-family: ${fonts.monospace};
   font-size: 1.2rem;
   color: white;
-  opacity: 0.2;
+  opacity: 0.13;
 `
 
 export default () => (
