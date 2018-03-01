@@ -98,13 +98,13 @@ export default class Hero extends React.Component<*, *> {
   }
 
   componentWillMount() {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       window.addEventListener('scroll', this.onScroll)
     }
   }
 
   componentWillUnmount() {
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
       window.addEventListener('scroll', this.onScroll)
     }
   }
