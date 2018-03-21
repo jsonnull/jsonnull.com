@@ -12,7 +12,8 @@ import { asyncComponent } from 'react-async-component'
 import type { RenderProps } from '../../../types'
 
 type Props = {
-  match: Object
+  match: Object,
+  location: Object
 } & RenderProps
 
 const Page = (props: Props) => {
