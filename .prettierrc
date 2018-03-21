@@ -2,3 +2,4 @@
 parser: babylon
 semi: false
 singleQuote: true
+proseWrap: 'always'
