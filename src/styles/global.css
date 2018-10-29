@@ -1,0 +1,46 @@
+html, body {
+  margin: 0; padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family:
+  /* 1 */ -apple-system, BlinkMacSystemFont,
+  /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  /* 3 */ "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-size: 1.6rem; 
+  line-height: 1.625;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* TODO: Move to emotion */
+::-moz-selection {
+  color: #fdfffb;
+  background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
+  opacity: 1;
+}
+
+::selection {
+  color: #fdfffb;
+  background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
+  opacity: 1;
+}
