@@ -12,6 +12,7 @@
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "feather-icons": "^4.0.0",
+    "puppeteer": "^1.0.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-emotion": "^2.0.5",
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "flow-bin": "^0.66.0",
-    "prettier": "^1.6.1",
-    "puppeteer": "^1.0.0"
+    "prettier": "^1.6.1"
   }
 }
