@@ -56,9 +56,9 @@ const Link = props => (
   </ListItem>
 )
 
-const Header = () => (
+const Header = ({ inverted }) => (
   <Wrapper>
-    <Title />
+    <Title inverted={inverted} />
     {/*
     <List>
       <Link to="/case-studies/">Work</Link>
