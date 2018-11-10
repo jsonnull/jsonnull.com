@@ -1,2 +1,7 @@
+# Redirect domain aliases to primary domain
+https://jasonnall.com/* https://jsonnull.com/:splat 301!
+https://www.jasonnall.com/* https://jsonnull.com/:splat 301!
+
+
 # Redirect default Netlify subdomain to primary domain
 https://jsonnull.netlify.com/* https://jsonnull.com/:splat 301!
