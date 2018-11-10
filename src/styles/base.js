@@ -29,7 +29,7 @@ export const colors = {
   lightGray: '#8793ab',
   gray: '#5c6c81',
   darkGray: '#2a3344',
-  black: '#18191C',
+  black: '#161b24',
 
   // @deprecated
   blue: '#3A7ADE',
@@ -38,8 +38,8 @@ export const colors = {
 
   green: '#1ed9a1',
   cyan: '#9db7ad',
-  yellow: 'eade65',
-  purple: '800140',
+  yellow: '#eade65',
+  purple: '#800140',
   orange: '#ee3107'
 }
 
