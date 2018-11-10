@@ -12,7 +12,6 @@
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "feather-icons": "^4.0.0",
-    "puppeteer": "^1.0.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-emotion": "^2.0.5",
@@ -23,10 +22,12 @@
     "gatsby-plugin-sharp": "^2.0.7",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
+    "puppeteer": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-emotion": "^9.2.12",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-map": "^3.2.0-rc.1"
   },
   "devDependencies": {
     "flow-bin": "^0.66.0",
