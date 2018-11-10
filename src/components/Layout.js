@@ -1,9 +1,12 @@
+import React from 'react'
 import styled, { injectGlobal } from 'react-emotion'
 import { colors } from '../styles/base'
 import { color, background } from '../styles/links'
+import Helmet from 'react-helmet'
 import '../styles/normalize.css'
 import '../styles/typeset.css'
 import '../styles/global.css'
+import fonts from '../styles/fonts'
 
 injectGlobal`
   a, a:link, a:visited, a:hover, a:active {
@@ -19,4 +22,18 @@ const Wrapper = styled.div`
   background: ${props => (props.dark ? colors.darkGray : colors.white)};
 `
 
-export default Wrapper
+const Layout = ({ children, dark }) => (
+  <Wrapper dark={dark}>
+    <Helmet titleTemplate="%s | Jason Nall">
+      <title>Welcome</title>
+      <link
+        href={`//fonts.googleapis.com/css?family=${fonts.join('|')}`}
+        rel="stylesheet"
+        type="text/css"
+      />
+    </Helmet>
+    {children}
+  </Wrapper>
+)
+
+export default Layout
