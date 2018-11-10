@@ -6,11 +6,11 @@ import Hero from '../components/Hero'
 
 const Home = () => (
   <Layout dark>
-    <Helmet titleTemplate="Jason Nall - %s">
-      <title>Designer and Developer</title>
+    <Helmet>
+      <title>Home</title>
     </Helmet>
 
-    <Header />
+    <Header inverted />
     <Hero />
   </Layout>
 )
