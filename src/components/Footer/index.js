@@ -10,7 +10,7 @@ import {
 } from '../../styles/links'
 
 const Background = styled.div`
-  background: ${colors.black};
+  background: ${colors.gray100};
   padding: 2.4rem;
   position: relative;
   margin-top: auto;
@@ -37,21 +37,21 @@ const Content = styled.div`
 const Quote = styled.p`
   margin: 0;
   font-family: ${fonts.serif};
-  color: ${colors.darkGray};
+  color: ${colors.gray400};
   font-size: ${fontSize.normal};
   padding-top: 100px;
 `
 
 const Attrib = styled.span`
   font-family: ${fonts.base};
-  color: ${colors.darkGray};
+  color: ${colors.gray400};
   font-size: ${fontSize.small};
 `
 
 const Source = styled.div`
   margin-top: auto;
   line-height: $lineUnit;
-  color: ${colors.gray};
+  color: ${colors.gray500};
   text-align: right;
   font-size: ${fontSize.tiny};
   display: none;
@@ -67,7 +67,7 @@ const Source = styled.div`
   a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.gray)} ${underlineOut};
+    ${color(colors.gray500)} ${underlineOut};
   }
 
   a:hover {

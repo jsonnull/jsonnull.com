@@ -6,7 +6,7 @@ import { colors, fonts, fontSize } from '../../styles/base'
 
 const lineHeight = `${2.4 * 1.4}rem`
 
-const Header = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   font-weight: 400;
@@ -15,9 +15,7 @@ const Header = styled.div`
   transform: translateY(-50%);
   left: 10%;
   right: 10%;
-  font-size: 2.4rem;
   line-height: ${lineHeight};
-  color: ${colors.lightGray};
 `
 
 const Left = styled.div`
@@ -25,14 +23,15 @@ const Left = styled.div`
   flex: 1;
   padding: 10px 30px;
   padding-left: 0;
-  font-family: ${fonts.base};
   font-weight: 300;
+  font-family: ${fonts.heading};
+  color: ${colors.gray600};
+  font-size: 2rem;
 `
 
 const Name = styled.h1`
   font-weight: 400;
   color: ${colors.white};
-  font-family: ${fonts.heading};
   font-size: 2.4rem;
 `
 
@@ -42,16 +41,16 @@ const Right = styled.div`
   position: relative;
 
   border-radius: 5px;
-  background: ${colors.black};
+  background: ${colors.gray100};
   letter-spacing: -0.02em;
   font-family: ${fonts.monospace};
   font-weight: 400;
-  color: ${colors.white};
-  font-size: 2rem;
+  color: ${colors.gray900};
+  font-size: 1.8rem;
 `
 
 const Bracket = styled.div`
-  color: ${colors.darkGray};
+  color: ${colors.gray400};
   position: absolute;
   ${props =>
     props.left &&
@@ -76,12 +75,12 @@ const Bracket = styled.div`
 `
 
 const Comment = styled.div`
-  color: ${colors.gray};
+  color: ${colors.gray500};
   letter-spacing: -0.06em;
 `
 
 const Hero = () => (
-  <Header>
+  <Wrapper>
     <Left>
       <Name>Jason Nall</Name>
       <div>I build things for the web</div>
@@ -92,7 +91,7 @@ const Hero = () => (
       <Bracket left />
       <Bracket right />
     </Right>
-  </Header>
+  </Wrapper>
 )
 
 export default Hero

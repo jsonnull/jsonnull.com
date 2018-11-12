@@ -24,12 +24,16 @@ export const fontSize = {
 export const lineUnit = '2.4rem'
 
 export const colors = {
+  gray900: '#f7f9fa',
+  gray800: '#dee8f1',
+  gray700: '#bbc9dd',
+  gray600: '#91a0ba',
+  gray500: '#65728d',
+  gray400: '#404960',
+  gray300: '#272d3d',
+  gray200: '#191c27',
+  gray100: '#13161f',
   white: '#fff',
-  veryLightGray: '#eee',
-  lightGray: '#8793ab',
-  gray: '#5c6c81',
-  darkGray: '#2a3344',
-  black: '#161b24',
 
   // @deprecated
   blue: '#3A7ADE',

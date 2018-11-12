@@ -32,7 +32,7 @@ const Icon = ({ name, href }: IconProps) => (
     <IconWrapper
       dangerouslySetInnerHTML={{
         __html: feather.icons[name].toSvg({
-          color: colors.gray,
+          color: colors.gray500,
           width: 20,
           height: 20
         })

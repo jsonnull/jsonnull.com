@@ -32,7 +32,7 @@ const Title = styled.h1`
     ${props =>
       props.inverted
         ? color(colors.white)
-        : color(colors.black)} ${underlineOut};
+        : color(colors.gray100)} ${underlineOut};
     background-position: 0 100%;
   }
 

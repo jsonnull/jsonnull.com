@@ -17,11 +17,11 @@ const LinkWrapper = styled.span`
     text-shadow: none;
     ${props => {
       if (props.small) {
-        return color(colors.gray)
+        return color(colors.gray500)
       } else if (props.emphasis) {
         return color(colors.blue)
       }
-      return color(colors.black)
+      return color(colors.gray100)
     }};
     ${underlineOut};
   }

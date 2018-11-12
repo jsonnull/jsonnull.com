@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: ${props => (props.dark ? colors.darkGray : colors.white)};
+  background: ${props => (props.dark ? colors.gray300 : colors.white)};
 `
 
 const Layout = ({ children, dark }) => (
