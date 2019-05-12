@@ -1,21 +1,19 @@
 // @flow
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import Title from './Title'
-import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
+import { colors, fonts, fontSize, lineUnit, media } from '../../../styles/base'
 import LinkImpl from './Link'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  height: 7.2rem;
-  padding: 2.4rem;
-  padding-right: 0;
+  padding: 4.8rem;
   z-index: 300;
 
   ${media.mobile`
-    height: 12rem;
-    padding: 4.8rem;
+    // height: 12rem;
+    // padding: 4.8rem;
   `};
 `
 
@@ -56,10 +54,9 @@ const Link = props => (
   </ListItem>
 )
 
-const Header = ({ inverted }) => (
+const Header = () => (
   <Wrapper>
-    <Title inverted={inverted} />
-    {/*
+    <Title />
     <List>
       <Link to="/case-studies/">Work</Link>
       <Link blog to="/blog/">
@@ -73,7 +70,6 @@ const Header = ({ inverted }) => (
         Lists
       </Link>
     </List>
-    */}
   </Wrapper>
 )
 

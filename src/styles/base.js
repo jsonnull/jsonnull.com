@@ -1,4 +1,4 @@
-import { css } from 'react-emotion'
+import { css } from '@emotion/core'
 
 export const fonts = {
   base: `
@@ -6,9 +6,12 @@ export const fonts = {
     /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     /* 3 */ "Helvetica Neue", sans-serif;
   `,
+  serif: `
+		/* 1 */ Athelas,
+		/* 2 */ Cambria,
+		/* 3 */ serif;
+	`,
   heading: 'Lato',
-  serif: 'Cardo',
-  content: 'Merriweather',
   monospace: 'Source Code Pro'
 }
 
@@ -24,15 +27,30 @@ export const fontSize = {
 export const lineUnit = '2.4rem'
 
 export const colors = {
-  gray900: '#f7f9fa',
-  gray800: '#dee8f1',
-  gray700: '#bbc9dd',
-  gray600: '#91a0ba',
-  gray500: '#65728d',
-  gray400: '#404960',
-  gray300: '#272d3d',
-  gray200: '#191c27',
-  gray100: '#13161f',
+  gray100: '#f7f7f7',
+  gray200: '#f0f0f0',
+  gray300: '#e0e0e0',
+  gray400: '#c4c4c4',
+  gray500: '#999',
+  gray600: '#5d5d5d',
+  gray900: '#171717',
+
+  green100: '#d9fccf',
+  green200: '#b7f6a7',
+  green300: '#91e782',
+  green400: '#69cd62',
+  green500: '#46a54c',
+  green600: '#2b6e3b',
+  green900: '#112e1d',
+
+  blue100: '#f0f6ff',
+  blue200: '#dbecff',
+  blue300: '#b7d5ff',
+  blue400: '#80aff9',
+  blue500: '#3a7ade',
+  blue600: '#163388',
+  blue900: '#030729',
+
   white: '#fff',
 
   // @deprecated

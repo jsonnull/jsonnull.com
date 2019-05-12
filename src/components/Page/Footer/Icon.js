@@ -1,7 +1,8 @@
 // @flow
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import feather from 'feather-icons'
+import { media, colors } from '../../../styles/base'
 
 const Social = styled.div`
   margin-top: auto;
@@ -12,8 +13,8 @@ const SocialLink = styled.a`
 `
 
 const IconWrapper = styled.div`
-  height: ${lineUnit};
-  line-height: ${lineUnit};
+  height: {lineUnit};
+  line-height: {lineUnit};
   margin-top: 1.2rem;
   padding-top: 2px;
   display: none;

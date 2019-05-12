@@ -1,18 +1,11 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../components/Layout'
-import Header from '../components/Header'
+import Page from '../components/Page'
 import Hero from '../components/Hero'
 
 const Home = () => (
-  <Layout dark>
-    <Helmet>
-      <title>Home</title>
-    </Helmet>
-
-    <Header inverted />
+  <Page title="Home">
     <Hero />
-  </Layout>
+  </Page>
 )
 
 export default Home
