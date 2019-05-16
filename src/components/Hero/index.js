@@ -70,6 +70,7 @@ const Hero = () => {
   const [index, setIndex] = useState(0)
   const type = types[index]
 
+  // Cycle through hero states
   useEffect(() => {
     setInterval(() => {
       setIndex(index => {
@@ -81,13 +82,15 @@ const Hero = () => {
     }, 4500)
   }, [])
 
-  const transitions = useTransition(type, null, {
+  // The main app transition
+  const appTransitions = useTransition(type, null, {
     from: { outer: 'translateX(100%)', inner: 'translateX(-100%)' },
     enter: { outer: 'translateX(0)', inner: 'translateX(0)' },
     leave: { outer: 'translateX(-100%)', inner: 'translateX(100%)' },
-    config: { mass: 1, tension: 280, friction: 80 }
+    config: { mass: 1, tension: 300, friction: 40 }
   })
 
+  // Jiggle of side elements
   const [{ radians }] = useSpring(() => ({
     to: async next => {
       while (1) await next({ radians: 2 * Math.PI })
@@ -97,10 +100,18 @@ const Hero = () => {
     reset: true
   }))
 
+  // Fade the set of sprites
+  const spriteTransitions = useTransition(type, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: { mass: 1, tension: 280, friction: 80 }
+  })
+
   return (
     <Wrapper>
       <AppLocation>
-        {transitions.map(({ item: type, props, key }) => (
+        {appTransitions.map(({ item: type, props, key }) => (
           <animated.div
             key={key}
             style={{
@@ -119,19 +130,22 @@ const Hero = () => {
           </animated.div>
         ))}
       </AppLocation>
-      {sprites.map((sprite, i) => (
-        <animated.div
-          key={i}
-          style={{
-            transform: radians.interpolate(interp(i)),
-            position: 'absolute',
-            left: '50%',
-            top: '50%'
-          }}
-        >
-          <Sprite key={sprite.text} {...sprite} type={type} />
-        </animated.div>
-      ))}
+      {spriteTransitions.map(({ item: type, props, key }) =>
+        sprites.map((sprite, i) => (
+          <animated.div
+            key={i}
+            style={{
+              ...props,
+              transform: radians.interpolate(interp(i)),
+              position: 'absolute',
+              left: '50%',
+              top: '50%'
+            }}
+          >
+            <Sprite key={sprite.text} {...sprite} type={type} />
+          </animated.div>
+        ))
+      )}
     </Wrapper>
   )
 }

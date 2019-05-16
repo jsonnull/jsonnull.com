@@ -1,7 +1,6 @@
 // @flow
 import React from 'react'
 import styled from '@emotion/styled'
-import { useTransition, animated } from 'react-spring'
 import { switchProp } from 'styled-tools'
 import { colors, fonts, fontSize } from '../../styles/base'
 import { I_AM_A } from '../../constants'
@@ -87,31 +86,15 @@ const Developer = props => {
 
 const Sprite = props => {
   const { shape, text, dx = 0, dy = 0, type } = props
-
-  const transitions = useTransition(type, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: { mass: 1, tension: 280, friction: 80 }
-  })
+  const Component = {
+    [I_AM_A.DESIGNER]: Designer,
+    [I_AM_A.DEVELOPER]: Developer
+  }[type]
 
   return (
-    <React.Fragment>
-      {transitions.map(({ item: type, props, key }) => {
-        const Component = {
-          [I_AM_A.DESIGNER]: Designer,
-          [I_AM_A.DEVELOPER]: Developer
-        }[type]
-
-        return (
-          <animated.div key={key} style={props}>
-            <Wrapper dx={dx} dy={dy} type={type}>
-              <Component text={text} shape={shape} />
-            </Wrapper>
-          </animated.div>
-        )
-      })}
-    </React.Fragment>
+    <Wrapper dx={dx} dy={dy} type={type}>
+      <Component text={text} shape={shape} />
+    </Wrapper>
   )
 }
 
