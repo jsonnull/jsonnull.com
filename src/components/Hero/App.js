@@ -15,8 +15,7 @@ const AppBackground = styled.div`
     [I_AM_A.DEVELOPER]: colors.gray900
   })};
   border-radius: 8px;
-  width: 45vw;
-  height: 30vw;
+  height: 100%;
 `
 
 const Circle = styled.div`
@@ -52,28 +51,6 @@ const Content = styled.div`
   font-size: ${fontSize.medium};
 `
 
-const Headline = styled.h1`
-  margin: auto;
-  font-weight: normal;
-  font-size: 3vw;
-  font-family: ${fonts.heading};
-  font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.4;
-  text-align: center;
-`
-
-const Name = styled.span`
-  display: block;
-  font-size: ${fontSize.large};
-  letter-spacing: 0;
-`
-
-const Title = styled.span`
-  // display: block;
-  font-weight: bold;
-`
-
 const Designer = styled.div``
 
 const Developer = styled.div`
@@ -84,10 +61,6 @@ const Developer = styled.div`
 
 const App = props => {
   const { type } = props
-  // const Style = {
-  // [I_AM_A.DESIGNER]: Designer,
-  // [I_AM_A.DEVELOPER]: Developer
-  // }[type]
   return (
     <AppBackground type={type}>
       <Titlebar>
@@ -95,12 +68,7 @@ const App = props => {
           {[0, 1, 2].map(i => <Circle key={i} type={type} />)}
         </Stoplights>
       </Titlebar>
-      <Content>
-        <Headline>
-          <Name>Hi, I'm Jason.</Name>
-          I <Title>{type}</Title> experiences.
-        </Headline>
-      </Content>
+      <Content />
     </AppBackground>
   )
 }

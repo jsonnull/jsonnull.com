@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { useSpring, useTransition, animated, config } from 'react-spring'
 import { I_AM_A } from '../../constants'
+import { colors, fonts, fontSize } from '../../styles/base'
 import App from './App'
 import Sprite from './Sprite'
 
@@ -10,60 +11,105 @@ const lineHeight = `${2.4 * 1.4}rem`
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-weight: 400;
-  flex: 1;
+  width: 960px;
+  min-height: 600px;
   line-height: ${lineHeight};
-`
-
-const AppLocation = styled.div`
   margin: auto;
-  width: 45vw;
-  height: 30vw;
-  overflow: hidden;
   position: relative;
 `
 
-const types = [I_AM_A.DESIGNER, I_AM_A.DEVELOPER]
+const AppLocation = styled.div`
+  width: 650px;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto auto;
+`
 
+const Headline = styled.h1`
+  margin: auto 0 0;
+  font-weight: normal;
+  font-size: 3.2rem;
+  font-family: ${fonts.heading};
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin-bottom: 4.8rem;
+  text-align: center;
+`
+
+const ShadowContainer = styled.div`
+  width: 960px;
+  height: 168px;
+  position: absolute;
+  top: 50%;
+  margin-top: 130px;
+`
+const Shadow = () => {
+  return (
+    <ShadowContainer>
+      <svg width="960" height="168">
+        <pattern
+          id="diagonalHatch"
+          width="10"
+          height="10"
+          patternTransform="rotate(45 0 0)"
+          patternUnits="userSpaceOnUse"
+        >
+          <line
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="10"
+            style={{
+              stroke: colors.gray500,
+              strokeWidth: 1
+            }}
+          />
+        </pattern>{' '}
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="url(#diagonalHatch)"
+        />
+      </svg>
+    </ShadowContainer>
+  )
+}
+
+const Title = styled.span`
+  font-weight: bold;
+`
+
+const types = [I_AM_A.DESIGNER, I_AM_A.DEVELOPER]
 export const SHAPES = {
-  SQUARE: 'square',
-  RECTANGLE: 'rectangle',
   CIRCLE: 'circle',
-  PARAGRAPH: 'paragraph'
+  TRIANGLE: 'triangle',
+  SQUARE: 'square'
+}
+export const SIDES = {
+  LEFT: 'left',
+  RIGHT: 'right'
 }
 
 const interp = i => r => {
-  const dx = 15 * Math.sin(r + i * 2 * Math.PI / 1.6)
-  const dy = 15 * Math.cos(r + i * 2 * Math.PI / 1.6)
-  return `translate(${dx}px, ${dy}px)`
+  const x = 5 * Math.sin(r + i * 2 * Math.PI / 1.6)
+  const y = 3 * Math.cos(r + i * 2 * Math.PI / 1.6)
+
+  return `translate(${x}px, ${y}px)`
 }
 
 const sprites = [
-  {
-    shape: SHAPES.CIRCLE,
-    text: '<Icon\n  to=/contact />',
-    dx: '-30vw',
-    dy: '15vh'
-  },
-  {
-    shape: SHAPES.SQUARE,
-    text: 'GET u/{id}/avatar',
-    dx: '-30vw',
-    dy: '-15vh'
-  },
-  {
-    shape: SHAPES.PARAGRAPH,
-    text: 'query {\n  users {\n    name\n  }\n}',
-    dx: '30vw',
-    dy: '-15vh'
-  },
-  {
-    shape: SHAPES.RECTANGLE,
-    text: '<Button secondary />',
-    dx: '30vw',
-    dy: '15vh'
-  }
+  [SHAPES.SQUARE, SIDES.LEFT, 0.7, 0.2],
+  [SHAPES.CIRCLE, SIDES.LEFT, 0.3, 0.5],
+  [SHAPES.TRIANGLE, SIDES.LEFT, 0.6, 0.85],
+  [SHAPES.CIRCLE, SIDES.RIGHT, 0.7, 0.2],
+  [SHAPES.TRIANGLE, SIDES.RIGHT, 0.3, 0.5],
+  [SHAPES.SQUARE, SIDES.RIGHT, 0.5, 0.85]
 ]
 
 const Hero = () => {
@@ -110,6 +156,10 @@ const Hero = () => {
 
   return (
     <Wrapper>
+      <Shadow />
+      <Headline>
+        I <Title>{type}</Title> experiences.
+      </Headline>
       <AppLocation>
         {appTransitions.map(({ item: type, props, key }) => (
           <animated.div
@@ -117,12 +167,17 @@ const Hero = () => {
             style={{
               transform: props.outer,
               position: 'absolute',
+              width: '100%',
+              height: '100%',
               overflow: 'hidden'
             }}
           >
             <animated.div
               style={{
-                transform: props.inner
+                transform: props.inner,
+                position: 'absolute',
+                width: '100%',
+                height: '100%'
               }}
             >
               <App type={type} />
@@ -142,7 +197,7 @@ const Hero = () => {
               top: '50%'
             }}
           >
-            <Sprite key={sprite.text} {...sprite} type={type} />
+            <Sprite sprite={sprite} type={type} />
           </animated.div>
         ))
       )}
