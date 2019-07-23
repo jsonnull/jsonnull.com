@@ -7,16 +7,15 @@ import { colors, fonts, fontSize, lineUnit, media } from '../../../styles/base'
 import { color, underlineIn, underlineOut } from '../../../styles/links'
 
 const Title = styled.h1`
-  font-size: ${fontSize.normal};
+  font-size: ${fontSize.small};
   font-family: ${fonts.heading};
   line-height: ${lineUnit};
   position: absolute;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
 
-  font-weight: ${ifProp('inverted', '400', '700')};
-
-  ${media.mobile`
-    font-size: ${fontSize.large};
-  `};
+	/*font-weight: ${ifProp('inverted', '400', '700')};*/
+	font-weight: 700;
 
   a,
   a:link,
