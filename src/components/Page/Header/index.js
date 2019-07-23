@@ -26,7 +26,6 @@ const List = styled.ul`
   line-height: ${lineUnit};
   height: ${lineUnit};
   z-index: 710;
-  letter-spacing: 0.1;
 
   ${media.mobile`
     font-size: ${fontSize.normal};
@@ -39,13 +38,8 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-  margin-left: 1.2rem;
-  margin-bottom: 1.2rem;
-  display: inline-block;
-
-  ${media.desktop`
-    display: block;
-  `};
+  margin-left: 2.4rem;
+  display: block;
 `
 
 const Link = props => (

@@ -6,14 +6,16 @@ import { colors, fontSize } from '../../../styles/base'
 import { color, underlineOut } from '../../../styles/links'
 
 const LinkWrapper = styled.span`
-  font-weight: 700;
+  font-weight: 400;
 
   a,
   a:link,
   a:visited,
   a:hover,
   a:active {
-    text-transform: lowercase;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: ${fontSize.small};
     transition: background-size 100ms ease;
     text-shadow: none;
     ${color(colors.gray900)};
