@@ -1,4 +1,9 @@
-import { css } from '@emotion/core'
+const mapValues = (object, callback) => {
+  return Object.keys(object).reduce((acc, label) => {
+    acc[label] = callback(object[label])
+    return acc
+  }, {})
+}
 
 export const fonts = {
   base: `
@@ -15,16 +20,30 @@ export const fonts = {
   monospace: 'Source Code Pro'
 }
 
-export const fontSize = {
-  tiny: '1.107692rem', // * 1.625 = 1.8rem
-  small: '1.358461rem', // * 1.625 = 2.2rem
-  normal: '1.6rem', // * 1.625 = 2.6rem
-  medium: '1.846153rem', // * 1.625 = 3.0rem
-  large: '2.4rem', // * 1.625 = 3.9rem
-  huge: '3.076923rem' // * 1.625 = 5rem
+// Line height as multiplier
+const lineHeightMultiplier = 1.625
+
+// Target heights in rem
+const lineHeights = {
+  tiny: 1.8,
+  small: 2.2,
+  normal: 2.6,
+  medium: 3.0,
+  large: 3.9,
+  huge: 5
 }
 
-export const lineUnit = '2.4rem'
+export const lineHeight = mapValues(
+  lineHeights,
+  lineHeight => `${lineHeight}rem`
+)
+
+export const fontSize = mapValues(
+  lineHeights,
+  lineHeight => `${lineHeight / lineHeightMultiplier}rem`
+)
+
+export const lineUnit = lineHeight.normal
 
 export const colors = {
   gray100: '#f7f7f7',
@@ -66,22 +85,13 @@ export const colors = {
 }
 
 export const breakpoints = {
-  mobileSmall: '300px',
-  mobile: '480px',
+  // mobile: '480px',
   tablet: '800px',
-  tabletLarge: '960px',
-  desktop: '1050px',
-  desktopLarge: '1200px',
-  desktopHuge: '1400px'
+  desktop: '1200px'
 }
 
 // Iterate through the sizes and create a media template
-export const media = Object.keys(breakpoints).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${breakpoints[label]}) {
-      ${css(...args)};
-    }
-  `
-
-  return acc
-}, {})
+export const media = mapValues(
+  breakpoints,
+  breakpointPx => `@media (min-width: ${breakpointPx})`
+)

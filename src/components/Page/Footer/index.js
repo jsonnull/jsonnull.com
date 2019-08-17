@@ -2,34 +2,36 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { colors, fonts, fontSize, lineUnit, media } from '../../../styles/base'
-import {
-  background,
-  color,
-  underlineIn,
-  underlineOut
-} from '../../../styles/links'
+import { noUnderline } from '../../../styles/links'
+import Icon from './Icon'
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 4.8rem;
+const paddingDesktop = '4.8rem'
+
+const Social = styled.div`
+  margin-top: auto;
 `
 
+const Wrapper = styled.div`
+  display: none;
+
+  ${media.tablet} {
+    display: flex;
+    flex-direction: row;
+    padding: ${paddingDesktop};
+  }
+`
+
+// eslint-disable-next-line
 const Quote = styled.p`
   margin: 0;
   margin-top: auto;
-  color: ${colors.gray800};
+  color: ${colors.gray500};
   font-size: ${fontSize.small};
   font-family: ${fonts.serif};
 `
 
-const Attrib = styled.span`
-  color: ${colors.gray700};
-`
-
 const Source = styled.div`
   margin-left: auto;
-  color: ${colors.gray900};
   display: block;
   font-size: ${fontSize.small};
 
@@ -38,37 +40,37 @@ const Source = styled.div`
   a:visited,
   a:hover,
   a:active {
-    transition: background-size 100ms ease;
-    text-shadow: none;
-    ${color(colors.gray900)} ${underlineOut};
+    color: ${colors.gray500};
+    transition: color 200ms ease;
+    ${noUnderline};
   }
 
   a:hover {
-    text-shadow: none;
-    ${underlineIn};
+    color: ${colors.gray900};
   }
 `
 
 const Footer = () => (
   <Wrapper>
+    {/*
     <Quote>
-      "It is the power of the mind to be unconquerable."
-      <Attrib> —&nbsp;Seneca</Attrib>
+      "It is the power of the mind to be unconquerable." –&nbsp;Seneca
     </Quote>
+		*/}
+    <Social>
+      <Icon name="github" href="https://github.com/jsonnull" />
+      <Icon name="twitter" href="https://twitter.com/jsonnull" />
+    </Social>
     <Source>
       <a
         href="https://github.com/jsonnull/jsonnull.com"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         Source on GitHub
       </a>
     </Source>
   </Wrapper>
 )
-// <Social>
-// <Icon name="github" href="https://github.com/jsonnull" />
-// <Icon name="twitter" href="https://twitter.com/jsonnull" />
-// </Social>
 
 export default Footer

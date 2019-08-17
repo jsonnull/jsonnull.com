@@ -2,26 +2,32 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import feather from 'feather-icons'
-import { media, colors } from '../../../styles/base'
-
-const Social = styled.div`
-  margin-top: auto;
-`
+import { colors, lineUnit } from '../../../styles/base'
+import { noUnderline } from '../../../styles/links'
 
 const SocialLink = styled.a`
-  background: none !important;
+  margin-right: 2.4rem;
+
+  opacity: 0.4;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    ${noUnderline};
+    transition: opacity 200ms;
+  }
+  &:hover {
+    opacity: 1;
+  }
 `
 
 const IconWrapper = styled.div`
-  height: {lineUnit};
-  line-height: {lineUnit};
+  height: ${lineUnit};
+  line-height: ${lineUnit};
   margin-top: 1.2rem;
   padding-top: 2px;
-  display: none;
-
-  ${media.desktop`
-    display: block;
-  `};
+  display: inline;
 `
 
 type IconProps = {
@@ -29,11 +35,11 @@ type IconProps = {
   href: string
 }
 const Icon = ({ name, href }: IconProps) => (
-  <SocialLink href={href} target="_blank" rel="noopener">
+  <SocialLink href={href} target="_blank" rel="noopener noreferrer">
     <IconWrapper
       dangerouslySetInnerHTML={{
         __html: feather.icons[name].toSvg({
-          color: colors.gray500,
+          color: colors.gray900,
           width: 20,
           height: 20
         })
