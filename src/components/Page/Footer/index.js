@@ -18,18 +18,17 @@ const Wrapper = styled.div`
 const Quote = styled.p`
   margin: 0;
   margin-top: auto;
-  color: ${colors.gray800};
+  color: ${colors.gray400};
   font-size: ${fontSize.small};
   font-family: ${fonts.serif};
 `
 
 const Attrib = styled.span`
-  color: ${colors.gray700};
+  color: ${colors.gray400};
 `
 
 const Source = styled.div`
   margin-left: auto;
-  color: ${colors.gray900};
   display: block;
   font-size: ${fontSize.small};
 
@@ -40,7 +39,7 @@ const Source = styled.div`
   a:active {
     transition: background-size 100ms ease;
     text-shadow: none;
-    ${color(colors.gray900)} ${underlineOut};
+    ${color(colors.gray400)} ${underlineOut};
   }
 
   a:hover {
@@ -53,7 +52,7 @@ const Footer = () => (
   <Wrapper>
     <Quote>
       "It is the power of the mind to be unconquerable."
-      <Attrib> —&nbsp;Seneca</Attrib>
+      <Attrib> –&nbsp;Seneca</Attrib>
     </Quote>
     <Source>
       <a
