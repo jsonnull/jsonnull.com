@@ -32,3 +32,8 @@ export const underlineOut = css`
 export const underlineIn = css`
   background-size: 100% 1px;
 `
+
+export const noUnderline = css`
+  background-image: none;
+  text-shadow: none;
+`
