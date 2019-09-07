@@ -62,7 +62,8 @@ const Text = styled.h1`
     font-size: ${12 * fontSize}px;
   }
 
-  ${App} & {
+  /* TODO: Use App & selector instead */
+  .app & {
     color: white;
   }
 `
@@ -94,7 +95,7 @@ const Hero = () => {
   return (
     <HeroArea>
       <Title />
-      <App>
+      <App className="app">
         <InnerHeroArea>
           <Title />
         </InnerHeroArea>

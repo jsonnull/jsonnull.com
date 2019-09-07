@@ -30,11 +30,7 @@ const IconWrapper = styled.div`
   display: inline;
 `
 
-type IconProps = {
-  name: string,
-  href: string
-}
-const Icon = ({ name, href }: IconProps) => (
+const Icon = ({ name, href }) => (
   <SocialLink href={href} target="_blank" rel="noopener noreferrer">
     <IconWrapper
       dangerouslySetInnerHTML={{
