@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { Link as LinkImpl } from 'gatsby'
+import LinkImpl from 'next/link'
 import { colors, fonts, fontSize, lineUnit, media } from '../../styles/base'
 import { noUnderline } from '../../styles/links'
 
@@ -65,20 +65,22 @@ const ListItem = styled.li`
   display: block;
 `
 
-const Link = props => (
+const Link = ({ href, children }) => (
   <ListItem>
-    <LinkImpl {...props} />
+    <LinkImpl href={href}>
+      <a>{children}</a>
+    </LinkImpl>
   </ListItem>
 )
 
 const Header = () => (
   <Wrapper>
     <Title>
-      <LinkImpl to="/">jsonnull</LinkImpl>
+      <LinkImpl href="/">jsonnull</LinkImpl>
     </Title>
     <List>
-      <Link to="/blog/">Blog</Link>
-      <Link to="/about/">About</Link>
+      <Link href="/blog/">Blog</Link>
+      <Link href="/about/">About</Link>
     </List>
   </Wrapper>
 )
