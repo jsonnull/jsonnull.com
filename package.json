@@ -51,7 +51,7 @@
     "puppeteer": "^1.0.0",
     "qs": "^6.5.1",
     "raw-loader": "^0.5.1",
-    "serialize-javascript": "^1.4.0",
+    "serialize-javascript": "^2.1.1",
     "through2": "^2.0.3",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.7.1",
