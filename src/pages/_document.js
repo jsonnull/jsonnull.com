@@ -11,7 +11,7 @@ class Document extends BaseDocument {
             type="text/css"
           />
         </Head>
-        <body>
+        <body className="bg-cloud-900">
           <Main />
           <NextScript />
         </body>
