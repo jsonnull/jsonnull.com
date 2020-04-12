@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Li = ({ children }) => <li className="ml-3">{children}</li>
 
-const Header = () => (
+export const Header = () => (
   <nav className="fixed flex flex-1 inset-x-0 p-8">
     <Link href="/">
       <a>jsonnull</a>
@@ -22,5 +22,3 @@ const Header = () => (
     </ul>
   </nav>
 )
-
-export default Header

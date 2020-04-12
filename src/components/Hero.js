@@ -8,7 +8,7 @@ const parts = [
   '.'
 ]
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div className="flex min-h-screen font-display items-center p-8 leading-tight">
       <div>
@@ -26,5 +26,3 @@ const Hero = () => {
     </div>
   )
 }
-
-export default Hero
