@@ -1,0 +1,21 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+/* TODO: rework */
+::-moz-selection {
+  color: #fdfffb;
+  background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
+  opacity: 1;
+}
+
+::selection {
+  color: #fdfffb;
+  background: rgba(131, 135, 132, 0.99);
+  text-shadow: none;
+  opacity: 1;
+}
