@@ -5,14 +5,14 @@ import { theme } from '../../tailwind.config'
 
 // "It is the power of the mind to be unconquerable." – Seneca
 
-const Footer = () => (
-  <div className="flex flex-1 inset-x-0 p-8">
+export const Footer = () => (
+  <div className="flex inset-x-0 p-8 mt-auto">
     {[
       ['github', 'https://github.com/jsonnull'],
-      ['twitter', 'twitter.com/jsonnull']
+      ['twitter', 'https://twitter.com/jsonnull']
     ].map(([name, href]) => {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <a href={href} key={href} target="_blank" rel="noopener noreferrer">
           <div
             className="mr-3"
             dangerouslySetInnerHTML={{
@@ -38,5 +38,3 @@ const Footer = () => (
     </div>
   </div>
 )
-
-export default Footer

@@ -1,14 +1,16 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Header from './Header'
-import Footer from './Footer'
+import { Header, Footer } from './'
 
 const background =
   'radial-gradient(100% 70vh at 0% 0%, #313135 0%, #17171A 100%)'
 // 'radial-gradient(100% 70vh at 0% 0%, #3B4056 0%, #17171A 100%)'
 
-const Page = ({ children, title = 'Welcome' }) => (
-  <div className="bg-cloud-900 text-cloud-100" style={{ background }}>
+export const Page = ({ children, title = 'Welcome' }) => (
+  <div
+    className="flex flex-col bg-cloud-900 text-cloud-100 min-h-screen"
+    style={{ background }}
+  >
     <Helmet titleTemplate="%s | Jason Nall">
       <title>{title}</title>
     </Helmet>
@@ -17,5 +19,3 @@ const Page = ({ children, title = 'Welcome' }) => (
     <Footer />
   </div>
 )
-
-export default Page

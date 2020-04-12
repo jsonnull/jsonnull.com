@@ -1,5 +1,0 @@
-```json
-{
-  "template": "blog"
-}
-```
