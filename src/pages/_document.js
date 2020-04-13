@@ -6,7 +6,7 @@ class Document extends BaseDocument {
       <Html>
         <Head>
           <link
-            href={`//fonts.googleapis.com/css?family=Lato:100,400,800`}
+            href="//fonts.googleapis.com/css?family=Lato:100,400,800"
             rel="stylesheet"
             type="text/css"
           />
