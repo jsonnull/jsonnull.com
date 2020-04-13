@@ -4,18 +4,18 @@ const parts = [
   "I'm a ",
   'software engineer',
   ' building ',
-  'web experiences',
+  <>web&nbsp;experiences</>,
   '.'
 ]
 
 export const Hero = () => {
   return (
-    <div className="flex min-h-screen font-display items-center p-8 leading-tight">
+    <div className="flex min-h-screen font-display items-center p-6 sm:p-8 tracking-tight">
       <div>
-        <h1 className="uppercase text-3xl font-extrabold text-steel">
+        <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-extrabold text-steel">
           Jason Nall
         </h1>
-        <h2 className="text-5xl font-hairline">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-hairline leading-tight">
           {parts[0]}
           <span className="font-normal">{parts[1]}</span>
           {parts[2]}
