@@ -6,7 +6,7 @@ import { theme } from '../../tailwind.config'
 // "It is the power of the mind to be unconquerable." – Seneca
 
 export const Footer = () => (
-  <div className="flex inset-x-0 p-8 mt-auto">
+  <div className="flex inset-x-0 p-6 sm:p-8 mt-auto">
     {[
       ['github', 'https://github.com/jsonnull'],
       ['twitter', 'https://twitter.com/jsonnull']

@@ -28,7 +28,7 @@ export const Header = () => {
   const isOpaque = useIsPastScrolly(30)
 
   return (
-    <nav className="fixed flex-1 inset-x-0 p-8">
+    <nav className="fixed flex-1 inset-x-0 p-6 sm:p-8">
       <div
         className={`transition duration-200 bg-cloud-900 absolute inset-0 ${
           isOpaque ? 'opacity-100' : 'opacity-0'
@@ -39,12 +39,9 @@ export const Header = () => {
           <a>jsonnull</a>
         </Link>
         <ul className="ml-auto flex">
-          {[
-            ['/blog/', 'blog'],
-            ['/about/', 'about']
-          ].map(([url, title]) => {
+          {[['/blog/', 'blog'], ['/about/', 'about']].map(([url, title]) => {
             return (
-              <li className="ml-8" key={url}>
+              <li className="ml-6 sm:ml-8" key={url}>
                 <Link href={url}>
                   <a>{title}</a>
                 </Link>
