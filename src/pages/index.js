@@ -38,7 +38,7 @@ const Home = () => {
     <Page title="Home">
       <ClearHeader />
       <div className="flex flex-col px-6 sm:px-8">
-        <div className="h-64" />
+        <div className="h-16 sm:h-32 md:h-48 lg:h-64" />
         <div className="font-display tracking-tight">
           <h1 className="uppercase text-xl md:text-2xl lg:text-3xl font-extrabold text-steel">
             Jason Nall
@@ -51,7 +51,7 @@ const Home = () => {
             {parts[4]}
           </h2>
         </div>
-        <div className="h-64" />
+        <div className="h-16 sm:h-32 md:h-48 lg:h-64" />
         {sections.map(section => (
           <React.Fragment key={section.name}>
             <h2 className="uppercase pb-4 text-cloud-500 font-bold">
