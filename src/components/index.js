@@ -1,7 +1,6 @@
 import React from 'react'
 export * from './Footer'
 export * from './Header'
-export * from './Hero'
 export * from './Page'
 
 const tailwind = (el, tailwind) => ({ children = [], className = '' }) => {
