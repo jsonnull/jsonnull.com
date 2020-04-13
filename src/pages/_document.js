@@ -10,6 +10,7 @@ class Document extends BaseDocument {
             rel="stylesheet"
             type="text/css"
           />
+          <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         </Head>
         <body className="bg-cloud-900">
           <Main />
