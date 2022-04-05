@@ -3,3 +3,10 @@ public
 node_modules
 .next
 src/out/
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

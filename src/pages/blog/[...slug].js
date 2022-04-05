@@ -1,4 +1,3 @@
-import React from 'react'
 import { ClearHeader, Heading, Page, Wrapper } from '../../components'
 import { promises } from 'fs'
 import Markdown from 'markdown-to-jsx'
@@ -13,20 +12,20 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
 export async function getStaticProps(context) {
   const { data, content } = await promises
     .readFile(`./content/blog/${context.params.slug.join('/')}.md`)
-    .then(buf => matter(buf.toString(), { delims: '```' }))
+    .then((buf) => matter(buf.toString(), { delims: '```' }))
 
   return {
     props: {
       data,
-      content
-    }
+      content,
+    },
   }
 }
 
