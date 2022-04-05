@@ -4,7 +4,7 @@ import BaseApp from 'next/app'
 class App extends BaseApp {
   render() {
     const { Component, pageProps } = this.props
-    return <Component {...pageProps} />
+    return Component.getLayout(<Component {...pageProps} />);
   }
 }
 

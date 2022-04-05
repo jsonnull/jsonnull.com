@@ -23,20 +23,23 @@ export async function getStaticProps(context) {
 
 const Posts = ({ posts }) => {
   return (
-    <Page title="Blog">
-      <ClearHeader />
-      <Wrapper>
-        <Heading>Blog</Heading>
-        {posts.map((post) => {
-          return (
-            <Link key={post.url} href={post.url}>
-              <a href={post.url}>{post.title}</a>
-            </Link>
-          )
-        })}
-      </Wrapper>
-    </Page>
+    <Wrapper>
+      <Heading>Blog</Heading>
+      {posts.map((post) => {
+        return (
+          <Link key={post.url} href={post.url}>
+            <a href={post.url}>{post.title}</a>
+          </Link>
+        )
+      })}
+    </Wrapper>
   )
 }
+
+Posts.getLayout = (page) => (
+  <Page title="Blog">
+    {page}
+  </Page>
+)
 
 export default Posts

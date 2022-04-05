@@ -27,10 +27,14 @@ const Title = () => {
 
 const Home = () => {
   return (
-    <Page title="Home">
-      <Title />
-    </Page>
+    <Title />
   )
 }
+
+Home.getLayout = page => (
+  <Page title="Home">
+    {page}
+  </Page>
+)
 
 export default Home
