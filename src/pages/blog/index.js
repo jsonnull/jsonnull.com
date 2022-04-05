@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import { ClearHeader, Heading, Page, Wrapper } from '../../components'
 import { promises } from 'fs'
@@ -10,15 +9,15 @@ export async function getStaticProps(context) {
   for await (const { url, path } of getPosts()) {
     const { data } = await promises
       .readFile(path)
-      .then(buf => matter(buf.toString(), { delims: '```' }))
+      .then((buf) => matter(buf.toString(), { delims: '```' }))
 
     posts.push({ ...data, url })
   }
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   }
 }
 
@@ -28,7 +27,7 @@ const Posts = ({ posts }) => {
       <ClearHeader />
       <Wrapper>
         <Heading>Blog</Heading>
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <Link key={post.url} href={post.url}>
               <a href={post.url}>{post.title}</a>

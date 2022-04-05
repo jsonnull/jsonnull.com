@@ -1,4 +1,10 @@
 .cache
 node_modules
 .next
-/public
+/public/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

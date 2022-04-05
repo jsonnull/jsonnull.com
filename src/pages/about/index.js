@@ -1,4 +1,3 @@
-import React from 'react'
 import { ClearHeader, Heading, Page, Wrapper } from '../../components'
 
 const About = () => {

@@ -1,6 +1,5 @@
-import React from 'react'
-import BaseApp from 'next/app'
 import '../global.css'
+import BaseApp from 'next/app'
 
 class App extends BaseApp {
   render() {
