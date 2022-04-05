@@ -3,7 +3,7 @@ const path = require('path')
 
 const HOST =
   process.env.TRAVIS == true
-    ? 'http://localhost:8080/'
+    ? 'http://localhost:3000/'
     : 'https://jsonnull.com/'
 
 const readme = {
@@ -18,52 +18,30 @@ const readme = {
   }
 }
 
-const twitter = {
-  url: 'twitter.html',
-  size: {
-    width: 1500,
-    height: 500
-  },
-  options: {
-    path: 'public/twitterHeader.png'
-  }
-}
-
-const screenshots = [readme, twitter]
-
 const main = async () => {
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    // https://github.com/puppeteer/puppeteer/issues/1837
+    args: [
+      '--disable-gpu',
+      '--renderer',
+      '--no-sandbox',
+      '--no-service-autorun',
+      '--no-experiments',
+      '--no-default-browser-check',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+      '--disable-extensions'
+    ]
   })
 
   const page = await browser.newPage()
 
-  /*
-   * Block google analytics on automated views
-   */
-  await page.setRequestInterception(true)
-  page.on('request', request => {
-    if (request.url().endsWith('analytics.js')) {
-      request.abort()
-    } else {
-      request.continue()
-    }
-  })
-
-  for (let i = 0; i < screenshots.length; i++) {
-    let screenshot = screenshots[i]
-    if (screenshot.size) {
-      await page.setViewport(screenshot.size)
-    }
-    try {
-      await page.goto(HOST + screenshot.url, {
-        waitUntil: 'networkidle0'
-      })
-      await page.screenshot(screenshot.options)
-    } catch (e) {
-      console.error(e)
-    }
-  }
+  await page.setViewport(readme.size)
+  await page.goto(HOST + readme.url, { waitUntil: 'networkidle0' })
+  await page.screenshot(readme.options)
 
   await browser.close()
 }

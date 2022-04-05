@@ -1,9 +1,8 @@
 .cache
-public
 node_modules
 .next
+public/
 src/out/
-
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
