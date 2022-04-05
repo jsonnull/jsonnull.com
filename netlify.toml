@@ -2,5 +2,9 @@
 publish = ".next"
 command = "yarn build"
 
+[build.environment]
+YARN_ENABLE_GLOBAL_CACHE = "true"
+YARN_GLOBAL_FOLDER = "/opt/buildhome/.yarn_cache"
+
 [[plugins]]
 package = "@netlify/plugin-nextjs"
