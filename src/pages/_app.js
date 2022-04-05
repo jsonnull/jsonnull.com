@@ -4,7 +4,10 @@ import BaseApp from 'next/app'
 class App extends BaseApp {
   render() {
     const { Component, pageProps } = this.props
-    return Component.getLayout(<Component {...pageProps} />);
+
+    const getLayout = Component.getLayout || ((page) => page)
+
+    return getLayout(<Component {...pageProps} />)
   }
 }
 
