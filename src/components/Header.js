@@ -87,7 +87,7 @@ export const Header = () => {
         </div>
         <div className="z-1 flex items-center w-full z-10">
           <Link href="/">
-            <a className="hover:underline decoration-zinc-400" ref={homeRef}>
+            <a className="sm:hover:underline decoration-zinc-400" ref={homeRef}>
               <span className="font-semibold hidden sm:inline">jsonnull</span>
               <Home
                 className="block sm:hidden"
@@ -108,7 +108,7 @@ export const Header = () => {
                 <li key={url}>
                   <Link href={url}>
                     <a
-                      className="hover:underline decoration-zinc-400"
+                      className="sm:hover:underline decoration-zinc-400"
                       ref={ref}
                     >
                       {title}
