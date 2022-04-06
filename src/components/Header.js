@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { zinc } from 'tailwindcss/colors'
-import { GitHub, Twitter } from 'react-feather'
+import { Home, GitHub, Twitter } from 'react-feather'
 import clsx from 'clsx'
 
 const PADDING = 8
@@ -88,7 +88,13 @@ export const Header = () => {
         <div className="z-1 flex items-center w-full z-10">
           <Link href="/">
             <a className="hover:underline decoration-zinc-400" ref={homeRef}>
-              <span className="font-bold">jsonnull</span>
+              <span className="font-semibold hidden sm:inline">jsonnull</span>
+              <Home
+                className="block sm:hidden"
+                width={18}
+                height={18}
+                color={'#ffffff'}
+              />
             </a>
           </Link>
           <Separator />
