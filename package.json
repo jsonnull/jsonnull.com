@@ -9,6 +9,8 @@
     "build:ci": "yarn build"
   },
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@popperjs/core": "^2.11.5",
     "clsx": "^1.1.1",
     "gray-matter": "4.0.3",
     "markdown-to-jsx": "7.1.7",
@@ -17,7 +19,8 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-feather": "^2.0.9",
-    "react-helmet": "6.1.0"
+    "react-helmet": "6.1.0",
+    "react-popper": "^2.2.5"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.3.1",

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { zinc } from 'tailwindcss/colors'
 import { Home, GitHub, Twitter } from 'react-feather'
+import { Theme } from './Theme'
 import clsx from 'clsx'
 
 const PADDING = 8
@@ -118,6 +119,8 @@ export const Header = () => {
               )
             })}
           </ul>
+          <Separator />
+          <Theme />
           <Separator className="pr-1 sm:pr-4 hidden sm:block" />
           <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center">
             {[
