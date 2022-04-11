@@ -11,7 +11,6 @@ const Title = () => {
         alt="Picture of the author"
         width="80"
         height="80"
-        placeholder="blur" // Optional blur-up while loading
         className="rounded-full"
       />
       <h1 className="pt-4 text-3xl sm:text-5xl font-semibold tracking-tight">
@@ -26,15 +25,9 @@ const Title = () => {
 }
 
 const Home = () => {
-  return (
-    <Title />
-  )
+  return <Title />
 }
 
-Home.getLayout = page => (
-  <Page title="Home">
-    {page}
-  </Page>
-)
+Home.getLayout = (page) => <Page title="Home">{page}</Page>
 
 export default Home
