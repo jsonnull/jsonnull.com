@@ -5,7 +5,6 @@ import {
   useLayoutEffect,
   useState,
 } from 'react'
-import { zinc } from 'tailwindcss/colors'
 import { Listbox } from '@headlessui/react'
 import { Sun, Monitor, Moon } from 'react-feather'
 import { usePopper } from 'react-popper'
@@ -74,7 +73,10 @@ export const Theme = () => {
 
   return (
     <Listbox value={theme} onChange={setTheme}>
-      <Listbox.Button ref={setReferenceElement}>
+      <Listbox.Button
+        ref={setReferenceElement}
+        className="p-2 rounded-full hover:bg-zinc-600 dark:hover:bg-zinc-800"
+      >
         <Sun className="block" width={18} height={18} className="dark:hidden" />
         <Moon
           className="block"
@@ -85,7 +87,7 @@ export const Theme = () => {
       </Listbox.Button>
       <Listbox.Options
         ref={setPopperElement}
-        className="rounded bg-black mb-3 overflow-hidden"
+        className="rounded bg-black mb-3 overflow-hidden "
         style={styles.popper}
         {...attributes.popper}
       >

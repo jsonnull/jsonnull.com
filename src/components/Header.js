@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { zinc } from 'tailwindcss/colors'
 import { Home, GitHub, Twitter } from 'react-feather'
 import { Theme } from './Theme'
 import clsx from 'clsx'
@@ -62,7 +61,9 @@ const useNavigation = () => {
 const Separator = ({ className }) => {
   return (
     <div className={clsx(className, 'px-3 sm:px-6')}>
-      <div className="border-l w-0 border-solid border-zinc-500">&nbsp;</div>
+      <div className="border-l w-0 border-solid border-zinc-500 dark:border-zinc-700">
+        &nbsp;
+      </div>
     </div>
   )
 }
@@ -74,7 +75,7 @@ export const Header = () => {
   return (
     <div className="fixed bottom-2 sm:bottom-8 inset-x-2 sm:inset-x-8 flex pointer-events-none">
       <nav
-        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center text-white bg-black/80 rounded-md pointer-events-auto"
+        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center text-white bg-black/80 dark:bg-zinc-900/80 rounded-md pointer-events-auto"
         ref={navRef}
       >
         <div
@@ -119,10 +120,10 @@ export const Header = () => {
               )
             })}
           </ul>
-          <Separator />
+          <Separator className="pr-1 sm:pr-4" />
           <Theme />
-          <Separator className="pr-1 sm:pr-4 hidden sm:block" />
-          <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center">
+          <Separator className="px-1 sm:px-4 hidden sm:block" />
+          <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400">
             {[
               [GitHub, 'https://github.com/jsonnull'],
               [Twitter, 'https://twitter.com/jsonnull'],
@@ -133,9 +134,9 @@ export const Header = () => {
                   key={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-zinc-600 p-2 rounded-full"
+                  className="hover:bg-zinc-600 hover:text-white dark:hover:bg-zinc-800 p-2 rounded-full"
                 >
-                  <Icon width={18} height={18} color={zinc['400']} />
+                  <Icon width={18} height={18} />
                 </a>
               )
             })}
