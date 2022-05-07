@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 const PADDING = 8
 
-const useNavigation = () => {
+const useNavigation = (theme) => {
   const navRef = useRef()
   const homeRef = useRef()
   const projectsRef = useRef()
@@ -41,7 +41,7 @@ const useNavigation = () => {
 
   useEffect(() => {
     updateBounds()
-  }, [navRef, homeRef, projectsRef, aboutRef, setBounds, path])
+  }, [navRef, homeRef, projectsRef, aboutRef, setBounds, path, theme])
 
   useEffect(() => {
     window.addEventListener('resize', updateBounds)
@@ -55,7 +55,6 @@ const useNavigation = () => {
     aboutRef,
     left: bounds.left,
     width: bounds.width,
-    updateNavigation: updateBounds,
   }
 }
 
@@ -76,6 +75,7 @@ const styles = {
 }
 
 export const Header = () => {
+  const [theme, setTheme] = useState('default')
   const {
     navRef,
     homeRef,
@@ -84,7 +84,7 @@ export const Header = () => {
     left,
     width,
     updateNavigation,
-  } = useNavigation()
+  } = useNavigation(theme)
 
   return (
     <div
@@ -138,7 +138,7 @@ export const Header = () => {
             })}
           </ul>
           <Separator className="pr-1 sm:pr-4" />
-          <Theme onChange={() => updateNavigation()} />
+          <Theme onChange={(theme) => setTheme(theme)} />
           <Separator className="px-1 sm:px-4 hidden sm:block" />
           <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400 dark:text-zinc-600">
             {[
