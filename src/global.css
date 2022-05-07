@@ -2,17 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: rework */
 ::-moz-selection {
-  color: #fdfffb;
-  background: rgba(131, 135, 132, 0.99);
+  color: white;
+  background: rgba(109, 117, 153, 0.99);
   text-shadow: none;
   opacity: 1;
 }
 
 ::selection {
-  color: #fdfffb;
-  background: rgba(131, 135, 132, 0.99);
+  color: white;
+  background: rgba(109, 117, 153, 0.99);
   text-shadow: none;
   opacity: 1;
+}
+
+@layer components {
+  .text-dimmed {
+    @apply text-zinc-700 dark:text-zinc-400;
+  }
+  .underline-themed {
+    @apply sm:hover:underline decoration-zinc-400 dark:decoration-zinc-600;
+  }
 }
