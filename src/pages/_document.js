@@ -4,9 +4,8 @@ class Document extends BaseDocument {
   render() {
     return (
       <Html>
-        <Head>
-        </Head>
-        <body className="bg-cloud-900">
+        <Head></Head>
+        <body className="bg-black">
           <Main />
           <NextScript />
         </body>

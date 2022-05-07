@@ -45,7 +45,7 @@ const useTheme = ({ onChange }) => {
       localStorage.theme = theme
       applyTheme(theme)
       if (onChange) {
-        onChange()
+        onChange(theme)
       }
     },
     [setThemeState]

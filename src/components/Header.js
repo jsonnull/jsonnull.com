@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 const PADDING = 8
 
-const useNavigation = () => {
+const useNavigation = (theme) => {
   const navRef = useRef()
   const homeRef = useRef()
   const projectsRef = useRef()
@@ -41,7 +41,7 @@ const useNavigation = () => {
 
   useEffect(() => {
     updateBounds()
-  }, [navRef, homeRef, projectsRef, aboutRef, setBounds, path])
+  }, [navRef, homeRef, projectsRef, aboutRef, setBounds, path, theme])
 
   useEffect(() => {
     window.addEventListener('resize', updateBounds)
@@ -55,7 +55,6 @@ const useNavigation = () => {
     aboutRef,
     left: bounds.left,
     width: bounds.width,
-    updateNavigation: updateBounds,
   }
 }
 
@@ -76,6 +75,7 @@ const styles = {
 }
 
 export const Header = () => {
+  const [theme, setTheme] = useState('default')
   const {
     navRef,
     homeRef,
@@ -84,17 +84,17 @@ export const Header = () => {
     left,
     width,
     updateNavigation,
-  } = useNavigation()
+  } = useNavigation(theme)
 
   return (
     <div
       className={clsx(
         styles.text,
-        'fixed bottom-2 sm:bottom-8 inset-x-2 sm:inset-x-8 flex pointer-events-none'
+        'fixed bottom-0 sm:bottom-8 inset-x-0 sm:inset-x-8 flex pointer-events-none'
       )}
     >
       <nav
-        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 rounded-md pointer-events-auto"
+        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 sm:rounded-md pointer-events-auto"
         ref={navRef}
       >
         <div
@@ -138,7 +138,7 @@ export const Header = () => {
             })}
           </ul>
           <Separator className="pr-1 sm:pr-4" />
-          <Theme onChange={() => updateNavigation()} />
+          <Theme onChange={(theme) => setTheme(theme)} />
           <Separator className="px-1 sm:px-4 hidden sm:block" />
           <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400 dark:text-zinc-600">
             {[

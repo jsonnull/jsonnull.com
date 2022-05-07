@@ -9,6 +9,6 @@ export const Page = ({ children, title = 'Welcome' }) => (
     </Helmet>
     <Header />
     <div className="flex flex-col">{children}</div>
-    <Spacer wide />
+    <Spacer extraWide />
   </div>
 )
