@@ -31,7 +31,7 @@ const applyTheme = (theme) => {
   }
 }
 
-const useTheme = () => {
+const useTheme = ({ onChange }) => {
   const initialTheme =
     typeof window !== 'undefined' && 'theme' in localStorage
       ? localStorage.theme
@@ -44,6 +44,9 @@ const useTheme = () => {
       setThemeState(theme)
       localStorage.theme = theme
       applyTheme(theme)
+      if (onChange) {
+        onChange()
+      }
     },
     [setThemeState]
   )
@@ -65,8 +68,8 @@ const useTheme = () => {
   return [theme, setTheme]
 }
 
-export const Theme = () => {
-  const [theme, setTheme] = useTheme()
+export const Theme = ({ onChange }) => {
+  const [theme, setTheme] = useTheme({ onChange })
   const [referenceElement, setReferenceElement] = useState(null)
   const [popperElement, setPopperElement] = useState(null)
   const { styles, attributes } = usePopper(referenceElement, popperElement)
@@ -75,19 +78,14 @@ export const Theme = () => {
     <Listbox value={theme} onChange={setTheme}>
       <Listbox.Button
         ref={setReferenceElement}
-        className="p-2 rounded-full hover:bg-zinc-600 dark:hover:bg-zinc-800"
+        className="p-2 rounded-full hover:bg-zinc-600 dark:hover:bg-zinc-400"
       >
-        <Sun className="block" width={18} height={18} className="dark:hidden" />
-        <Moon
-          className="block"
-          width={18}
-          height={18}
-          className="hidden dark:block"
-        />
+        <Sun width={18} height={18} className="block dark:hidden" />
+        <Moon width={18} height={18} className="hidden dark:block" />
       </Listbox.Button>
       <Listbox.Options
         ref={setPopperElement}
-        className="rounded bg-black mb-3 overflow-hidden "
+        className="rounded bg-black dark:bg-white text-white dark:text-black mb-3 overflow-hidden "
         style={styles.popper}
         {...attributes.popper}
       >
@@ -98,7 +96,7 @@ export const Theme = () => {
                 return (
                   <li
                     className={clsx(
-                      'flex gap-2 py-2 px-4 items-center cursor-pointer hover:bg-zinc-900/50',
+                      'flex gap-2 py-2 px-4 items-center cursor-pointer hover:bg-zinc-900/50 dark:hover:bg-zinc-400/50',
                       selected && 'text-sky'
                     )}
                   >

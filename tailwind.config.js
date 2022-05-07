@@ -1,3 +1,8 @@
+const plugin = require('tailwindcss/plugin')
+const {
+  default: flattenColorPalette,
+} = require('tailwindcss/lib/util/flattenColorPalette')
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -51,10 +56,47 @@ module.exports = {
         '"Liberation Mono"',
         '"Courier New"',
         'monospace',
-      ],
-      display: ['Lato'],
+      ]
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    plugin(
+      function patternColors({ matchUtilities, theme }) {
+        matchUtilities(
+          {
+            'pattern-lines': (value) => {
+              return {
+                'background-size': `${value} ${value}`,
+                'background-image':
+                  'repeating-linear-gradient(-45deg, var(--tw-pattern-fg) 0, var(--tw-pattern-fg) 0.5px, var(--tw-pattern-bg) 0, var(--tw-pattern-bg) 50%)',
+              }
+            },
+          },
+          { values: theme('patternSize') }
+        )
+      },
+      {
+        theme: {
+          patternSize: {
+            sm: '4px',
+            DEFAULT: '8px',
+          },
+        },
+      }
+    ),
+    plugin(function patternColors({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'pattern-bg': (color) => ({
+            '--tw-pattern-bg': color,
+          }),
+          'pattern-fg': (color) => ({
+            '--tw-pattern-fg': color,
+          }),
+        },
+        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+      )
+    }),
+  ],
 }

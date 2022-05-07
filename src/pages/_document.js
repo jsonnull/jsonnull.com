@@ -5,11 +5,6 @@ class Document extends BaseDocument {
     return (
       <Html>
         <Head>
-          <link
-            href={`//fonts.googleapis.com/css?family=Lato:100,400,800`}
-            rel="stylesheet"
-            type="text/css"
-          />
         </Head>
         <body className="bg-cloud-900">
           <Main />

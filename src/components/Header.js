@@ -55,31 +55,50 @@ const useNavigation = () => {
     aboutRef,
     left: bounds.left,
     width: bounds.width,
+    updateNavigation: updateBounds,
   }
 }
 
 const Separator = ({ className }) => {
   return (
     <div className={clsx(className, 'px-3 sm:px-6')}>
-      <div className="border-l w-0 border-solid border-zinc-500 dark:border-zinc-700">
+      <div className="border-l w-0 border-solid border-zinc-500 dark:border-zinc-500">
         &nbsp;
       </div>
     </div>
   )
 }
 
+const styles = {
+  text: 'dark:font-semibold text-white dark:text-black',
+  homeText: 'font-semibold dark:font-bold',
+  underline: 'underline-themed',
+}
+
 export const Header = () => {
-  const { navRef, homeRef, projectsRef, aboutRef, left, width } =
-    useNavigation()
+  const {
+    navRef,
+    homeRef,
+    projectsRef,
+    aboutRef,
+    left,
+    width,
+    updateNavigation,
+  } = useNavigation()
 
   return (
-    <div className="fixed bottom-2 sm:bottom-8 inset-x-2 sm:inset-x-8 flex pointer-events-none">
+    <div
+      className={clsx(
+        styles.text,
+        'fixed bottom-2 sm:bottom-8 inset-x-2 sm:inset-x-8 flex pointer-events-none'
+      )}
+    >
       <nav
-        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center text-white bg-black/80 dark:bg-zinc-900/80 rounded-md pointer-events-auto"
+        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 rounded-md pointer-events-auto"
         ref={navRef}
       >
         <div
-          className="bg-black/90 rounded-lg h-8 absolute z-1 transition-[left,width] ease-in"
+          className="bg-black/90 dark:bg-zinc-400/90 rounded-lg h-8 absolute z-1 transition-[left,width] ease-in"
           style={{
             left: `${left - PADDING}px`,
             width: `${width + PADDING * 2}px`,
@@ -89,13 +108,14 @@ export const Header = () => {
         </div>
         <div className="z-1 flex items-center w-full z-10">
           <Link href="/">
-            <a className="sm:hover:underline decoration-zinc-400" ref={homeRef}>
-              <span className="font-semibold hidden sm:inline">jsonnull</span>
+            <a className={clsx(styles.underline)} ref={homeRef}>
+              <span className={clsx(styles.homeText, 'hidden sm:inline')}>
+                jsonnull
+              </span>
               <Home
-                className="block sm:hidden"
+                className={clsx('block sm:hidden', styles.text)}
                 width={18}
                 height={18}
-                color={'#ffffff'}
               />
             </a>
           </Link>
@@ -109,10 +129,7 @@ export const Header = () => {
               return (
                 <li key={url}>
                   <Link href={url}>
-                    <a
-                      className="sm:hover:underline decoration-zinc-400"
-                      ref={ref}
-                    >
+                    <a className={clsx(styles.underline)} ref={ref}>
                       {title}
                     </a>
                   </Link>
@@ -121,9 +138,9 @@ export const Header = () => {
             })}
           </ul>
           <Separator className="pr-1 sm:pr-4" />
-          <Theme />
+          <Theme onChange={() => updateNavigation()} />
           <Separator className="px-1 sm:px-4 hidden sm:block" />
-          <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400">
+          <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400 dark:text-zinc-600">
             {[
               [GitHub, 'https://github.com/jsonnull'],
               [Twitter, 'https://twitter.com/jsonnull'],
@@ -134,7 +151,7 @@ export const Header = () => {
                   key={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:bg-zinc-600 hover:text-white dark:hover:bg-zinc-800 p-2 rounded-full"
+                  className="hover:bg-zinc-600 hover:text-white dark:hover:text-black dark:hover:bg-zinc-400 p-2 rounded-full"
                 >
                   <Icon width={18} height={18} />
                 </a>
