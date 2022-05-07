@@ -21,7 +21,7 @@ export const Project = ({
       >
         <div
           className={clsx(
-            'flex items-center h-6 pl-2 pr-1 m-[-1px] min-w-[100px]',
+            'flex items-center h-6 pl-2 pr-1 m-[-1px] min-w-[120px]',
             'text-sm text-zinc-100 dark:text-black dark:font-bold',
             'bg-zinc-900 dark:bg-zinc-200',
             retired && 'bg-zinc-700 dark:bg-zinc-400'
