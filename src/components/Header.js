@@ -90,11 +90,11 @@ export const Header = () => {
     <div
       className={clsx(
         styles.text,
-        'fixed bottom-2 sm:bottom-8 inset-x-2 sm:inset-x-8 flex pointer-events-none'
+        'fixed bottom-0 sm:bottom-8 inset-x-0 sm:inset-x-8 flex pointer-events-none'
       )}
     >
       <nav
-        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 rounded-md pointer-events-auto"
+        className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 sm:rounded-md pointer-events-auto"
         ref={navRef}
       >
         <div

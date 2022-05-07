@@ -19,7 +19,7 @@ const Title = () => {
         height="80"
         className="rounded-full"
       />
-      <h1 className="pt-4 text-3xl sm:text-5xl font-semibold tracking-tight">
+      <h1 className="pt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
         Crafting{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-fog to-steel">
           experiences
