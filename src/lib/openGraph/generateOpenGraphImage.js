@@ -11,7 +11,7 @@ export async function generateOpenGraphImage({ title, slug }) {
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath,
-    headless: false, // chromium.headless,
+    headless: true, // chromium.headless
   })
 
   const page = await browser.newPage()
@@ -53,5 +53,5 @@ export async function generateOpenGraphImage({ title, slug }) {
 
   await browser.close()
 
-  return `/public/og-images/${slug}.jpg`;
+  return `/public/og-images/${slug}.jpg`
 }
