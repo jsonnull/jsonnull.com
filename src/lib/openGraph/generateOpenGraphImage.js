@@ -45,7 +45,7 @@ export async function generateOpenGraphImage({ title, slug }) {
   await page.screenshot({
     path: path.resolve(__dirname, `../../../public/og-images/${slug}.jpg`),
     type: 'jpeg',
-    quality: 90,
+    quality: 100,
     clip: { x: 0, y: 0, width: 1200, height: 632 },
   })
 
