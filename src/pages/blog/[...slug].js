@@ -17,14 +17,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const path = context.params.slug.join('/')
+  const slug = context.params.slug.join('-')
+
   const { data, content } = await promises
-    .readFile(`./content/blog/${context.params.slug.join('/')}.md`)
+    .readFile(`./content/blog/${path}.md`)
     .then((buf) => matter(buf.toString(), { delims: '```' }))
 
   return {
     props: {
       data,
       content,
+      path,
+      slug,
     },
   }
 }
@@ -38,6 +43,14 @@ const Post = ({ data, content }) => {
   )
 }
 
-Post.getLayout = (page, { data }) => <Page title={data.title}>{page}</Page>
+Post.getLayout = (page, { data, path, slug }) => (
+  <Page
+    title={data.title}
+    pagePath={`/blog/${path}/`}
+    // ogImagePath={`/og-images/${slug}.jpg`}
+  >
+    {page}
+  </Page>
+)
 
 export default Post

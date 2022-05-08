@@ -43,6 +43,10 @@ const Projects = () => {
   )
 }
 
-Projects.getLayout = (page) => <Page title="Projects">{page}</Page>
+Projects.getLayout = (page) => (
+  <Page title="Projects" pagePath="/projects/">
+    {page}
+  </Page>
+)
 
 export default Projects

@@ -37,7 +37,7 @@ const Posts = ({ posts }) => {
 }
 
 Posts.getLayout = (page) => (
-  <Page title="Blog">
+  <Page title="Blog" pagePath="/blog/">
     {page}
   </Page>
 )

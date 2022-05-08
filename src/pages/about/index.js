@@ -15,6 +15,10 @@ const About = () => {
   )
 }
 
-About.getLayout = (page) => <Page title="About">{page}</Page>
+About.getLayout = (page) => (
+  <Page title="About" pagePath="/about">
+    {page}
+  </Page>
+)
 
 export default About
