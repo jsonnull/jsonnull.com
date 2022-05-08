@@ -6,6 +6,7 @@ command = "yarn build"
 YARN_VERSION = "3.1.1"
 YARN_ENABLE_GLOBAL_CACHE = "true"
 YARN_GLOBAL_FOLDER = "/opt/buildhome/.yarn_cache"
+NEXT_PUBLIC_SITE_URL = "https://jsonnull.com"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"

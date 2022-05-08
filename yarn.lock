@@ -2102,7 +2102,6 @@ __metadata:
     react: 18.0.0
     react-dom: 18.0.0
     react-feather: ^2.0.9
-    react-helmet: 6.1.0
     react-popper: ^2.2.5
     tailwindcss: 3.0.23
     ts-node: ^10.7.0
@@ -3219,7 +3218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.0.1, react-fast-compare@npm:^3.1.1":
+"react-fast-compare@npm:^3.0.1":
   version: 3.2.0
   resolution: "react-fast-compare@npm:3.2.0"
   checksum: 8ef272c825ae329f61633ce4ce7f15aa5b84e5214d88bc0823880236e03e985a13195befa2c7a4eda7db3b017dc7985729152d88445823f652403cf36c2b86aa
@@ -3234,20 +3233,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.6 || ^17
   checksum: 8535541c1041ba9ce02e1b6fe4425dc6857030ae2223d89fa2aa1faf82b04e542c863b267ee7ba5961d22fe3216f43241200a5807d8a8df48a96485ac8b68bf7
-  languageName: node
-  linkType: hard
-
-"react-helmet@npm:6.1.0":
-  version: 6.1.0
-  resolution: "react-helmet@npm:6.1.0"
-  dependencies:
-    object-assign: ^4.1.1
-    prop-types: ^15.7.2
-    react-fast-compare: ^3.1.1
-    react-side-effect: ^2.1.0
-  peerDependencies:
-    react: ">=16.3.0"
-  checksum: a4998479dab7fc1c2799eddefb1870a9d881b5f71cfdf97979a9882e42f4bb50402d55335f308f461e735e01a06f46b16cc7b4e6bcb22c7a4a6f85a753c5c106
   languageName: node
   linkType: hard
 
@@ -3268,15 +3253,6 @@ __metadata:
     "@popperjs/core": ^2.0.0
     react: ^16.8.0 || ^17
   checksum: 915fcf08e1da4fd48a200074fcdd936f601ee2173f1e730cfed8a54fd47716aa8bf9cce2392463e3bcbe64a096d0baf463809ed2874b94d3a9d430ae6d817b5d
-  languageName: node
-  linkType: hard
-
-"react-side-effect@npm:^2.1.0":
-  version: 2.1.1
-  resolution: "react-side-effect@npm:2.1.1"
-  peerDependencies:
-    react: ^16.3.0 || ^17.0.0
-  checksum: 324511ea8f6669555e166b4af280cdf46034bf0e33c486711e3ce17f88f6f21fed17055098408be1347657d0cbcd614bca944cf9f8e4ecfa96a21d13893fe9fc
   languageName: node
   linkType: hard
 

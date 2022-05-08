@@ -8,4 +8,6 @@ mkShell {
     nodejs-16_x
     nodePackages.yarn
   ];
+
+  NEXT_PUBLIC_SITE_URL = "http://localhost:3000";
 }

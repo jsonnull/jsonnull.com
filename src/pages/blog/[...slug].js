@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet'
 import { promises } from 'fs'
 import Markdown from 'markdown-to-jsx'
 import matter from 'gray-matter'
@@ -33,15 +32,12 @@ export async function getStaticProps(context) {
 const Post = ({ data, content }) => {
   return (
     <Wrapper>
-      <Helmet>
-        <title>{data.title}</title>
-      </Helmet>
       <Heading>{data.title}</Heading>
       <Markdown>{content}</Markdown>
     </Wrapper>
   )
 }
 
-Post.getLayout = (page) => <Page title="Blog">{page}</Page>
+Post.getLayout = (page, { data }) => <Page title={data.title}>{page}</Page>
 
 export default Post

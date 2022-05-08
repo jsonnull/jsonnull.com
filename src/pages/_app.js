@@ -7,7 +7,7 @@ class App extends BaseApp {
 
     const getLayout = Component.getLayout || ((page) => page)
 
-    return getLayout(<Component {...pageProps} />)
+    return getLayout(<Component {...pageProps} />, pageProps)
   }
 }
 
