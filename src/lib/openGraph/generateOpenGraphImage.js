@@ -6,8 +6,6 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { OpenGraph } from '../../components/OpenGraph'
 
 export async function generateOpenGraphImage({ title, slug }) {
-  const { nextConfigDir } = getConfig().serverRuntimeConfig
-
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath,
@@ -17,12 +15,12 @@ export async function generateOpenGraphImage({ title, slug }) {
   const page = await browser.newPage()
 
   let html = fs
-    .readFileSync(
-      path.resolve(nextConfigDir, 'src/lib/openGraph/template.html')
-    )
+    .readFileSync(path.resolve(__dirname, './template.html'))
     .toString()
 
-  const css = fs.readFileSync(path.resolve(nextConfigDir, '.css/bundle.css'))
+  const css = fs.readFileSync(
+    path.resolve(__dirname, '../../../.css/bundle.css')
+  )
 
   html = html.replace('{tailwindcss}', css)
 
@@ -45,7 +43,7 @@ export async function generateOpenGraphImage({ title, slug }) {
   await page.waitForTimeout(500)
 
   await page.screenshot({
-    path: path.resolve(nextConfigDir, `src/public/og-images/${slug}.jpg`),
+    path: path.resolve(__dirname, `../../public/og-images/${slug}.jpg`),
     type: 'jpeg',
     quality: 90,
     clip: { x: 0, y: 0, width: 1200, height: 632 },

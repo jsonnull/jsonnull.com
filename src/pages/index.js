@@ -6,12 +6,11 @@ import { Heading, Page, Wrapper } from '../components'
 import { Spacer } from '../components/Spacer.tsx'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { Button } from '../components/Button'
-import profilePic from '../../static/img/photo.jpg'
+import { profileDataURI } from '../lib/profileDataURI'
 import { jsonnull, configuration } from '../data/projects/index.ts'
 import { ArrowRight } from 'react-feather'
-import { generateOpenGraphImage } from '../lib/openGraph/generateOpenGraphImage'
 
-const Title = ({ className }) => {
+export const Title = ({ className }) => {
   return (
     <h1
       className={clsx(
@@ -32,7 +31,7 @@ const TitleSection = () => {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src={profilePic}
+        src={profileDataURI}
         alt="Picture of the author"
         width="80"
         height="80"
@@ -72,10 +71,5 @@ const Home = () => {
 }
 
 Home.getLayout = (page) => <Page title="Home">{page}</Page>
-
-export async function getStaticProps() {
-  const ogUrl = await generateOpenGraphImage({ title: <Title className="sm:text-7xl" />, slug: 'index' })
-  return { props: { ogUrl } }
-}
 
 export default Home
