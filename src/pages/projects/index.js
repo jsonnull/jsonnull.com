@@ -22,6 +22,7 @@ const Projects = () => {
       {[novel].map(({ name, description, milestones }) => {
         return (
           <Project
+            key={name}
             name={name}
             description={description}
             milestone={milestones[0].name}
@@ -42,6 +43,10 @@ const Projects = () => {
   )
 }
 
-Projects.getLayout = (page) => <Page title="Projects">{page}</Page>
+Projects.getLayout = (page) => (
+  <Page title="Projects" pagePath="/projects/">
+    {page}
+  </Page>
+)
 
 export default Projects

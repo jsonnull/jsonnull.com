@@ -1,7 +1,12 @@
 .cache
+.css
 node_modules
 .next
-/public/
+/public/*
+!/public/og-images
+!/public/robots.txt
+/public/og-images/*
+!/src/public/og-images/.gitkeep
 .yarn/*
 !.yarn/patches
 !.yarn/plugins

@@ -1,31 +1,43 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import clsx from 'clsx'
 import { Heading, Page, Wrapper } from '../components'
 import { Spacer } from '../components/Spacer.tsx'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { Button } from '../components/Button'
-import profilePic from '../../static/img/photo.jpg'
+import { profileDataURI } from '../lib/profileDataURI'
 import { jsonnull, configuration } from '../data/projects/index.ts'
 import { ArrowRight } from 'react-feather'
 
-const Title = () => {
+export const Title = ({ className }) => {
+  return (
+    <h1
+      className={clsx(
+        'pt-4 text-4xl sm:text-5xl font-semibold tracking-tight',
+        className
+      )}
+    >
+      Crafting{' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-fog to-steel">
+        experiences
+      </span>{' '}
+      with code.
+    </h1>
+  )
+}
+
+const TitleSection = () => {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src={profilePic}
+        src={profileDataURI}
         alt="Picture of the author"
         width="80"
         height="80"
         className="rounded-full"
       />
-      <h1 className="pt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
-        Crafting{' '}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-fog to-steel">
-          experiences
-        </span>{' '}
-        with code.
-      </h1>
+      <Title />
     </div>
   )
 }
@@ -34,7 +46,7 @@ const Home = () => {
   return (
     <Wrapper>
       <Spacer extraWide />
-      <Title />
+      <TitleSection />
       <Spacer extraWide />
       <div className="flex flex-col items-center">
         <Heading>Recent Projects</Heading>
@@ -58,6 +70,10 @@ const Home = () => {
   )
 }
 
-Home.getLayout = (page) => <Page title="Home">{page}</Page>
+Home.getLayout = (page) => (
+  <Page title="Home" pagePath="/" ogImagePath="/og-images/index.jpg">
+    {page}
+  </Page>
+)
 
 export default Home
