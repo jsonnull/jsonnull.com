@@ -2,8 +2,10 @@
 .css
 node_modules
 .next
-/public/
-/src/public/og-images/*
+/public/*
+!/public/og-images
+!/public/robots.txt
+/public/og-images/*
 !/src/public/og-images/.gitkeep
 .yarn/*
 !.yarn/patches

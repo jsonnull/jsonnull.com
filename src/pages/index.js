@@ -71,7 +71,7 @@ const Home = () => {
 }
 
 Home.getLayout = (page) => (
-  <Page title="Home" ogImage="/public/og-images/index.jpg">
+  <Page title="Home" ogImage="/og-images/index.jpg">
     {page}
   </Page>
 )
