@@ -70,6 +70,10 @@ const Home = () => {
   )
 }
 
-Home.getLayout = (page) => <Page title="Home">{page}</Page>
+Home.getLayout = (page) => (
+  <Page title="Home" ogImage="/public/og-images/index.jpg">
+    {page}
+  </Page>
+)
 
 export default Home
