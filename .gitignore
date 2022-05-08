@@ -3,7 +3,7 @@
 node_modules
 .next
 /public/
-/src/public/og-images/
+/src/public/og-images/*
 !/src/public/og-images/.gitkeep
 .yarn/*
 !.yarn/patches
