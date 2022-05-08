@@ -786,6 +786,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chrome-aws-lambda@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "chrome-aws-lambda@npm:10.1.0"
+  dependencies:
+    lambdafs: ^2.0.3
+  peerDependencies:
+    puppeteer-core: ^10.1.0
+  checksum: e5ad2dc68cfaf33123fd94503fdacd1744f127f097a1a20e40a07a2e0b9f97ce7650aaec96a3ae6a941e86a2757d7c426f7d4171bff997e8d1454c4be1f298e0
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -1092,6 +1103,13 @@ __metadata:
   version: 0.0.969999
   resolution: "devtools-protocol@npm:0.0.969999"
   checksum: c67e2a40864edfbdc892eb6db2b6edf82a277af5bcc070741a6b39ffe052955a3c1fb99a0bb029631b326d290861a79deea423634d5a441b9faeab2884208396
+  languageName: node
+  linkType: hard
+
+"devtools-protocol@npm:0.0.981744":
+  version: 0.0.981744
+  resolution: "devtools-protocol@npm:0.0.981744"
+  checksum: 609901bff551f5fbe98e272bdda7269de527e28fab138de371ffd7e9a06fa68ca2eec2e961bd1cd6fd98223ccee562c55b7ce3235d4e37cc8d85d6681bc45593
   languageName: node
   linkType: hard
 
@@ -1619,6 +1637,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"https-proxy-agent@npm:5.0.1":
+  version: 5.0.1
+  resolution: "https-proxy-agent@npm:5.0.1"
+  dependencies:
+    agent-base: 6
+    debug: 4
+  checksum: 571fccdf38184f05943e12d37d6ce38197becdd69e58d03f43637f7fa1269cf303a7d228aa27e5b27bbd3af8f09fd938e1c91dcfefff2df7ba77c20ed8dfc765
+  languageName: node
+  linkType: hard
+
 "human-signals@npm:^2.1.0":
   version: 2.1.0
   resolution: "human-signals@npm:2.1.0"
@@ -1981,6 +2009,7 @@ __metadata:
     "@popperjs/core": ^2.11.5
     "@types/react": ^18.0.9
     autoprefixer: ^10.4.4
+    chrome-aws-lambda: ^10.1.0
     clsx: ^1.1.1
     gray-matter: 4.0.3
     markdown-to-jsx: 7.1.7
@@ -1988,6 +2017,7 @@ __metadata:
     postcss: ^8.4.12
     prettier: 2.6.2
     puppeteer: 13.5.2
+    puppeteer-core: ^13.7.0
     react: 18.0.0
     react-dom: 18.0.0
     react-feather: ^2.0.9
@@ -2002,6 +2032,17 @@ __metadata:
   version: 6.0.3
   resolution: "kind-of@npm:6.0.3"
   checksum: 3ab01e7b1d440b22fe4c31f23d8d38b4d9b91d9f291df683476576493d5dfd2e03848a8b05813dd0c3f0e835bc63f433007ddeceb71f05cb25c45ae1b19c6d3b
+  languageName: node
+  linkType: hard
+
+"lambdafs@npm:^2.0.3":
+  version: 2.1.1
+  resolution: "lambdafs@npm:2.1.1"
+  dependencies:
+    tar-fs: "*"
+  bin:
+    lambdafs: bin/brotli.js
+  checksum: e277462851769dbb9062096e793d0da67f8bada78be9988bb177ddab91f9335ba1f67ea9fc0768c966dc52381301575945211b6e34061a068b82f127e6848e4e
   languageName: node
   linkType: hard
 
@@ -3009,6 +3050,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"puppeteer-core@npm:^13.7.0":
+  version: 13.7.0
+  resolution: "puppeteer-core@npm:13.7.0"
+  dependencies:
+    cross-fetch: 3.1.5
+    debug: 4.3.4
+    devtools-protocol: 0.0.981744
+    extract-zip: 2.0.1
+    https-proxy-agent: 5.0.1
+    pkg-dir: 4.2.0
+    progress: 2.0.3
+    proxy-from-env: 1.1.0
+    rimraf: 3.0.2
+    tar-fs: 2.1.1
+    unbzip2-stream: 1.4.3
+    ws: 8.5.0
+  checksum: 652c4cfc9d228a8c5162227368a78a3a28ea6f287b4bfb359fa84cb83109e8203b4251103f8b0f7eca173a2a3f5d8cb8a7b664cc958a13d536ec91b5e729e731
+  languageName: node
+  linkType: hard
+
 "puppeteer@npm:13.5.2":
   version: 13.5.2
   resolution: "puppeteer@npm:13.5.2"
@@ -3630,7 +3691,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar-fs@npm:2.1.1, tar-fs@npm:^2.0.0, tar-fs@npm:^2.1.1":
+"tar-fs@npm:*, tar-fs@npm:2.1.1, tar-fs@npm:^2.0.0, tar-fs@npm:^2.1.1":
   version: 2.1.1
   resolution: "tar-fs@npm:2.1.1"
   dependencies:
