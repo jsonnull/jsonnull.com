@@ -47,7 +47,7 @@ Post.getLayout = (page, { data, path, slug }) => (
   <Page
     title={data.title}
     pagePath={`/blog/${path}/`}
-    // ogImagePath={`/og-images/${slug}.jpg`}
+    // ogImagePath={`/og-images/${slug}.png`}
   >
     {page}
   </Page>
