@@ -15,15 +15,15 @@
     "gray-matter": "4.0.3",
     "markdown-to-jsx": "7.1.7",
     "next": "latest",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-feather": "^2.0.9",
     "react-popper": "^2.2.5"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.3.1",
     "@resvg/resvg-js": "^2.1.0",
-    "@types/node": "^18.11.3",
+    "@types/node": "^18.11.4",
     "@types/react": "^18.0.9",
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
