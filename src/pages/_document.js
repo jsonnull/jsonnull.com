@@ -4,7 +4,13 @@ class Document extends BaseDocument {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <script
+            defer
+            data-domain="jsonnull.com"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
+        </Head>
         <body className="bg-black">
           <Main />
           <NextScript />
