@@ -7,9 +7,3 @@ node_modules
 !/public/robots.txt
 /public/og-images/*
 !/src/public/og-images/.gitkeep
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
