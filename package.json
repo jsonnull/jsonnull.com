@@ -6,7 +6,7 @@
     "screenshots": "ts-node scripts/screenshots.tsx",
     "dev": "next ./src",
     "build": "tailwindcss -i src/global.css -o .css/bundle.css && ts-node scripts/screenshots && next build",
-    "build:ci": "yarn build"
+    "build:ci": "pnpm build"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
