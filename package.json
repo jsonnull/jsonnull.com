@@ -2,35 +2,37 @@
   "name": "jsonnull.com",
   "private": true,
   "scripts": {
-    "format": "prettier --write 'src/**/*.js' './*.js'",
+    "format": "prettier --write '**/*.{ts,tsx,md}'",
     "screenshots": "ts-node scripts/screenshots.tsx",
-    "dev": "next ./src",
+    "dev": "next dev",
     "build": "tailwindcss -i src/global.css -o .css/bundle.css && ts-node scripts/screenshots && next build",
     "build:ci": "pnpm build"
   },
   "dependencies": {
-    "@headlessui/react": "^1.5.0",
-    "@popperjs/core": "^2.11.5",
-    "clsx": "^1.1.1",
+    "@headlessui/react": "^1.7.10",
+    "@popperjs/core": "^2.11.6",
+    "clsx": "^1.2.1",
     "gray-matter": "4.0.3",
-    "markdown-to-jsx": "7.1.7",
-    "next": "latest",
+    "markdown-to-jsx": "7.1.9",
+    "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-feather": "^2.0.9",
-    "react-popper": "^2.2.5"
+    "react-feather": "^2.0.10",
+    "react-popper": "^2.3.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.3.1",
-    "@resvg/resvg-js": "^2.1.0",
-    "@types/node": "^18.11.4",
-    "@types/react": "^18.0.9",
-    "autoprefixer": "^10.4.4",
-    "postcss": "^8.4.12",
-    "prettier": "2.7.1",
-    "satori": "^0.0.44",
-    "tailwindcss": "3.2.3",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "@netlify/plugin-nextjs": "^4.30.4",
+    "@resvg/resvg-js": "^2.4.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "prettier": "2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "satori": "^0.2.3",
+    "tailwindcss": "3.2.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   }
 }
