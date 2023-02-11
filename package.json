@@ -2,7 +2,7 @@
   "name": "jsonnull.com",
   "private": true,
   "scripts": {
-    "format": "prettier --write 'src/**/*.js' './*.js'",
+    "format": "prettier --write '**/*.{ts,tsx,md}'",
     "screenshots": "ts-node scripts/screenshots.tsx",
     "dev": "next dev",
     "build": "tailwindcss -i src/global.css -o .css/bundle.css && ts-node scripts/screenshots && next build",
@@ -23,11 +23,13 @@
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.30.4",
     "@resvg/resvg-js": "^2.4.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "satori": "^0.2.3",
     "tailwindcss": "3.2.6",
     "ts-node": "^10.9.1",

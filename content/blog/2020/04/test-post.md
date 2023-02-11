@@ -1,8 +1,8 @@
 ```json
 {
-  "template": "post",
-  "title": "A Test Blog Post",
-  "date": "2020-04-11"
+    "template": "post",
+    "title": "A Test Blog Post",
+    "date": "2020-04-11"
 }
 ```
 
