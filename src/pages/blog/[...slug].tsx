@@ -1,10 +1,12 @@
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import { promises } from 'fs'
 import Markdown from 'markdown-to-jsx'
 import matter from 'gray-matter'
 import { Heading, Page, Wrapper } from '../../components'
 import { getPosts } from '../../lib/getPosts'
+import type { PostFrontMatter } from '../../types'
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for await (const { slug } of getPosts()) {
     paths.push({ params: { slug } })
@@ -16,17 +18,26 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
-  const path = context.params.slug.join('/')
-  const slug = context.params.slug.join('-')
+interface PageProps {
+  data: PostFrontMatter
+  content: string
+  path: string
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps = async (
+  context
+): Promise<{ props: PageProps }> => {
+  const path = (context.params?.slug as string[]).join('/')
+  const slug = (context.params?.slug as string[]).join('-')
 
   const { data, content } = await promises
     .readFile(`./content/blog/${path}.md`)
-    .then((buf) => matter(buf.toString(), { delims: '```' }))
+    .then((buf) => matter(buf.toString(), { delimiters: '```' }))
 
   return {
     props: {
-      data,
+      data: data as PostFrontMatter,
       content,
       path,
       slug,
@@ -34,7 +45,7 @@ export async function getStaticProps(context) {
   }
 }
 
-const Post = ({ data, content }) => {
+const Post = ({ data, content }: PageProps) => {
   return (
     <Wrapper>
       <Heading>{data.title}</Heading>
@@ -43,7 +54,7 @@ const Post = ({ data, content }) => {
   )
 }
 
-Post.getLayout = (page, { data, path, slug }) => (
+Post.getLayout = (page: React.ReactNode, { data, path }: PageProps) => (
   <Page
     title={data.title}
     pagePath={`/blog/${path}/`}

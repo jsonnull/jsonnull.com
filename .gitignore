@@ -7,3 +7,4 @@ node_modules
 !/public/robots.txt
 /public/og-images/*
 !/src/public/og-images/.gitkeep
+tsconfig.tsbuildinfo

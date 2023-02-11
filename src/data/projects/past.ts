@@ -1,4 +1,4 @@
-import type { Project } from './types'
+import type { Project } from '../../types'
 
 export const reactRoutine: Project = {
   name: 'React Routine',

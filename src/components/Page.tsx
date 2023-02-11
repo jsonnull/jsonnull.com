@@ -1,6 +1,7 @@
+import * as React from 'react'
 import Head from 'next/head'
 import { Header } from './'
-import { Spacer } from './Spacer.tsx'
+import { Spacer } from './Spacer'
 
 export const Page = ({
   children,
@@ -8,6 +9,12 @@ export const Page = ({
   description = "Jason Nall's technical blog",
   pagePath,
   ogImagePath,
+}: {
+  children: React.ReactNode
+  title?: string
+  description?: string
+  pagePath: string
+  ogImagePath?: string
 }) => {
   const baseUrl =
     process.env.NEXT_PUBLIC_NETLIFY_URL &&
@@ -15,7 +22,7 @@ export const Page = ({
       ? process.env.NEXT_PUBLIC_NETLIFY_URL
       : process.env.NEXT_PUBLIC_SITE_URL
 
-  const domain = new URL(baseUrl).hostname
+  const domain = new URL(baseUrl!).hostname
   const pageUrl = new URL(pagePath, baseUrl)
 
   let ogImageURL
@@ -31,19 +38,19 @@ export const Page = ({
         <meta name="description" content={description} />
 
         {/* Open Graph meta tags */}
-        <meta property="og:url" content={pageUrl} />
+        <meta property="og:url" content={pageUrl.toString()} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        {ogImageURL && <meta property="og:image" content={ogImageURL} />}
+        {ogImageURL && <meta property="og:image" content={ogImageURL.toString()} />}
 
         {/* Twitter meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content={domain} />
-        <meta property="twitter:url" content={pageUrl} />
+        <meta property="twitter:url" content={pageUrl.toString()} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        {ogImageURL && <meta name="twitter:image" content={ogImageURL} />}
+        {ogImageURL && <meta name="twitter:image" content={ogImageURL.toString()} />}
       </Head>
       <Header />
       <div className="flex flex-col">{children}</div>

@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Home, GitHub, Twitter } from 'react-feather'
@@ -7,17 +13,26 @@ import clsx from 'clsx'
 
 const PADDING = 8
 
-const useNavigation = (theme) => {
-  const navRef = useRef()
-  const homeRef = useRef()
-  const projectsRef = useRef()
-  const aboutRef = useRef()
+const useNavigation = (theme: string) => {
+  const navRef = useRef<HTMLElement>()
+  const homeRef = useRef<HTMLElement>()
+  const projectsRef = useRef<HTMLElement>()
+  const aboutRef = useRef<HTMLElement>()
   const router = useRouter()
   const [bounds, setBounds] = useState({ left: 10000, width: 0 })
 
   const path = router.pathname
 
   const updateBounds = useCallback(() => {
+    if (
+      !navRef.current ||
+      !homeRef.current ||
+      !projectsRef.current ||
+      !aboutRef.current
+    ) {
+      return
+    }
+
     const root = navRef.current.getBoundingClientRect()
 
     let navBounds
@@ -58,7 +73,7 @@ const useNavigation = (theme) => {
   }
 }
 
-const Separator = ({ className }) => {
+const Separator = ({ className }: { className?: string }) => {
   return (
     <div className={clsx(className, 'px-3 sm:px-6')}>
       <div className="border-l w-0 border-solid border-zinc-500 dark:border-zinc-500">
@@ -76,15 +91,8 @@ const styles = {
 
 export const Header = () => {
   const [theme, setTheme] = useState('default')
-  const {
-    navRef,
-    homeRef,
-    projectsRef,
-    aboutRef,
-    left,
-    width,
-    updateNavigation,
-  } = useNavigation(theme)
+  const { navRef, homeRef, projectsRef, aboutRef, left, width } =
+    useNavigation(theme)
 
   return (
     <div
@@ -95,7 +103,7 @@ export const Header = () => {
     >
       <nav
         className="relative w-full sm:w-auto sm:mx-auto pl-4 pr-2 sm:px-6 sm:pr-4 py-4 backdrop-blur flex items-center bg-black/80 dark:bg-white/80 sm:rounded-md pointer-events-auto"
-        ref={navRef}
+        ref={navRef as any}
       >
         <div
           className="bg-black/90 dark:bg-zinc-400/90 rounded-lg h-8 absolute z-1 transition-[left,width] ease-in"
@@ -107,8 +115,11 @@ export const Header = () => {
           &nbsp;
         </div>
         <div className="z-1 flex items-center w-full z-10">
-          <Link href="/" className={clsx(styles.underline)} ref={homeRef}>
-
+          <Link
+            href="/"
+            className={clsx(styles.underline)}
+            ref={homeRef as any}
+          >
             <span className={clsx(styles.homeText, 'hidden sm:inline')}>
               jsonnull
             </span>
@@ -117,34 +128,35 @@ export const Header = () => {
               width={18}
               height={18}
             />
-
           </Link>
           <Separator />
           <ul className="flex gap-3 sm:gap-6">
-            {[
-              ['/projects/', 'projects', projectsRef],
-              // ['/blog/', 'blog'],
-              ['/about/', 'about', aboutRef],
-            ].map(([url, title, ref]) => {
+            {(
+              [
+                ['/projects/', 'projects', projectsRef],
+                // ['/blog/', 'blog'],
+                ['/about/', 'about', aboutRef],
+              ] as [string, string, MutableRefObject<HTMLAnchorElement>][]
+            ).map(([url, title, ref]) => {
               return (
                 <li key={url}>
                   <Link href={url} className={clsx(styles.underline)} ref={ref}>
-
                     {title}
-
                   </Link>
                 </li>
-              );
+              )
             })}
           </ul>
           <Separator className="pr-1 sm:pr-4" />
           <Theme onChange={(theme) => setTheme(theme)} />
           <Separator className="px-1 sm:px-4 hidden sm:block" />
           <ul className="flex gap-1 sm:gap-2 ml-auto leading-none items-center text-zinc-400 dark:text-zinc-600">
-            {[
-              [GitHub, 'https://github.com/jsonnull'],
-              [Twitter, 'https://twitter.com/jsonnull'],
-            ].map(([Icon, href]) => {
+            {(
+              [
+                [GitHub, 'https://github.com/jsonnull'],
+                [Twitter, 'https://twitter.com/jsonnull'],
+              ] as [any, string][]
+            ).map(([Icon, href]) => {
               return (
                 <a
                   href={href}
@@ -161,5 +173,5 @@ export const Header = () => {
         </div>
       </nav>
     </div>
-  );
+  )
 }

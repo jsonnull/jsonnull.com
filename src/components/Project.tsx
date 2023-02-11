@@ -7,6 +7,13 @@ export const Project = ({
   milestone,
   className,
   retired,
+}: {
+  name: string
+  description: string
+  progress?: number
+  milestone: string
+  className?: string
+  retired?: boolean
 }) => {
   return (
     <div className={clsx(className, 'flex flex-col', retired && 'text-dimmed')}>

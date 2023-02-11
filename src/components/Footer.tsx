@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 // "It is the power of the mind to be unconquerable." – Seneca
 
 export const Footer = () => (

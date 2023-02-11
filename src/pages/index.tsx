@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Heading, Page, Wrapper } from '../components'
-import { Spacer } from '../components/Spacer.tsx'
+import { Spacer } from '../components/Spacer'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { Button } from '../components/Button'
 import { profileDataURI } from '../lib/profileDataURI'
-import { jsonnull, configuration } from '../data/projects/index.ts'
+import { jsonnull, configuration } from '../data/projects'
 import { ArrowRight } from 'react-feather'
 
-export const Title = ({ className }) => {
+export const Title = ({ className }: { className?: string }) => {
   return (
     <h1
       className={clsx(
@@ -56,21 +56,19 @@ const Home = () => {
       <Spacer medium />
       <div className="flex justify-center">
         <Link href="/projects">
-
           <Button>
             <div className="flex items-center underline-themed">
               See my other projects
               <ArrowRight size={18} className="ml-2" />
             </div>
           </Button>
-
         </Link>
       </div>
     </Wrapper>
-  );
+  )
 }
 
-Home.getLayout = (page) => (
+Home.getLayout = (page: React.ReactNode) => (
   <Page title="Home" pagePath="/" ogImagePath="/og-images/index.png">
     {page}
   </Page>

@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { Title, Page, Wrapper } from '../../components'
-import { Spacer } from '../../components/Spacer.tsx'
+import { Spacer } from '../../components/Spacer'
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
   )
 }
 
-About.getLayout = (page) => (
+About.getLayout = (page: React.ReactNode) => (
   <Page title="About" pagePath="/about">
     {page}
   </Page>

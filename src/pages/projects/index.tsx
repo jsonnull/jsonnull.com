@@ -1,9 +1,10 @@
+import * as React from 'react'
 import { Heading, Page, Wrapper, Title } from '../../components'
-import { Spacer } from '../../components/Spacer.tsx'
+import { Spacer } from '../../components/Spacer'
 import { Project } from '../../components/Project'
 import { ProjectGrid } from '../../components/ProjectGrid'
-import { configuration, jsonnull, novel } from '../../data/projects/index.ts'
-import * as past from '../../data/projects/past.ts'
+import { configuration, jsonnull, novel } from '../../data/projects'
+import * as past from '../../data/projects/past'
 
 const Projects = () => {
   return (
@@ -43,7 +44,7 @@ const Projects = () => {
   )
 }
 
-Projects.getLayout = (page) => (
+Projects.getLayout = (page: React.ReactNode) => (
   <Page title="Projects" pagePath="/projects/">
     {page}
   </Page>

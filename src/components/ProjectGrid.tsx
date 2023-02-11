@@ -1,7 +1,14 @@
 import { Project } from './Project'
 import clsx from 'clsx'
+import { Project as ProjectType } from '../types'
 
-export const ProjectGrid = ({ projects, retired }) => {
+export const ProjectGrid = ({
+  projects,
+  retired,
+}: {
+  projects: ProjectType[]
+  retired?: boolean
+}) => {
   return (
     <div
       className={clsx('grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-16')}

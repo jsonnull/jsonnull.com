@@ -10,7 +10,7 @@ import { Sun, Monitor, Moon } from 'react-feather'
 import { usePopper } from 'react-popper'
 import clsx from 'clsx'
 
-const themes = [
+const themes: [string, any, string][] = [
   ['light', Sun, 'Light'],
   ['dark', Moon, 'Dark'],
   ['system', Monitor, 'System'],
@@ -19,7 +19,7 @@ const themes = [
 const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
-const applyTheme = (theme) => {
+const applyTheme = (theme: string) => {
   if (
     theme === 'dark' ||
     (theme === 'system' &&
@@ -31,7 +31,7 @@ const applyTheme = (theme) => {
   }
 }
 
-const useTheme = ({ onChange }) => {
+const useTheme = ({ onChange }: { onChange: (theme: string) => void }) => {
   const initialTheme =
     typeof window !== 'undefined' && 'theme' in localStorage
       ? localStorage.theme
@@ -40,7 +40,7 @@ const useTheme = ({ onChange }) => {
   const [theme, setThemeState] = useState(initialTheme)
 
   const setTheme = useCallback(
-    (theme) => {
+    (theme: string) => {
       setThemeState(theme)
       localStorage.theme = theme
       applyTheme(theme)
@@ -58,17 +58,17 @@ const useTheme = ({ onChange }) => {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-    mediaQuery.addEventListener('change', applyTheme)
+    mediaQuery.addEventListener('change', () => applyTheme(theme))
 
     return () => {
-      mediaQuery.removeEventListener('change', applyTheme)
+      mediaQuery.removeEventListener('change', () => applyTheme(theme))
     }
   }, [])
 
   return [theme, setTheme]
 }
 
-export const Theme = ({ onChange }) => {
+export const Theme = ({ onChange }: { onChange: (theme: string) => void }) => {
   const [theme, setTheme] = useTheme({ onChange })
   const [referenceElement, setReferenceElement] = useState(null)
   const [popperElement, setPopperElement] = useState(null)
@@ -77,14 +77,14 @@ export const Theme = ({ onChange }) => {
   return (
     <Listbox value={theme} onChange={setTheme}>
       <Listbox.Button
-        ref={setReferenceElement}
+        ref={setReferenceElement as any}
         className="p-2 rounded-full hover:bg-zinc-600 dark:hover:bg-zinc-400"
       >
         <Sun width={18} height={18} className="block dark:hidden" />
         <Moon width={18} height={18} className="hidden dark:block" />
       </Listbox.Button>
       <Listbox.Options
-        ref={setPopperElement}
+        ref={setPopperElement as any}
         className="rounded bg-black dark:bg-white text-white dark:text-black mb-3 overflow-hidden "
         style={styles.popper}
         {...attributes.popper}
