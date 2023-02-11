@@ -4,7 +4,7 @@
   "scripts": {
     "format": "prettier --write 'src/**/*.js' './*.js'",
     "screenshots": "ts-node scripts/screenshots.tsx",
-    "dev": "next ./src",
+    "dev": "next dev",
     "build": "tailwindcss -i src/global.css -o .css/bundle.css && ts-node scripts/screenshots && next build",
     "build:ci": "pnpm build"
   },

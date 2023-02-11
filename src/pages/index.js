@@ -56,18 +56,18 @@ const Home = () => {
       <Spacer medium />
       <div className="flex justify-center">
         <Link href="/projects">
-          <a>
-            <Button>
-              <div className="flex items-center underline-themed">
-                See my other projects
-                <ArrowRight size={18} className="ml-2" />
-              </div>
-            </Button>
-          </a>
+
+          <Button>
+            <div className="flex items-center underline-themed">
+              See my other projects
+              <ArrowRight size={18} className="ml-2" />
+            </div>
+          </Button>
+
         </Link>
       </div>
     </Wrapper>
-  )
+  );
 }
 
 Home.getLayout = (page) => (

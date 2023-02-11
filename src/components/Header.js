@@ -107,17 +107,17 @@ export const Header = () => {
           &nbsp;
         </div>
         <div className="z-1 flex items-center w-full z-10">
-          <Link href="/">
-            <a className={clsx(styles.underline)} ref={homeRef}>
-              <span className={clsx(styles.homeText, 'hidden sm:inline')}>
-                jsonnull
-              </span>
-              <Home
-                className={clsx('block sm:hidden', styles.text)}
-                width={18}
-                height={18}
-              />
-            </a>
+          <Link href="/" className={clsx(styles.underline)} ref={homeRef}>
+
+            <span className={clsx(styles.homeText, 'hidden sm:inline')}>
+              jsonnull
+            </span>
+            <Home
+              className={clsx('block sm:hidden', styles.text)}
+              width={18}
+              height={18}
+            />
+
           </Link>
           <Separator />
           <ul className="flex gap-3 sm:gap-6">
@@ -128,13 +128,13 @@ export const Header = () => {
             ].map(([url, title, ref]) => {
               return (
                 <li key={url}>
-                  <Link href={url}>
-                    <a className={clsx(styles.underline)} ref={ref}>
-                      {title}
-                    </a>
+                  <Link href={url} className={clsx(styles.underline)} ref={ref}>
+
+                    {title}
+
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
           <Separator className="pr-1 sm:pr-4" />
@@ -161,5 +161,5 @@ export const Header = () => {
         </div>
       </nav>
     </div>
-  )
+  );
 }

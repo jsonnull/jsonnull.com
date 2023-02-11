@@ -28,12 +28,12 @@ const Posts = ({ posts }) => {
       {posts.map((post) => {
         return (
           <Link key={post.url} href={post.url}>
-            <a href={post.url}>{post.title}</a>
+            {post.title}
           </Link>
-        )
+        );
       })}
     </Wrapper>
-  )
+  );
 }
 
 Posts.getLayout = (page) => (
