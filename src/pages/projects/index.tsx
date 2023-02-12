@@ -3,7 +3,7 @@ import { Heading, Page, Title, Wrapper } from "../../components";
 import { Project } from "../../components/Project";
 import { ProjectGrid } from "../../components/ProjectGrid";
 import { Spacer } from "../../components/Spacer";
-import { configuration, jsonnull, novel } from "../../data/projects";
+import { configuration, electronTrpc,  jsonnull, novel } from "../../data/projects";
 import * as past from "../../data/projects/past";
 
 const Projects = () => {
@@ -16,21 +16,11 @@ const Projects = () => {
             <Spacer wide />
             <Heading>Work In Progress</Heading>
             <Spacer medium />
-            <ProjectGrid projects={[jsonnull, configuration]} />
+            <ProjectGrid projects={[electronTrpc, jsonnull, configuration]} />
             <Spacer wide />
             <Heading>Writing</Heading>
             <Spacer medium />
-            {[novel].map(({ name, description, milestones }) => {
-                return (
-                    <Project
-                        key={name}
-                        name={name}
-                        description={description}
-                        milestone={milestones[0].name}
-                        progress={milestones[0].progress}
-                    />
-                );
-            })}
+            <Project project={novel} />
             <Spacer wide />
             <Heading className="text-dimmed">Past Projects</Heading>
             <Spacer small />

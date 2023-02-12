@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Head from "next/head";
 import * as React from "react";
 import { Header } from "./";
@@ -30,7 +31,12 @@ export const Page = ({
     }
 
     return (
-        <div className="flex min-h-screen flex-col bg-white text-black dark:bg-black dark:text-zinc-200">
+        <div
+            className={clsx(
+                "flex min-h-screen flex-col bg-white text-black dark:bg-black dark:text-zinc-200",
+                "decoration-black underline-offset-2 dark:decoration-zinc-200"
+            )}
+        >
             <Head>
                 {/* Meta tags */}
                 <title>{title} | Jason Nall</title>
