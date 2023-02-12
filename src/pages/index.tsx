@@ -2,12 +2,12 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { ArrowRight } from "react-feather";
+import { ArrowRight, GitHub } from "react-feather";
 import { Heading, Page, Wrapper } from "../components";
 import { Button } from "../components/Button";
 import { ProjectGrid } from "../components/ProjectGrid";
 import { Spacer } from "../components/Spacer";
-import { configuration, jsonnull } from "../data/projects";
+import { electronTrpc, jsonnull } from "../data/projects";
 import { profileDataURI } from "../lib/profileDataURI";
 
 export const Title = ({ className }: { className?: string }) => {
@@ -44,17 +44,17 @@ const Home = () => {
             <TitleSection />
             <Spacer extraWide />
             <div className="flex flex-col items-center">
-                <Heading>Recent Projects</Heading>
+                <Heading>Projects</Heading>
             </div>
             <Spacer medium />
-            <ProjectGrid projects={[jsonnull, configuration]} />
+            <ProjectGrid projects={[electronTrpc, jsonnull]} />
             <Spacer medium />
             <div className="flex justify-center">
                 <Link href="/projects">
                     <Button>
-                        <div className="underline-themed flex items-center">
+                        <div className="flex items-center gap-2 sm:hover:underline">
                             See my other projects
-                            <ArrowRight size={18} className="ml-2" />
+                            <ArrowRight size={18} />
                         </div>
                     </Button>
                 </Link>

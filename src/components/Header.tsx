@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from "react";
-import { GitHub, Home, Twitter } from "react-feather";
+import { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { GitHub, Home } from "react-feather";
 import { Theme } from "./Theme";
 
 const PADDING = 8;
@@ -75,7 +75,7 @@ const Separator = ({ className }: { className?: string }) => {
 const styles = {
     text: "dark:font-semibold text-white dark:text-black",
     homeText: "font-semibold dark:font-bold",
-    underline: "underline-themed",
+    underline: "sm:hover:underline",
 };
 
 export const Header = () => {
@@ -86,11 +86,11 @@ export const Header = () => {
         <div
             className={clsx(
                 styles.text,
-                "pointer-events-none fixed inset-x-0 bottom-0 flex sm:inset-x-8 sm:bottom-8"
+                "pointer-events-none fixed inset-x-4 bottom-4 flex sm:inset-x-8 sm:bottom-8"
             )}
         >
             <nav
-                className="pointer-events-auto relative flex w-full items-center bg-black/80 py-4 pl-4 pr-2 backdrop-blur dark:bg-white/80 sm:mx-auto sm:w-auto sm:rounded-md sm:px-6 sm:pr-4"
+                className="pointer-events-auto relative mx-auto flex w-auto items-center rounded-md bg-black/80 px-6 py-4 backdrop-blur dark:bg-white/80"
                 ref={navRef as any}
             >
                 <div
@@ -112,13 +112,13 @@ export const Header = () => {
                         />
                     </Link>
                     <Separator />
-                    <ul className="flex gap-3 sm:gap-6">
+                    <ul className="flex items-center gap-3 sm:gap-6">
                         {(
                             [
                                 ["/projects/", "projects", projectsRef],
                                 // ['/blog/', 'blog'],
                                 ["/about/", "about", aboutRef],
-                            ] as [string, string, MutableRefObject<HTMLAnchorElement>][]
+                            ] as [string, ReactNode, MutableRefObject<HTMLAnchorElement>][]
                         ).map(([url, title, ref]) => {
                             return (
                                 <li key={url}>
@@ -128,30 +128,18 @@ export const Header = () => {
                                 </li>
                             );
                         })}
+                        <li>
+                            <Link
+                                href={"https://github.com/jsonnull"}
+                                className={clsx(styles.underline)}
+                                target="_blank"
+                            >
+                                <GitHub width={18} height={18} className="" />
+                            </Link>
+                        </li>
                     </ul>
                     <Separator className="pr-1 sm:pr-4" />
                     <Theme onChange={(theme) => setTheme(theme)} />
-                    <Separator className="hidden px-1 sm:block sm:px-4" />
-                    <ul className="ml-auto flex items-center gap-1 leading-none text-zinc-400 dark:text-zinc-600 sm:gap-2">
-                        {(
-                            [
-                                [GitHub, "https://github.com/jsonnull"],
-                                [Twitter, "https://twitter.com/jsonnull"],
-                            ] as [any, string][]
-                        ).map(([Icon, href]) => {
-                            return (
-                                <a
-                                    href={href}
-                                    key={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="rounded-full p-2 hover:bg-zinc-600 hover:text-white dark:hover:bg-zinc-400 dark:hover:text-black"
-                                >
-                                    <Icon width={18} height={18} />
-                                </a>
-                            );
-                        })}
-                    </ul>
                 </div>
             </nav>
         </div>

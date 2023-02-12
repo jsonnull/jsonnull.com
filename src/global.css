@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 ::-moz-selection {
-  color: white;
-  background: rgba(109, 117, 153, 0.99);
-  text-shadow: none;
-  opacity: 1;
+    color: white;
+    background: rgba(109, 117, 153, 0.99);
+    text-shadow: none;
+    opacity: 1;
 }
 
 ::selection {
-  color: white;
-  background: rgba(109, 117, 153, 0.99);
-  text-shadow: none;
-  opacity: 1;
+    color: white;
+    background: rgba(109, 117, 153, 0.99);
+    text-shadow: none;
+    opacity: 1;
 }
 
 @layer components {
-  .text-dimmed {
-    @apply text-zinc-700 dark:text-zinc-400;
-  }
-  .underline-themed {
-    @apply sm:hover:underline decoration-zinc-400 dark:decoration-zinc-600;
-  }
+    .text-dimmed {
+        @apply text-zinc-500;
+    }
+    .underline-themed {
+        @apply decoration-zinc-500 hover:decoration-black sm:underline;
+    }
 }
