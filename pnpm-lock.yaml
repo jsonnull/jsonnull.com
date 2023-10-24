@@ -6,7 +6,7 @@ specifiers:
   '@popperjs/core': ^2.11.6
   '@resvg/resvg-js': ^2.4.0
   '@trivago/prettier-plugin-sort-imports': ^4.0.0
-  '@types/node': ^18.13.0
+  '@types/node': ^20.0.0
   '@types/react': ^18.0.28
   autoprefixer: ^10.4.13
   clsx: ^1.2.1
@@ -41,7 +41,7 @@ devDependencies:
   '@netlify/plugin-nextjs': 4.30.4
   '@resvg/resvg-js': 2.4.0
   '@trivago/prettier-plugin-sort-imports': 4.0.0_prettier@2.8.4
-  '@types/node': 18.13.0
+  '@types/node': 20.8.8
   '@types/react': 18.0.28
   autoprefixer: 10.4.13_postcss@8.4.21
   postcss: 8.4.21
@@ -49,7 +49,7 @@ devDependencies:
   prettier-plugin-tailwindcss: 0.2.2_bwu25c6byziayi365gfglcp76m
   satori: 0.2.3
   tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
-  ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
+  ts-node: 10.9.1_j3pkloej6ozrgw54faub5cqagq
   typescript: 4.9.5
 
 packages:
@@ -957,8 +957,10 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@types/node/18.13.0:
-    resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
+  /@types/node/20.8.8:
+    resolution: {integrity: sha512-YRsdVxq6OaLfmR9Hy816IMp33xOBjfyOgUd77ehqg96CFywxAPbDbXvAsuN2KVg2HOT8Eh6uAfU+l4WffwPVrQ==}
+    dependencies:
+      undici-types: 5.25.3
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -2190,7 +2192,7 @@ packages:
     dependencies:
       lilconfig: 2.0.6
       postcss: 8.4.21
-      ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
+      ts-node: 10.9.1_j3pkloej6ozrgw54faub5cqagq
       yaml: 1.10.2
     dev: true
 
@@ -2727,7 +2729,7 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: true
 
-  /ts-node/10.9.1_4bewfcp2iebiwuold25d6rgcsy:
+  /ts-node/10.9.1_j3pkloej6ozrgw54faub5cqagq:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -2746,7 +2748,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.13.0
+      '@types/node': 20.8.8
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -2784,6 +2786,10 @@ packages:
 
   /uncrypto/0.1.2:
     resolution: {integrity: sha512-kuZwRKV615lEw/Xx3Iz56FKk3nOeOVGaVmw0eg+x4Mne28lCotNFbBhDW7dEBCBKyKbRQiCadEZeNAFPVC5cgw==}
+    dev: true
+
+  /undici-types/5.25.3:
+    resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
     dev: true
 
   /undici/5.18.0:
