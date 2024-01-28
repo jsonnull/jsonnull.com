@@ -17,5 +17,5 @@ export interface Project {
     description: string;
     milestones: { name: string; progress?: number }[];
     tags?: string[];
-    website?: { url: string, title: string };
+    website?: { url: string; title: string };
 }

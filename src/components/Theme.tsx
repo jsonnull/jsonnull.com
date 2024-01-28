@@ -38,7 +38,7 @@ const useTheme = ({ onChange }: { onChange: (theme: string) => void }) => {
                 onChange(theme);
             }
         },
-        [setThemeState]
+        [setThemeState],
     );
 
     useIsomorphicLayoutEffect(() => {
@@ -86,8 +86,8 @@ export const Theme = ({ onChange }: { onChange: (theme: string) => void }) => {
                                 return (
                                     <li
                                         className={clsx(
-                                            "flex cursor-pointer items-center gap-2 py-2 px-4 hover:bg-zinc-900/50 dark:hover:bg-zinc-400/50",
-                                            selected && "text-sky"
+                                            "flex cursor-pointer items-center gap-2 px-4 py-2 hover:bg-zinc-900/50 dark:hover:bg-zinc-400/50",
+                                            selected && "text-sky",
                                         )}
                                     >
                                         <Icon className="block" width={18} height={18} /> {display}

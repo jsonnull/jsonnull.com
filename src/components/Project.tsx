@@ -49,7 +49,7 @@ export const Project = ({
                 className={clsx(
                     "flex",
                     "rounded border border-solid border-zinc-500",
-                    "pattern-lines pattern-bg-transparent pattern-fg-zinc-500"
+                    "pattern-lines pattern-bg-transparent pattern-fg-zinc-500",
                 )}
             >
                 <div
@@ -58,7 +58,7 @@ export const Project = ({
                         "text-sm text-zinc-100 dark:font-bold dark:text-black",
                         "bg-zinc-900 dark:bg-zinc-200",
                         retired && "bg-zinc-500 dark:bg-zinc-500",
-                        progress === 100 ? "rounded" : "rounded-l"
+                        progress === 100 ? "rounded" : "rounded-l",
                     )}
                     style={{ width: `calc(${progress}% + 2px)` }}
                 >

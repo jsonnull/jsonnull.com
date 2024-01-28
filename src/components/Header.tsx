@@ -86,7 +86,7 @@ export const Header = () => {
         <div
             className={clsx(
                 styles.text,
-                "pointer-events-none fixed inset-x-4 bottom-4 flex sm:inset-x-8 sm:bottom-8"
+                "pointer-events-none fixed inset-x-4 bottom-4 flex sm:inset-x-8 sm:bottom-8",
             )}
         >
             <nav

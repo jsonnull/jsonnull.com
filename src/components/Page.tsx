@@ -34,7 +34,7 @@ export const Page = ({
         <div
             className={clsx(
                 "flex min-h-screen flex-col bg-white text-black dark:bg-black dark:text-zinc-200",
-                "decoration-black underline-offset-2 dark:decoration-zinc-200"
+                "decoration-black underline-offset-2 dark:decoration-zinc-200",
             )}
         >
             <Head>

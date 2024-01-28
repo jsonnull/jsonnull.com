@@ -144,7 +144,7 @@ export async function generateOpenGraphImage({ title, slug }: { title?: string; 
 
     await promises.writeFile(
         path.resolve(__dirname, `../../../public/og-images/${slug}.png`),
-        pngBuffer
+        pngBuffer,
     );
 
     return `/og-images/${slug}.png`;

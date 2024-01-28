@@ -11,8 +11,8 @@ export const Button = ({
     return (
         <div
             className={clsx(
-                "cursor-pointer bg-zinc-900 p-3 px-6 rounded text-white dark:bg-zinc-200 dark:font-bold dark:text-black",
-                className
+                "cursor-pointer rounded bg-zinc-900 p-3 px-6 text-white dark:bg-zinc-200 dark:font-bold dark:text-black",
+                className,
             )}
         >
             {children}

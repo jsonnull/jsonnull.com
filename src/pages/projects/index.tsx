@@ -3,7 +3,7 @@ import { Heading, Page, Title, Wrapper } from "../../components";
 import { Project } from "../../components/Project";
 import { ProjectGrid } from "../../components/ProjectGrid";
 import { Spacer } from "../../components/Spacer";
-import { configuration, electronTrpc,  jsonnull, novel } from "../../data/projects";
+import { configuration, electronTrpc, jsonnull, novel } from "../../data/projects";
 import * as past from "../../data/projects/past";
 
 const Projects = () => {
