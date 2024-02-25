@@ -43,12 +43,12 @@ devDependencies:
   '@trivago/prettier-plugin-sort-imports': 4.0.0_prettier@2.8.4
   '@types/node': 18.13.0
   '@types/react': 18.0.28
-  autoprefixer: 10.4.13_postcss@8.4.21
-  postcss: 8.4.21
+  autoprefixer: 10.4.13_postcss@8.4.31
+  postcss: 8.4.31
   prettier: 2.8.4
   prettier-plugin-tailwindcss: 0.2.2_bwu25c6byziayi365gfglcp76m
   satori: 0.2.3
-  tailwindcss: 3.2.6_aesdjsunmf4wiehhujt67my7tu
+  tailwindcss: 3.2.6_7yjimpmjsytckvq3hfaydnm7um
   ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
   typescript: 4.9.5
 
@@ -771,8 +771,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@planetscale/database/1.5.0:
-    resolution: {integrity: sha512-Qwh7Or1W5dB5mZ9EQqDkgvkDKhBBmQe58KIVUy0SGocNtr5fP4JAWtvZ6EdLAV6C6hVpzNlCA2xIg9lKTswm1Q==}
+  /@planetscale/database/1.16.0:
+    resolution: {integrity: sha512-HNUrTqrd8aTRZYMDcsoZ62s36sIWkMMmKZBOehoCWR2WrfNPKq+Q1yQef5okl3pSVlldFnu2h/dbHjOsDTHXug==}
     engines: {node: '>=16'}
     requiresBuild: true
     dev: true
@@ -1056,7 +1056,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /autoprefixer/10.4.13_postcss@8.4.21:
+  /autoprefixer/10.4.13_postcss@8.4.31:
     resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -1068,7 +1068,7 @@ packages:
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.21
+      postcss: 8.4.31
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -1162,7 +1162,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /chownr/1.1.4:
@@ -1506,8 +1506,8 @@ packages:
     resolution: {integrity: sha512-YEexkCpL4j03jn5SxaMHqcO6IuWuqm8JFUYhyCep7Ao89JIYmB8xoKhK7zXXJ9cCaNXpyNH5L3QtAmoxjoHW2w==}
     dev: true
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents/2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -1953,8 +1953,8 @@ packages:
     resolution: {integrity: sha512-5vQEh3y+DG/lMPM0mCGPDnyV8chYg/g7rl6v3Gd8WMF9S429ox3Xk8qrk174kWhG767KQMqqxLD1WnGd77hiew==}
     dev: true
 
-  /nanoid/3.3.4:
-    resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
+  /nanoid/3.3.7:
+    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -2154,29 +2154,29 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /postcss-import/14.1.0_postcss@8.4.21:
+  /postcss-import/14.1.0_postcss@8.4.31:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.31
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.1
     dev: true
 
-  /postcss-js/4.0.1_postcss@8.4.21:
+  /postcss-js/4.0.1_postcss@8.4.31:
     resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.4.21
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.21
+      postcss: 8.4.31
     dev: true
 
-  /postcss-load-config/3.1.4_aesdjsunmf4wiehhujt67my7tu:
+  /postcss-load-config/3.1.4_7yjimpmjsytckvq3hfaydnm7um:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -2189,18 +2189,18 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.0.6
-      postcss: 8.4.21
+      postcss: 8.4.31
       ts-node: 10.9.1_4bewfcp2iebiwuold25d6rgcsy
       yaml: 1.10.2
     dev: true
 
-  /postcss-nested/6.0.0_postcss@8.4.21:
+  /postcss-nested/6.0.0_postcss@8.4.31:
     resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.31
       postcss-selector-parser: 6.0.11
     dev: true
 
@@ -2220,16 +2220,16 @@ packages:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanoid: 3.3.4
+      nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: false
 
-  /postcss/8.4.21:
-    resolution: {integrity: sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==}
+  /postcss/8.4.31:
+    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanoid: 3.3.4
+      nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
@@ -2650,7 +2650,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.2.6_aesdjsunmf4wiehhujt67my7tu:
+  /tailwindcss/3.2.6_7yjimpmjsytckvq3hfaydnm7um:
     resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
@@ -2671,11 +2671,11 @@ packages:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.21
-      postcss-import: 14.1.0_postcss@8.4.21
-      postcss-js: 4.0.1_postcss@8.4.21
-      postcss-load-config: 3.1.4_aesdjsunmf4wiehhujt67my7tu
-      postcss-nested: 6.0.0_postcss@8.4.21
+      postcss: 8.4.31
+      postcss-import: 14.1.0_postcss@8.4.31
+      postcss-js: 4.0.1_postcss@8.4.31
+      postcss-load-config: 3.1.4_7yjimpmjsytckvq3hfaydnm7um
+      postcss-nested: 6.0.0_postcss@8.4.31
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
@@ -2815,7 +2815,7 @@ packages:
       ufo: 1.0.1
       ws: 8.12.0
     optionalDependencies:
-      '@planetscale/database': 1.5.0
+      '@planetscale/database': 1.16.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
