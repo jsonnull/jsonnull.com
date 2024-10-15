@@ -11,7 +11,7 @@ specifiers:
   autoprefixer: ^10.4.13
   clsx: ^1.2.1
   gray-matter: 4.0.3
-  markdown-to-jsx: 7.1.9
+  markdown-to-jsx: 7.4.0
   next: ^13.1.6
   postcss: ^8.4.21
   prettier: 2.8.4
@@ -30,7 +30,7 @@ dependencies:
   '@popperjs/core': 2.11.6
   clsx: 1.2.1
   gray-matter: 4.0.3
-  markdown-to-jsx: 7.1.9_react@18.2.0
+  markdown-to-jsx: 7.4.0_react@18.2.0
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1874,8 +1874,8 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: true
 
-  /markdown-to-jsx/7.1.9_react@18.2.0:
-    resolution: {integrity: sha512-x4STVIKIJR0mGgZIZ5RyAeQD7FEZd5tS8m/htbcVGlex32J+hlSLj+ExrHCxP6nRKF1EKbcO7i6WhC1GtOpBlA==}
+  /markdown-to-jsx/7.4.0_react@18.2.0:
+    resolution: {integrity: sha512-zilc+MIkVVXPyTb4iIUTIz9yyqfcWjszGXnwF9K/aiBWcHXFcmdEMTkG01/oQhwSCH7SY1BnG6+ev5BzWmbPrg==}
     engines: {node: '>= 10'}
     peerDependencies:
       react: '>= 0.14.0'
